@@ -11,7 +11,10 @@ namespace ZurvanBot.Discord.Gateway.Payloads
 
         public string Serialized()
         {
-            var serialized = JsonConvert.SerializeObject(this);
+            var serialized = JsonConvert.SerializeObject(this, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
             return serialized;
         }
     }

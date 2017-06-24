@@ -6,7 +6,9 @@ using System.Threading;
 using Newtonsoft.Json.Linq;
 using WebSocketSharp;
 using ZurvanBot.Discord;
+using ZurvanBot.Discord.Gateway;
 using ZurvanBot.Discord.Resources.Params;
+using ZurvanBot.Util;
 using ZurvanBot.Util.HTTP;
 
 namespace ZurvanBot
@@ -17,7 +19,7 @@ namespace ZurvanBot
         {   
             using (var ws = new WebSocket ("wss://gateway.discord.gg/?v=5&encoding=json"))
             {
-                var heartbeatInterval = 1000;
+                /* var heartbeatInterval = 1000;
                 var lastSeq = -1;
                 var locker = new object();
                 
@@ -65,7 +67,7 @@ namespace ZurvanBot
                             var s = @"{
     ""op"": 2,
     ""d"": {
-        ""token"": ""token"",
+        ""token"": ""MjQzMDg0Nzc2NzkyMTI5NTM2.DC_KCA.IfP0ZhwJjjHOp_80_VbQQZCLCTw"",
         ""properties"": {
             ""$os"": ""linux"",
             ""$browser"": ""zurvanbot"",
@@ -105,7 +107,12 @@ namespace ZurvanBot
                 };
 
                 ws.Connect ();
-                Console.ReadKey (true);
+                Console.ReadKey (true); */
+                
+                var gateway = new GatewayListener("wss://gateway.discord.gg/", "token");
+                gateway.StarListening().Wait();
+
+                Log.Info("Closed.");
             }
         }
     }

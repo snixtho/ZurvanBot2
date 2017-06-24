@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8e0e615b-ac48-4abe-bb44-ddb6f8f04d6f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.ZurvanBot2/.idea/contentModel.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.ZurvanBot2/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.ZurvanBot2/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.ZurvanBot2/riderModule.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/IdentifyData.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ConsoleApplication/Util/Log.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ConsoleApplication/Util/PlatformDetect.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vs/ZurvanBot2/v14/.suo" afterPath="$PROJECT_DIR$/.vs/ZurvanBot2/v14/.suo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyPayload.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyPayload.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Program.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/ZurvanBot2.csproj" afterPath="$PROJECT_DIR$/ConsoleApplication/ZurvanBot2.csproj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/DeviceInfo.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/DeviceData.cs" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="814">
+              <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+              <folding>
+                <marker date="1498327591087" expanded="true" signature="6:296" ph="..." />
+                <marker date="1498327591087" expanded="true" signature="317:3684" ph="{...}" />
+                <marker date="1498327591087" expanded="true" signature="346:3682" ph="{...}" />
+                <marker date="1498327591087" expanded="true" signature="399:3676" ph="{...}" />
+                <marker date="1498327591087" expanded="true" signature="503:3666" ph="{...}" />
+                <marker date="1498327591087" expanded="true" signature="534:3460" ph="/* var heartbeatInterval = 1000; ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GatewayListener.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="157" column="9" lean-forward="false" selection-start-line="157" selection-start-column="9" selection-end-line="157" selection-end-column="9" />
+              <folding>
+                <marker date="1498327551408" expanded="true" signature="6:210" ph="..." />
+                <marker date="1498327551408" expanded="true" signature="247:6445" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="282:6443" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="667:807" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="817:941" ph="/// Gets the connection url. ... " />
+                <marker date="1498327551408" expanded="true" signature="982:1181" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="1220:1660" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="1703:1998" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="2085:2629" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="2379:2530" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="2550:2619" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="2716:2808" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="2901:5413" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="3159:5403" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="3383:3446" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="5489:5571" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="5581:5747" ph="/// Starts to listen to events to the gateway server. ... " />
+                <marker date="1498327551408" expanded="true" signature="5783:6437" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="5828:6335" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="6046:6216" ph="{...}" />
+                <marker date="1498327551408" expanded="true" signature="6240:6321" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IdentifyData.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/IdentifyData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <folding>
+                <marker date="1498327097174" expanded="true" signature="44:272" ph="{...}" />
+                <marker date="1498327097174" expanded="true" signature="76:270" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IdentifyPayload.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyPayload.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="5" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+              <folding>
+                <marker date="1498327300054" expanded="true" signature="44:193" ph="{...}" />
+                <marker date="1498327300054" expanded="true" signature="92:191" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PayloadBase.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+              <folding>
+                <marker date="1498327346963" expanded="true" signature="68:476" ph="{...}" />
+                <marker date="1498327346963" expanded="true" signature="99:474" ph="{...}" />
+                <marker date="1498327346963" expanded="true" signature="236:468" ph="{...}" />
+                <marker date="1498327346963" expanded="true" signature="349:425" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceData.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/DeviceData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+              <folding>
+                <marker date="1498327055831" expanded="true" signature="6:73" ph="..." />
+                <marker date="1498327055831" expanded="true" signature="119:829" ph="{...}" />
+                <marker date="1498327055831" expanded="true" signature="149:827" ph="{...}" />
+                <marker date="1498327055831" expanded="true" signature="183:388" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Util/Log.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Util/PlatformDetect.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/DeviceInfo.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/DeviceData.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyData.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/IdentifyData.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyPayload.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="951" />
+    <option name="y" value="348" />
+    <option name="width" value="1606" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2 (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2 (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Util" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2 (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Discord" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2 (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Discord" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gateway" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2 (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Discord" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gateway" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Payloads" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2 (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Discord" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gateway" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Payloads" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Project.Default">
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/ConsoleApplication/ZurvanBot2.csproj" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.5" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/ConsoleApplication/bin/Debug/ZurvanBot.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ConsoleApplication/bin/Debug" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e0e615b-ac48-4abe-bb44-ddb6f8f04d6f" name="Default" comment="" />
+      <created>1498298368926</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1498298368926</updated>
+      <workItem from="1498298370031" duration="6567000" />
+      <workItem from="1498321780977" duration="5835000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="12402000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="951" y="348" width="1606" height="1047" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27868852" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17232704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1673774" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="10" lean-forward="false" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding>
+            <marker date="1498327591087" expanded="true" signature="6:296" ph="..." />
+            <marker date="1498327591087" expanded="true" signature="317:3684" ph="{...}" />
+            <marker date="1498327591087" expanded="true" signature="346:3682" ph="{...}" />
+            <marker date="1498327591087" expanded="true" signature="399:3676" ph="{...}" />
+            <marker date="1498327591087" expanded="true" signature="503:3666" ph="{...}" />
+            <marker date="1498327591087" expanded="true" signature="534:3460" ph="/* var heartbeatInterval = 1000; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="89" column="19" lean-forward="true" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
+          <folding>
+            <marker date="1498327551408" expanded="true" signature="6:210" ph="..." />
+            <marker date="1498327551408" expanded="true" signature="247:6445" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="282:6443" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="667:807" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="817:941" ph="/// Gets the connection url. ... " />
+            <marker date="1498327551408" expanded="true" signature="982:1181" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="1220:1660" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="1703:1998" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="2085:2629" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="2379:2530" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="2550:2619" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="2716:2808" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="2901:5413" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="3159:5403" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="3383:3446" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="5489:5571" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="5581:5747" ph="/// Starts to listen to events to the gateway server. ... " />
+            <marker date="1498327551408" expanded="true" signature="5783:6437" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="5828:6335" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="6046:6216" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="6240:6321" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding>
+            <marker date="1498322358793" expanded="true" signature="6:87" ph="..." />
+            <marker date="1498322358793" expanded="true" signature="124:1641" ph="{...}" />
+            <marker date="1498322358793" expanded="true" signature="155:1639" ph="{...}" />
+            <marker date="1498322358793" expanded="true" signature="325:401" ph="{...}" />
+            <marker date="1498322358793" expanded="true" signature="411:575" ph="/// Send a heartbeat to the websocket server. ... " />
+            <marker date="1498322358793" expanded="true" signature="612:936" ph="{...}" />
+            <marker date="1498322358793" expanded="true" signature="694:790" ph="{...}" />
+            <marker date="1498322358793" expanded="true" signature="946:1018" ph="/// Starts the heartbeater. ... " />
+            <marker date="1498322358793" expanded="true" signature="1046:1352" ph="{...}" />
+            <marker date="1498322358793" expanded="true" signature="1072:1290" ph="{...}" />
+            <marker date="1498322358793" expanded="true" signature="1122:1276" ph="{...}" />
+            <marker date="1498322358793" expanded="true" signature="1362:1548" ph="/// This has to be called in between the heartbeats, otherwise ... " />
+            <marker date="1498322358793" expanded="true" signature="1584:1633" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Util/Log.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+          <folding>
+            <marker date="1498325069054" expanded="false" signature="6:200" ph="..." />
+            <marker date="1498325069054" expanded="true" signature="226:6684" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="233:293" ph="/// Easy logging class. ... " />
+            <marker date="1498325069054" expanded="true" signature="314:6682" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="350:462" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="693:781" ph="/// List of streams to output log lines to. ... " />
+            <marker date="1498325069054" expanded="true" signature="863:1124" ph="/// The log level that is required for outputting log lines. ... " />
+            <marker date="1498325069054" expanded="true" signature="1182:1278" ph="/// Whether to enable console output while logging. ... " />
+            <marker date="1498325069054" expanded="true" signature="1318:1879" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="1344:1534" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="1550:1869" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="1902:2009" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="2047:2172" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="2190:2341" ph="/// Writes a line to the desired output stream. ... " />
+            <marker date="1498325069054" expanded="true" signature="2383:2718" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="2572:2694" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="2728:3025" ph="/// Add a file that will have log lines written to it. ... " />
+            <marker date="1498325069054" expanded="true" signature="3072:3499" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="3509:3721" ph="/// Converts abc.def.ghi etc.. to (Abc)(Def)(Ghi) etc.. ... " />
+            <marker date="1498325069054" expanded="true" signature="3775:4293" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="3954:4261" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="4311:4504" ph="/// Log a info message. ... " />
+            <marker date="1498325069054" expanded="true" signature="4563:4799" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="4817:5004" ph="/// Log an error. ... " />
+            <marker date="1498325069054" expanded="true" signature="5064:5301" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="5319:5507" ph="/// Log a warning. ... " />
+            <marker date="1498325069054" expanded="true" signature="5569:5808" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="5826:6014" ph="/// Log a warning. ... " />
+            <marker date="1498325069054" expanded="true" signature="6074:6311" ph="{...}" />
+            <marker date="1498325069054" expanded="true" signature="6321:6485" ph="/// Add a file that will have log lines written to it. ... " />
+            <marker date="1498325069054" expanded="true" signature="6540:6676" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Util/PlatformDetect.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <marker date="1498326968386" expanded="true" signature="39:1550" ph="{...}" />
+            <marker date="1498326968386" expanded="true" signature="73:1548" ph="{...}" />
+            <marker date="1498326968386" expanded="true" signature="88:248" ph="/// Get the string of the current platform. ... " />
+            <marker date="1498326968386" expanded="true" signature="295:400" ph="{...}" />
+            <marker date="1498326968386" expanded="true" signature="410:537" ph="/// Get the current platform. ... " />
+            <marker date="1498326968386" expanded="true" signature="584:655" ph="{...}" />
+            <marker date="1498326968386" expanded="true" signature="665:806" ph="/// Get a more broad platform name, like linux, windows mac etc. ... " />
+            <marker date="1498326968386" expanded="true" signature="858:1542" ph="{...}" />
+            <marker date="1498326968386" expanded="true" signature="1110:1172" ph="{...}" />
+            <marker date="1498326968386" expanded="true" signature="1224:1282" ph="{...}" />
+            <marker date="1498326968386" expanded="true" signature="1332:1391" ph="{...}" />
+            <marker date="1498326968386" expanded="true" signature="1441:1501" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/DeviceData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding>
+            <marker date="1498327055831" expanded="true" signature="6:73" ph="..." />
+            <marker date="1498327055831" expanded="true" signature="119:829" ph="{...}" />
+            <marker date="1498327055831" expanded="true" signature="149:827" ph="{...}" />
+            <marker date="1498327055831" expanded="true" signature="183:388" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyPayload.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="5" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding>
+            <marker date="1498327300054" expanded="true" signature="44:193" ph="{...}" />
+            <marker date="1498327300054" expanded="true" signature="92:191" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <marker date="1498327346963" expanded="true" signature="68:476" ph="{...}" />
+            <marker date="1498327346963" expanded="true" signature="99:474" ph="{...}" />
+            <marker date="1498327346963" expanded="true" signature="236:468" ph="{...}" />
+            <marker date="1498327346963" expanded="true" signature="349:425" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding>
+            <marker date="1498327591087" expanded="true" signature="6:296" ph="..." />
+            <marker date="1498327591087" expanded="true" signature="317:3684" ph="{...}" />
+            <marker date="1498327591087" expanded="true" signature="346:3682" ph="{...}" />
+            <marker date="1498327591087" expanded="true" signature="399:3676" ph="{...}" />
+            <marker date="1498327591087" expanded="true" signature="503:3666" ph="{...}" />
+            <marker date="1498327591087" expanded="true" signature="534:3460" ph="/* var heartbeatInterval = 1000; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/IdentifyData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <marker date="1498327097174" expanded="true" signature="44:272" ph="{...}" />
+            <marker date="1498327097174" expanded="true" signature="76:270" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="157" column="9" lean-forward="false" selection-start-line="157" selection-start-column="9" selection-end-line="157" selection-end-column="9" />
+          <folding>
+            <marker date="1498327551408" expanded="true" signature="6:210" ph="..." />
+            <marker date="1498327551408" expanded="true" signature="247:6445" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="282:6443" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="667:807" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="817:941" ph="/// Gets the connection url. ... " />
+            <marker date="1498327551408" expanded="true" signature="982:1181" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="1220:1660" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="1703:1998" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="2085:2629" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="2379:2530" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="2550:2619" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="2716:2808" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="2901:5413" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="3159:5403" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="3383:3446" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="5489:5571" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="5581:5747" ph="/// Starts to listen to events to the gateway server. ... " />
+            <marker date="1498327551408" expanded="true" signature="5783:6437" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="5828:6335" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="6046:6216" ph="{...}" />
+            <marker date="1498327551408" expanded="true" signature="6240:6321" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using WebSocketSharp;
 using ZurvanBot.Discord.Gateway.Payloads;
+using ZurvanBot.Util;
 
 namespace ZurvanBot.Discord.Gateway
 {
@@ -15,12 +16,13 @@ namespace ZurvanBot.Discord.Gateway
         private bool _isRunning = false;
         private string _authToken;
         private HeartBeater _heart;
+        private object _mainWait = new object();
         
-        public int GatewayProtocol { get; private set; }
+        public int ProtocolVersion { get; private set; }
         
         public GatewayListener(string gatewayUrl, string authToken)
         {
-            GatewayProtocol = 5;
+            ProtocolVersion = 5;
             _gatewayAddress = new Uri(gatewayUrl);
             _authToken = authToken;
         }
@@ -34,7 +36,7 @@ namespace ZurvanBot.Discord.Gateway
             return "wss://"
                    + _gatewayAddress.Host
                    + "/"
-                   + "?v=" + GatewayProtocol
+                   + "?v=" + ProtocolVersion
                    + "&encoding=json";
         }
 
@@ -55,79 +57,125 @@ namespace ZurvanBot.Discord.Gateway
         private void SendAuthentication()
         {
             var identifyPayload = new IdentifyPayload();
-            identifyPayload.compress = false;
-            identifyPayload.token = _authToken;
+            identifyPayload.d.compress = false;
+            identifyPayload.d.token = _authToken;
+            Console.WriteLine(identifyPayload.Serialized());
             _websocket.Send(identifyPayload.Serialized());
         }
 
         private void WebsocketOnOnClose(object sender, CloseEventArgs closeEventArgs)
         {
+            Log.Info("Connection closed: (" + closeEventArgs.Code + ") " + closeEventArgs.Reason);
             
+            if ((ErrorCode)closeEventArgs.Code == ErrorCode.NotAuthenticated)
+                Log.Error("Authentication failed for gateway.");
+            
+            try
+            {
+                Monitor.Enter(_mainWait);
+                _isRunning = false;
+                Monitor.PulseAll(_mainWait);
+            }
+            finally
+            {
+                Monitor.Exit(_mainWait);
+            }
         }
 
         private void WebsocketOnOnError(object sender, ErrorEventArgs errorEventArgs)
         {
-            
+            Log.Error("Connection Errored: " + errorEventArgs.Message);
         }
 
         private void WebsocketOnOnMessage(object sender, MessageEventArgs messageEventArgs)
         {
+            Log.Info("Message recieved from websocket.");
+            Log.Debug("Message: " + messageEventArgs.Data);
             var jo = JObject.Parse(messageEventArgs.Data);
             var op = (OpCode) (int) jo["op"];
 
             switch (op)
             {
                 case OpCode.Dispatch:
-                    var t = (string)jo["d"];
+                    Log.Debug("Event: Dispatch", "websocket.onmessage");
+                    var t = (string)jo["t"];
                     if (t.ToUpper().Equals("READY")) {
                         _heart.Start();
                     }
                     break;
                 case OpCode.Heartbeat:
+                    Log.Debug("Event: Heartbeat", "websocket.onmessage");
                     break;
                 case OpCode.HeartbeatACK:
+                    Log.Debug("Event: HeartbeatACK", "websocket.onmessage");
+                    _heart.EchoHeartbeat();
                     break;
                 case OpCode.Hello:
+                    Log.Debug("Event: Hello", "websocket.onmessage");
                     SendAuthentication();
-                    _heart = new HeartBeater(_websocket, (int)jo["op"]["d"]["heartbeat_interval"]);
+                    var heartInterval = (int) jo["d"]["heartbeat_interval"];
+                    _heart = new HeartBeater(_websocket, heartInterval);
                     break;
                 case OpCode.Identify:
+                    Log.Debug("Event: Indentify", "websocket.onmessage");
                     break;
                 case OpCode.InvalidSession:
+                    Log.Debug("Event: InvalidSession", "websocket.onmessage");
                     break;
                 case OpCode.Reconnect:
+                    Log.Debug("Event: Reconnect", "websocket.onmessage");
                     break;
                 case OpCode.RequestGuildMembers:
+                    Log.Debug("Event: RequestGuildMembers", "websocket.onmessage");
                     break;
                 case OpCode.Resume:
+                    Log.Debug("Event: Resume", "websocket.onmessage");
                     break;
                 case OpCode.StatusUpdate:
+                    Log.Debug("Event: StatusUpdate", "websocket.onmessage");
                     break;
                 case OpCode.VoiceServeRPing:
+                    Log.Debug("Event: VoiceServerRPing", "websocket.onmessage");
                     break;
                 case OpCode.VoiceStateUpdate:
+                    Log.Debug("Event: VoiceStateUpdate", "websocket.onmessage");
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
         private void WebsocketOnOnOpen(object sender, EventArgs eventArgs)
         {
-            
+            Log.Debug("Websocket open.", "websocket.onopen");
         }
 
         /// <summary>
         /// Starts to listen to events to the gateway server.
         /// </summary>
         /// <returns>The main thread which can be joined.</returns>
-        public Thread StarListening()
+        public Task StarListening()
         {
-            var t = new Thread(() =>
+            var t = new Task(() =>
             {
                 SetupNewSocket();
+                _websocket.Connect();
                 
-                // todo: implement proper wait
-                while (_isRunning) ;
+                // wait until _isRunning is false, which is usally when the connection closes.
+                try
+                {
+                    Monitor.Enter(_mainWait);
+                    while (_isRunning)
+                        Monitor.Wait(_mainWait);
+                }
+                finally
+                {
+                    Monitor.Exit(_mainWait);
+                }
             });
+            
+            t.Start();
+            _isRunning = true;
 
             return t;
         }

@@ -36,9 +36,6 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SuperSocket.ClientEngine, Version=0.8.0.12, Culture=neutral, PublicKeyToken=ee9af13f57f00acc">
-      <HintPath>..\packages\SuperSocket.ClientEngine.Core.0.8.0.12\lib\net45\SuperSocket.ClientEngine.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,7 +54,8 @@
     <Compile Include="Discord\Gateway\GatewayListener.cs" />
     <Compile Include="Discord\Gateway\HeartBeater.cs" />
     <Compile Include="Discord\Gateway\OpCode.cs" />
-    <Compile Include="Discord\Gateway\Payloads\DeviceInfo.cs" />
+    <Compile Include="Discord\Gateway\Payloads\Data\DeviceData.cs" />
+    <Compile Include="Discord\Gateway\Payloads\Data\IdentifyData.cs" />
     <Compile Include="Discord\Gateway\Payloads\HeartbeatPayload.cs" />
     <Compile Include="Discord\Gateway\Payloads\IdentifyPayload.cs" />
     <Compile Include="Discord\Gateway\Payloads\PayloadBase.cs" />
@@ -143,6 +141,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\HTTP\HTTPSRequest.cs" />
     <Compile Include="Util\HTTP\HTTPSResponse.cs" />
+    <Compile Include="Util\Log.cs" />
+    <Compile Include="Util\PlatformDetect.cs" />
     <Compile Include="ZurvanBot.cs" />
   </ItemGroup>
   <ItemGroup>

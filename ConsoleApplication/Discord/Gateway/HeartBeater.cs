@@ -54,8 +54,9 @@ namespace ZurvanBot.Discord.Gateway
         /// This has to be called in between the heartbeats, otherwise
         /// the heartbeater will automatically close the websocket connection.
         /// </summary>
-        public void EchoHeartbeat() {
-
+        public void EchoHeartbeat()
+        {
+            _gotEcho = true;
         }
     }
 }

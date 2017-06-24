@@ -2,10 +2,7 @@
 {
     public class IdentifyPayload: PayloadBase
     {
-        public string token;
-        public DeviceInfo properties;
-        public bool compress;
-        public int? large_threshold;
-        public int?[] shard;
+        public new IdentifyData d = new IdentifyData();
+        public new int op = 2;
     }
 }
