@@ -8,6 +8,7 @@ namespace ZurvanBot.Discord.Gateway
     {
         private int _interval;
         private WebSocket _ws;
+        private bool _gotEcho = true;
         
         public HeartBeater(WebSocket ws, int interval)
         {
@@ -22,6 +23,10 @@ namespace ZurvanBot.Discord.Gateway
         private bool SendHeartbeat()
         {
             if (!_ws.IsAlive) return false;
+            if (!_gotEcho) {
+                _ws.Close(CloseStatusCode.Normal);
+                return false;
+            }
             
             var heartbeat = new HeartbeatPayload();
             _ws.Send(heartbeat.Serialized());
@@ -43,6 +48,14 @@ namespace ZurvanBot.Discord.Gateway
                 }
             }
             catch (ThreadInterruptedException e) {}
+        }
+
+        /// <summary>
+        /// This has to be called in between the heartbeats, otherwise
+        /// the heartbeater will automatically close the websocket connection.
+        /// </summary>
+        public void EchoHeartbeat() {
+
         }
     }
 }
