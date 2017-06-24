@@ -1,6 +1,8 @@
 ﻿using System.Threading;
+using System.Threading.Tasks;
 using WebSocketSharp;
 using ZurvanBot.Discord.Gateway.Payloads;
+using ZurvanBot.Util;
 
 namespace ZurvanBot.Discord.Gateway
 {
@@ -24,6 +26,7 @@ namespace ZurvanBot.Discord.Gateway
         {
             if (!_ws.IsAlive) return false;
             if (!_gotEcho) {
+                Log.Error("Heartbeater got no echo, closing connection.", "heartbeater");
                 _ws.Close(CloseStatusCode.Normal);
                 return false;
             }
@@ -48,6 +51,28 @@ namespace ZurvanBot.Discord.Gateway
                 }
             }
             catch (ThreadInterruptedException e) {}
+        }
+
+        /// <summary>
+        /// Starts the heartbeater asynchronous.
+        /// </summary>
+        public Task StartAsync()
+        {
+            var task = new Task(() =>
+            {
+                try
+                {
+                    while (_ws.IsAlive)
+                    {
+                        if (!SendHeartbeat())
+                            break;
+                        Thread.Sleep(_interval);
+                    }
+                }
+                catch (ThreadInterruptedException e) {}
+            });
+
+            return task;
         }
 
         /// <summary>

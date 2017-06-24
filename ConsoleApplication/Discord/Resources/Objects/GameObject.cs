@@ -4,6 +4,6 @@
     {
         public string name;
         public int type;
-        public int url;
+        public string url;
     }
 }

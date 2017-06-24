@@ -109,8 +109,17 @@ namespace ZurvanBot
                 ws.Connect ();
                 Console.ReadKey (true); */
                 
-                var gateway = new GatewayListener("wss://gateway.discord.gg/", "token");
-                gateway.StarListening().Wait();
+                // Log.Instance().LogLevel = Log.Elevation.Warning;
+                
+                var gateway = new GatewayListener("wss://gateway.discord.gg/", "MjQzMDg0Nzc2NzkyMTI5NTM2.DDA97w.PH7KBiIIygTw3UXhU6F4Fg3r7vQ");
+                
+                gateway.OnReadyEvent += eventArgs =>
+                {
+                    Console.WriteLine(eventArgs.Guilds.Length);
+                };
+                
+                gateway.StartListeningAsync().Wait();
+
 
                 Log.Info("Closed.");
             }
