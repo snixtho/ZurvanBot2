@@ -1,0 +1,11 @@
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/bin/Debug/ZurvanBot.exe.mdb
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/bin/Debug/ZurvanBot.exe
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/obj/Debug/ZurvanBot.exe
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/obj/Debug/ZurvanBot.exe.mdb
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/bin/Debug/Newtonsoft.Json.dll
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/bin/Debug/SuperSocket.ClientEngine.dll
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/bin/Debug/WebSocket4Net.dll
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/bin/Debug/ZurvanBot.pdb
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/obj/Debug/ZurvanBot.pdb
+/home/snixtho/RiderProjects/ConsoleApplication/ConsoleApplication/bin/Debug/websocket-sharp.dll

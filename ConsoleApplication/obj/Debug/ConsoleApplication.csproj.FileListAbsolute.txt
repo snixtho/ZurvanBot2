@@ -1,0 +1,10 @@
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBox2\ConsoleApplication\obj\Debug\ZurvanBot.exe
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBox2\ConsoleApplication\obj\Debug\ZurvanBot.pdb
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBox2\ConsoleApplication\bin\Debug\ZurvanBot.exe
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBox2\ConsoleApplication\bin\Debug\ZurvanBot.pdb
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBox2\ConsoleApplication\bin\Debug\Newtonsoft.Json.dll
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBox2\ConsoleApplication\bin\Debug\SuperSocket.ClientEngine.dll
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBox2\ConsoleApplication\bin\Debug\websocket-sharp.dll
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBox2\ConsoleApplication\bin\Debug\Newtonsoft.Json.xml
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBox2\ConsoleApplication\bin\Debug\websocket-sharp.xml
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBox2\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E492371-DE40-47E9-9142-E13D90FE5806}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZurvanBot</RootNamespace>
+    <AssemblyName>ZurvanBot</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.ClientEngine, Version=0.8.0.12, Culture=neutral, PublicKeyToken=ee9af13f57f00acc">
+      <HintPath>..\packages\SuperSocket.ClientEngine.Core.0.8.0.12\lib\net45\SuperSocket.ClientEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="websocket-sharp, Version=1.0.2.59611, Culture=neutral, PublicKeyToken=5660b08a1845a91e">
+      <HintPath>..\packages\WebSocketSharp.1.0.3-rc11\lib\websocket-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Discord\API.cs" />
+    <Compile Include="Discord\Authentication.cs" />
+    <Compile Include="Discord\BasicRequestResponse.cs" />
+    <Compile Include="Discord\Gateway\ErrorCode.cs" />
+    <Compile Include="Discord\Gateway\GatewayListener.cs" />
+    <Compile Include="Discord\Gateway\HeartBeater.cs" />
+    <Compile Include="Discord\Gateway\OpCode.cs" />
+    <Compile Include="Discord\Gateway\Payloads\DeviceInfo.cs" />
+    <Compile Include="Discord\Gateway\Payloads\HeartbeatPayload.cs" />
+    <Compile Include="Discord\Gateway\Payloads\IdentifyPayload.cs" />
+    <Compile Include="Discord\Gateway\Payloads\PayloadBase.cs" />
+    <Compile Include="Discord\ResourceRequest.cs" />
+    <Compile Include="Discord\Resources\Channel.cs" />
+    <Compile Include="Discord\Resources\Guild.cs" />
+    <Compile Include="Discord\Resources\Invite.cs" />
+    <Compile Include="Discord\Resources\Objects\AccountObject.cs" />
+    <Compile Include="Discord\Resources\Objects\AttachmentObject.cs" />
+    <Compile Include="Discord\Resources\Objects\BeginGuildPruneParams.cs" />
+    <Compile Include="Discord\Resources\Objects\ConnectionObject.cs" />
+    <Compile Include="Discord\Resources\Objects\DMChannelObject.cs" />
+    <Compile Include="Discord\Resources\Objects\EmbedObject.cs" />
+    <Compile Include="Discord\Resources\Objects\EmbedAuthorObject.cs" />
+    <Compile Include="Discord\Resources\Objects\EmbedFieldObject.cs" />
+    <Compile Include="Discord\Resources\Objects\EmbedFooterObject.cs" />
+    <Compile Include="Discord\Resources\Objects\EmbedImageObject.cs" />
+    <Compile Include="Discord\Resources\Objects\EmbedProviderObject.cs" />
+    <Compile Include="Discord\Resources\Objects\EmbedThumbnailObject.cs" />
+    <Compile Include="Discord\Resources\Objects\EmbedVideoObject.cs" />
+    <Compile Include="Discord\Resources\Objects\EmojiObject.cs" />
+    <Compile Include="Discord\Resources\Objects\GameObject.cs" />
+    <Compile Include="Discord\Resources\Objects\GetGuildPruneCountParams.cs" />
+    <Compile Include="Discord\Resources\Objects\GuildChannelObject.cs" />
+    <Compile Include="Discord\Resources\Objects\GuildEmbedObject.cs" />
+    <Compile Include="Discord\Resources\Objects\GuildMemberObject.cs" />
+    <Compile Include="Discord\Resources\Objects\GuildObject.cs" />
+    <Compile Include="Discord\Resources\Objects\IntegrationObject.cs" />
+    <Compile Include="Discord\Resources\Objects\InviteChannelObject.cs" />
+    <Compile Include="Discord\Resources\Objects\InviteGuildObject.cs" />
+    <Compile Include="Discord\Resources\Objects\InviteMetadataObject.cs" />
+    <Compile Include="Discord\Resources\Objects\InviteObject.cs" />
+    <Compile Include="Discord\Resources\Objects\InviteWithMetadataObject.cs" />
+    <Compile Include="Discord\Resources\Objects\MessageObject.cs" />
+    <Compile Include="Discord\Resources\Objects\OverwriteObject.cs" />
+    <Compile Include="Discord\Resources\Objects\PresenceObject.cs" />
+    <Compile Include="Discord\Resources\Objects\PruneCountObject.cs" />
+    <Compile Include="Discord\Resources\Objects\ReactionObject.cs" />
+    <Compile Include="Discord\Resources\Objects\ResObject.cs" />
+    <Compile Include="Discord\Resources\Objects\RoleObject.cs" />
+    <Compile Include="Discord\Resources\Objects\UnavailableGuildObject.cs" />
+    <Compile Include="Discord\Resources\Objects\UserGuildObject.cs" />
+    <Compile Include="Discord\Resources\Objects\UserObject.cs" />
+    <Compile Include="Discord\Resources\Objects\VoiceRegionObject.cs" />
+    <Compile Include="Discord\Resources\Objects\VoiceStateObject.cs" />
+    <Compile Include="Discord\Resources\Params\AddGuildMemberParams.cs" />
+    <Compile Include="Discord\Resources\Params\BulkDeleteMessagesParams.cs" />
+    <Compile Include="Discord\Resources\Params\CreateChannelInviteParams.cs" />
+    <Compile Include="Discord\Resources\Params\CreateDMParams.cs" />
+    <Compile Include="Discord\Resources\Params\CreateGroupDMParams.cs" />
+    <Compile Include="Discord\Resources\Params\CreateGuildBanParams.cs" />
+    <Compile Include="Discord\Resources\Params\CreateGuildChannelParams.cs" />
+    <Compile Include="Discord\Resources\Params\CreateGuildIntegrationParams.cs" />
+    <Compile Include="Discord\Resources\Params\CreateGuildParams.cs" />
+    <Compile Include="Discord\Resources\Params\CreateGuildRoleParams.cs" />
+    <Compile Include="Discord\Resources\Params\CreateMessageParams.cs" />
+    <Compile Include="Discord\Resources\Params\EditChannelPermissionsParams.cs" />
+    <Compile Include="Discord\Resources\Params\EditMessageParams.cs" />
+    <Compile Include="Discord\Resources\Params\GetChannelMessagesParams.cs" />
+    <Compile Include="Discord\Resources\Params\GetCurrentUserGuildsParams.cs" />
+    <Compile Include="Discord\Resources\Params\GroupDMAddRecipientParams.cs" />
+    <Compile Include="Discord\Resources\Params\ListGuildMembersParams.cs" />
+    <Compile Include="Discord\Resources\Params\ModifyChannelParams.cs" />
+    <Compile Include="Discord\Resources\Params\ModifyCurrentUserNickParams.cs" />
+    <Compile Include="Discord\Resources\Params\ModifyCurrentUserParams.cs" />
+    <Compile Include="Discord\Resources\Params\ModifyGuildChannelPositionsObject.cs" />
+    <Compile Include="Discord\Resources\Params\ModifyGuildEmbedParams.cs" />
+    <Compile Include="Discord\Resources\Params\ModifyGuildIntegrationParams.cs" />
+    <Compile Include="Discord\Resources\Params\ModifyGuildMemberParams.cs" />
+    <Compile Include="Discord\Resources\Params\ModifyGuildObject.cs" />
+    <Compile Include="Discord\Resources\Params\ModifyGuildRoleParams.cs" />
+    <Compile Include="Discord\Resources\Params\ModifyGuildRolePositionsParams.cs" />
+    <Compile Include="Discord\Resources\Resource.cs" />
+    <Compile Include="Discord\Resources\User.cs" />
+    <Compile Include="Discord\Resources\Voice.cs" />
+    <Compile Include="Plugins\Collections\PluginCollection.cs" />
+    <Compile Include="Plugins\Collections\PluginsFileCollection.cs" />
+    <Compile Include="Plugins\PluginInterfaces\IEventsInitialization.cs" />
+    <Compile Include="Plugins\Plugin.cs" />
+    <Compile Include="Plugins\PluginDirectory.cs" />
+    <Compile Include="Plugins\PluginSystem.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\HTTP\HTTPSRequest.cs" />
+    <Compile Include="Util\HTTP\HTTPSResponse.cs" />
+    <Compile Include="ZurvanBot.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

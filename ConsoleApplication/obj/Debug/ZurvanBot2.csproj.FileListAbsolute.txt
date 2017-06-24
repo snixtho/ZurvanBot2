@@ -1,0 +1,4 @@
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBot2\ConsoleApplication\obj\Debug\ZurvanBot.exe
+E:\Dropbox\Dropbox\Project_Ovnesa\csharp\ZurvanBot2\ConsoleApplication\obj\Debug\ZurvanBot.pdb
+E:\Dropbox\Dropbox\Project_Ovnesa\vs\ZurvanBot2\ConsoleApplication\obj\Debug\ZurvanBot.exe
+E:\Dropbox\Dropbox\Project_Ovnesa\vs\ZurvanBot2\ConsoleApplication\obj\Debug\ZurvanBot.pdb
