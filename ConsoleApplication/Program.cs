@@ -21,9 +21,17 @@ namespace ZurvanBot
             
             var gateway = new GatewayListener("wss://gateway.discord.gg/", "token");
 
-            gateway.OnReady += eventArgs =>
+            gateway.OnMessageCreate += eventArgs =>
             {
-                //gateway.JoinVoiceServer(130641144705974272);
+                Log.Info("'" + eventArgs.Message.content + "'");
+                
+                if (eventArgs.Message.content.Trim().ToLower().Equals("leave voice"))
+                {
+                    gateway.DisconnectFromVoice(130641144705974272);
+                } else if (eventArgs.Message.content.Trim().ToLower().Equals("join voice"))
+                {
+                    gateway.JoinVoiceChannel(130641144705974272, 130641144705974273);
+                }
             };
             
             /* gateway.OnMessageCreate += eventArgs =>
