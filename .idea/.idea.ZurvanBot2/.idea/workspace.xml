@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e0e615b-ac48-4abe-bb44-ddb6f8f04d6f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GameTypes.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerActions.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/VoiceStateUpdateData.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/VoiceStateUpdatePayload.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.ZurvanBot2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ZurvanBot2/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageDeleteBulkEventArgs.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageDeleteBulkEventArgs.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/PresenceUpdateEventArgs.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/PresenceUpdateEventArgs.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerEvents.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerEvents.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GameObject.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GameObject.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Program.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Util/Log.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Util/Log.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/ZurvanBot2.csproj" afterPath="$PROJECT_DIR$/ConsoleApplication/ZurvanBot2.csproj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,83 +22,85 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+            <state relative-caret-position="459">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
-                <marker date="1498421317232" expanded="false" signature="6:296" ph="..." />
-                <marker date="1498421317232" expanded="true" signature="317:964" ph="{...}" />
-                <marker date="1498421317232" expanded="true" signature="346:962" ph="{...}" />
-                <marker date="1498421317232" expanded="true" signature="399:956" ph="{...}" />
-                <marker date="1498421317232" expanded="true" signature="714:849" ph="{...}" />
+                <marker date="1498424083786" expanded="false" signature="6:296" ph="..." />
+                <marker date="1498424083786" expanded="true" signature="317:1048" ph="{...}" />
+                <marker date="1498424083786" expanded="true" signature="346:1046" ph="{...}" />
+                <marker date="1498424083786" expanded="true" signature="399:1040" ph="{...}" />
+                <marker date="1498424083786" expanded="true" signature="635:726" ph="{...}" />
+                <marker date="1498424083786" expanded="true" signature="753:934" ph="/* gateway.OnMessageCreate += eventArgs =&gt; ... */" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GatewayListenerEvents.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GatewayListenerEvents.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerEvents.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+            <state relative-caret-position="376">
+              <caret line="308" column="61" lean-forward="false" selection-start-line="308" selection-start-column="61" selection-end-line="308" selection-end-column="61" />
               <folding>
-                <marker date="1498422677904" expanded="true" signature="6:162" ph="..." />
-                <marker date="1498422677904" expanded="true" signature="199:18124" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="242:18122" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="4601:18116" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="4653:5451" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="4724:4784" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="4848:5334" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="5500:5740" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="5796:6341" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="6397:6648" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="6704:7188" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="7242:7482" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="7536:7776" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="7830:8170" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="7913:8047" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="8225:8580" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="8308:8457" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="8638:8999" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="8724:8873" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="9060:9442" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="9149:9313" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="9509:9769" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="9827:10069" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="10130:10505" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="10219:10376" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="10566:11075" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="10655:10946" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="11136:11527" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="11225:11398" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="11586:11958" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="11673:11831" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="12017:12389" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="12104:12262" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="12448:12811" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="12535:12684" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="12867:13115" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="13171:13419" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="13475:13826" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="13560:13701" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="13887:14261" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="13976:14132" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="14323:14846" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="14413:14716" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="14911:15440" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="15004:15307" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="15509:15897" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="15605:15761" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="15954:16531" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="16040:16405" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="16585:17007" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="16668:16884" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="17060:17296" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="17356:17616" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="17677:18106" ph="{...}" />
-                <marker date="1498422677904" expanded="true" signature="17766:17977" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="6:186" ph="..." />
+                <marker date="1498423856100" expanded="true" signature="223:18401" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="266:18399" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="4625:18393" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="4677:5707" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="4791:4914" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="4938:5020" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="5104:5590" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="5756:6029" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="6085:6630" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="6686:6937" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="6993:7477" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="7531:7771" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="7825:8065" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="8119:8459" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="8202:8336" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="8514:8869" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="8597:8746" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="8927:9288" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="9013:9162" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="9349:9731" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="9438:9602" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="9798:10058" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="10116:10358" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="10419:10794" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="10508:10665" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="10855:11364" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="10944:11235" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="11425:11816" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="11514:11687" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="11875:12247" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="11962:12120" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="12306:12678" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="12393:12551" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="12737:13100" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="12824:12973" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="13156:13404" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="13460:13708" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="13764:14115" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="13849:13990" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="14176:14550" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="14265:14421" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="14612:15128" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="14702:14998" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="15193:15715" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="15286:15582" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="15784:16172" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="15880:16036" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="16229:16808" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="16315:16682" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="16862:17284" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="16945:17161" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="17337:17573" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="17633:17893" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="17954:18383" ph="{...}" />
+                <marker date="1498423856100" expanded="true" signature="18043:18254" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -122,117 +122,118 @@
       <file leaf-file-name="GatewayListener.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="181" column="29" lean-forward="false" selection-start-line="181" selection-start-column="29" selection-end-line="181" selection-end-column="29" />
+            <state relative-caret-position="748">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
-                <marker date="1498395128856" expanded="false" signature="6:327" ph="..." />
-                <marker date="1498395128856" expanded="true" signature="364:7861" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="407:7859" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="685:770" ph="/// The gateway procotol version to use. ... " />
-                <marker date="1498395128856" expanded="true" signature="836:957" ph="/// Set to true to call events asynchronously, false to wait for completion. ... " />
-                <marker date="1498395128856" expanded="true" signature="1080:1252" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="1262:1386" ph="/// Gets the connection url. ... " />
-                <marker date="1498395128856" expanded="true" signature="1427:1626" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="1665:2284" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="1784:1948" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="2327:2620" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="2707:3315" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="3001:3216" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="3236:3305" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="3402:3494" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="3587:6131" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="3848:6121" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="6207:6289" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="6299:6465" ph="/// Starts to listen to events to the gateway server. ... " />
-                <marker date="1498395128856" expanded="true" signature="6507:7345" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="6735:7243" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="7006:7176" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="7355:7434" ph="/// Stop listening to the gateway. ... " />
-                <marker date="1498395128856" expanded="true" signature="7470:7853" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="7563:7754" ph="{...}" />
-                <marker date="1498395128856" expanded="true" signature="7774:7843" ph="{...}" />
+                <marker date="1498423454712" expanded="false" signature="6:327" ph="..." />
+                <marker date="1498423454712" expanded="true" signature="364:7957" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="407:7955" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="774:859" ph="/// The gateway procotol version to use. ... " />
+                <marker date="1498423454712" expanded="true" signature="925:1046" ph="/// Set to true to call events asynchronously, false to wait for completion. ... " />
+                <marker date="1498423454712" expanded="true" signature="1169:1341" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="1351:1475" ph="/// Gets the connection url. ... " />
+                <marker date="1498423454712" expanded="true" signature="1516:1715" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="1754:2373" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="1873:2037" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="2416:2709" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="2796:3404" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="3090:3305" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="3325:3394" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="3491:3583" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="3676:6227" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="3937:6217" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="6303:6385" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="6395:6561" ph="/// Starts to listen to events to the gateway server. ... " />
+                <marker date="1498423454712" expanded="true" signature="6603:7441" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="6831:7339" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="7102:7272" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="7451:7530" ph="/// Stop listening to the gateway. ... " />
+                <marker date="1498423454712" expanded="true" signature="7566:7949" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="7659:7850" ph="{...}" />
+                <marker date="1498423454712" expanded="true" signature="7870:7939" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HeartBeater.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs">
+      <file leaf-file-name="ZurvanBot.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/ZurvanBot.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="740">
-              <caret line="91" column="9" lean-forward="false" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1498395590874" expanded="false" signature="6:139" ph="..." />
-                <marker date="1498395590874" expanded="true" signature="176:2590" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="207:2588" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="377:453" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="463:627" ph="/// Send a heartbeat to the websocket server. ... " />
-                <marker date="1498395590874" expanded="true" signature="664:1245" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="704:837" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="865:1051" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="1255:1327" ph="/// Starts the heartbeater. ... " />
-                <marker date="1498395590874" expanded="true" signature="1355:1661" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="1381:1599" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="1431:1585" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="1671:1756" ph="/// Starts the heartbeater asynchronous. ... " />
-                <marker date="1498395590874" expanded="true" signature="1789:2255" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="1837:2191" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="1871:2121" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="1929:2103" ph="{...}" />
-                <marker date="1498395590874" expanded="true" signature="2265:2451" ph="/// This has to be called in between the heartbeats, otherwise ... " />
-                <marker date="1498395590874" expanded="true" signature="2487:2582" ph="{...}" />
+                <marker date="1498290349000" expanded="true" signature="19:171" ph="{...}" />
+                <marker date="1498290349000" expanded="true" signature="48:169" ph="{...}" />
+                <marker date="1498290349000" expanded="true" signature="130:163" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuildObject.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildObject.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding>
-                <marker date="1498393109525" expanded="true" signature="45:934" ph="{...}" />
-                <marker date="1498393109525" expanded="true" signature="88:932" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GuildMemberObject.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildMemberObject.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-              <folding>
-                <marker date="1498393160212" expanded="true" signature="45:285" ph="{...}" />
-                <marker date="1498393160212" expanded="true" signature="93:283" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountObject.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/AccountObject.cs">
+      <file leaf-file-name="VoiceStateUpdatePayload.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/VoiceStateUpdatePayload.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
               <folding>
-                <marker date="1498290351000" expanded="true" signature="45:161" ph="{...}" />
-                <marker date="1498290351000" expanded="true" signature="89:159" ph="{...}" />
+                <marker date="1498423294334" expanded="true" signature="44:217" ph="{...}" />
+                <marker date="1498423294334" expanded="true" signature="100:215" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoleObject.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/RoleObject.cs">
+      <file leaf-file-name="VoiceStateUpdateData.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/VoiceStateUpdateData.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="119">
+              <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
               <folding>
-                <marker date="1498392918176" expanded="true" signature="45:308" ph="{...}" />
-                <marker date="1498392918176" expanded="true" signature="87:306" ph="{...}" />
+                <marker date="1498423261031" expanded="true" signature="44:241" ph="{...}" />
+                <marker date="1498423261031" expanded="true" signature="84:239" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IdentifyData.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/IdentifyData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1498327097174" expanded="true" signature="44:272" ph="{...}" />
+                <marker date="1498327097174" expanded="true" signature="76:270" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IdentifyPayload.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyPayload.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1498327300054" expanded="true" signature="44:193" ph="{...}" />
+                <marker date="1498327300054" expanded="true" signature="92:191" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GatewayListenerActions.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerActions.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+              <folding>
+                <marker date="1498423774425" expanded="true" signature="6:65" ph="..." />
+                <marker date="1498423774425" expanded="true" signature="102:800" ph="{...}" />
+                <marker date="1498423774425" expanded="true" signature="145:798" ph="{...}" />
+                <marker date="1498423774425" expanded="true" signature="225:792" ph="{...}" />
+                <marker date="1498423774425" expanded="true" signature="529:683" ph="{...}" />
+                <marker date="1498423774425" expanded="true" signature="567:669" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -252,11 +253,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildMemberAddEventArgs.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildMemberRemoveEventArgs.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildMembersChunkEventArgs.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildRoleCreateEventArgs.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildRoleDeleteEventArgs.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildRoleUpdateEventArgs.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageDeleteBulkEventArgs.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageDeleteEventArgs.cs" />
@@ -294,15 +290,20 @@
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildObject.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildMemberObject.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Util/Log.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/38D3CEF1-4C5A-4FC9-A92D-E0991034BC1A/26/8ed0017d/CloseStatusCode.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Util/Eval.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GameTypes.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GameObject.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/PresenceUpdateEventArgs.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/VoiceStateUpdate.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/VoiceStateUpdateData.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/VoiceStateUpdatePayload.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerActions.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerEvents.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
       </list>
     </option>
   </component>
@@ -454,7 +455,37 @@
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Events" />
+              <option name="myItemId" value="Payloads" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2 (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZurvanBot2" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Discord" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gateway" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Payloads" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -570,12 +601,12 @@
       <workItem from="1498298370031" duration="6567000" />
       <workItem from="1498321780977" duration="16068000" />
       <workItem from="1498386987593" duration="626000" />
-      <workItem from="1498387644625" duration="12122000" />
+      <workItem from="1498387644625" duration="13510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35383000" />
+    <option name="totallyTimeSpent" value="36771000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -595,11 +626,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18654709" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.167713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997677" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24633636" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16702127" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25401255" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16681615" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -624,83 +655,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildMemberUpdateEventArgs.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding>
-            <marker date="1498392680646" expanded="true" signature="86:285" ph="{...}" />
-            <marker date="1498392680646" expanded="true" signature="150:283" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/VoiceServerUpdateEventArgs.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding>
-            <marker date="1498392668045" expanded="true" signature="42:212" ph="{...}" />
-            <marker date="1498392668045" expanded="true" signature="106:210" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/VoiceStateUpdateEventArgs.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <marker date="1498332814548" expanded="true" signature="86:207" ph="{...}" />
-            <marker date="1498332814548" expanded="true" signature="149:205" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/BeginGuildPruneParams.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498290352000" expanded="true" signature="45:126" ph="{...}" />
-            <marker date="1498290352000" expanded="true" signature="86:124" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/ConnectionObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding>
-            <marker date="1498392761247" expanded="true" signature="45:271" ph="{...}" />
-            <marker date="1498392761247" expanded="true" signature="92:269" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/DMChannelObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding>
-            <marker date="1498392789146" expanded="true" signature="60:229" ph="{...}" />
-            <marker date="1498392789146" expanded="true" signature="106:227" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmbedAuthorObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498290351000" expanded="true" signature="45:232" ph="{...}" />
-            <marker date="1498290351000" expanded="true" signature="93:230" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmbedFieldObject.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1117,41 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="181" column="29" lean-forward="false" selection-start-line="181" selection-start-column="29" selection-end-line="181" selection-end-column="29" />
-          <folding>
-            <marker date="1498395128856" expanded="false" signature="6:327" ph="..." />
-            <marker date="1498395128856" expanded="true" signature="364:7861" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="407:7859" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="685:770" ph="/// The gateway procotol version to use. ... " />
-            <marker date="1498395128856" expanded="true" signature="836:957" ph="/// Set to true to call events asynchronously, false to wait for completion. ... " />
-            <marker date="1498395128856" expanded="true" signature="1080:1252" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="1262:1386" ph="/// Gets the connection url. ... " />
-            <marker date="1498395128856" expanded="true" signature="1427:1626" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="1665:2284" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="1784:1948" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="2327:2620" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="2707:3315" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="3001:3216" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="3236:3305" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="3402:3494" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="3587:6131" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="3848:6121" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="6207:6289" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="6299:6465" ph="/// Starts to listen to events to the gateway server. ... " />
-            <marker date="1498395128856" expanded="true" signature="6507:7345" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="6735:7243" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="7006:7176" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="7355:7434" ph="/// Stop listening to the gateway. ... " />
-            <marker date="1498395128856" expanded="true" signature="7470:7853" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="7563:7754" ph="{...}" />
-            <marker date="1498395128856" expanded="true" signature="7774:7843" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
@@ -1176,20 +1095,6 @@
             <marker date="1498395590874" expanded="true" signature="1929:2103" ph="{...}" />
             <marker date="1498395590874" expanded="true" signature="2265:2451" ph="/// This has to be called in between the heartbeats, otherwise ... " />
             <marker date="1498395590874" expanded="true" signature="2487:2582" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding>
-            <marker date="1498421317232" expanded="false" signature="6:296" ph="..." />
-            <marker date="1498421317232" expanded="true" signature="317:964" ph="{...}" />
-            <marker date="1498421317232" expanded="true" signature="346:962" ph="{...}" />
-            <marker date="1498421317232" expanded="true" signature="399:956" ph="{...}" />
-            <marker date="1498421317232" expanded="true" signature="714:849" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1227,17 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GameTypes.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <marker date="1498422307481" expanded="true" signature="35:117" ph="{...}" />
-            <marker date="1498422307481" expanded="true" signature="63:115" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/PresenceUpdateEventArgs.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1249,66 +1143,212 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/IdentifyData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1498327097174" expanded="true" signature="44:272" ph="{...}" />
+            <marker date="1498327097174" expanded="true" signature="76:270" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GameTypes.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <marker date="1498422307481" expanded="true" signature="35:117" ph="{...}" />
+            <marker date="1498422307481" expanded="true" signature="63:115" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="101" lean-forward="true" selection-start-line="15" selection-start-column="101" selection-end-line="15" selection-end-column="101" />
+          <folding>
+            <marker date="1498423688120" expanded="true" signature="68:537" ph="{...}" />
+            <marker date="1498423688120" expanded="true" signature="99:535" ph="{...}" />
+            <marker date="1498423688120" expanded="true" signature="256:529" ph="{...}" />
+            <marker date="1498423688120" expanded="true" signature="369:486" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyPayload.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1498327300054" expanded="true" signature="44:193" ph="{...}" />
+            <marker date="1498327300054" expanded="true" signature="92:191" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/VoiceStateUpdatePayload.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding>
+            <marker date="1498423294334" expanded="true" signature="44:217" ph="{...}" />
+            <marker date="1498423294334" expanded="true" signature="100:215" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/VoiceStateUpdateData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+          <folding>
+            <marker date="1498423261031" expanded="true" signature="44:241" ph="{...}" />
+            <marker date="1498423261031" expanded="true" signature="84:239" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerEvents.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+        <state relative-caret-position="376">
+          <caret line="308" column="61" lean-forward="false" selection-start-line="308" selection-start-column="61" selection-end-line="308" selection-end-column="61" />
           <folding>
-            <marker date="1498422677904" expanded="true" signature="6:162" ph="..." />
-            <marker date="1498422677904" expanded="true" signature="199:18124" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="242:18122" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="4601:18116" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="4653:5451" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="4724:4784" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="4848:5334" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="5500:5740" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="5796:6341" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="6397:6648" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="6704:7188" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="7242:7482" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="7536:7776" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="7830:8170" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="7913:8047" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="8225:8580" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="8308:8457" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="8638:8999" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="8724:8873" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="9060:9442" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="9149:9313" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="9509:9769" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="9827:10069" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="10130:10505" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="10219:10376" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="10566:11075" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="10655:10946" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="11136:11527" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="11225:11398" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="11586:11958" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="11673:11831" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="12017:12389" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="12104:12262" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="12448:12811" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="12535:12684" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="12867:13115" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="13171:13419" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="13475:13826" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="13560:13701" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="13887:14261" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="13976:14132" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="14323:14846" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="14413:14716" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="14911:15440" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="15004:15307" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="15509:15897" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="15605:15761" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="15954:16531" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="16040:16405" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="16585:17007" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="16668:16884" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="17060:17296" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="17356:17616" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="17677:18106" ph="{...}" />
-            <marker date="1498422677904" expanded="true" signature="17766:17977" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="6:186" ph="..." />
+            <marker date="1498423856100" expanded="true" signature="223:18401" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="266:18399" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="4625:18393" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="4677:5707" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="4791:4914" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="4938:5020" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="5104:5590" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="5756:6029" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="6085:6630" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="6686:6937" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="6993:7477" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="7531:7771" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="7825:8065" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="8119:8459" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="8202:8336" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="8514:8869" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="8597:8746" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="8927:9288" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="9013:9162" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="9349:9731" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="9438:9602" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="9798:10058" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="10116:10358" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="10419:10794" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="10508:10665" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="10855:11364" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="10944:11235" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="11425:11816" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="11514:11687" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="11875:12247" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="11962:12120" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="12306:12678" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="12393:12551" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="12737:13100" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="12824:12973" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="13156:13404" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="13460:13708" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="13764:14115" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="13849:13990" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="14176:14550" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="14265:14421" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="14612:15128" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="14702:14998" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="15193:15715" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="15286:15582" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="15784:16172" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="15880:16036" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="16229:16808" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="16315:16682" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="16862:17284" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="16945:17161" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="17337:17573" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="17633:17893" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="17954:18383" ph="{...}" />
+            <marker date="1498423856100" expanded="true" signature="18043:18254" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerActions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding>
+            <marker date="1498423774425" expanded="true" signature="6:65" ph="..." />
+            <marker date="1498423774425" expanded="true" signature="102:800" ph="{...}" />
+            <marker date="1498423774425" expanded="true" signature="145:798" ph="{...}" />
+            <marker date="1498423774425" expanded="true" signature="225:792" ph="{...}" />
+            <marker date="1498423774425" expanded="true" signature="529:683" ph="{...}" />
+            <marker date="1498423774425" expanded="true" signature="567:669" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <marker date="1498423454712" expanded="false" signature="6:327" ph="..." />
+            <marker date="1498423454712" expanded="true" signature="364:7957" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="407:7955" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="774:859" ph="/// The gateway procotol version to use. ... " />
+            <marker date="1498423454712" expanded="true" signature="925:1046" ph="/// Set to true to call events asynchronously, false to wait for completion. ... " />
+            <marker date="1498423454712" expanded="true" signature="1169:1341" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="1351:1475" ph="/// Gets the connection url. ... " />
+            <marker date="1498423454712" expanded="true" signature="1516:1715" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="1754:2373" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="1873:2037" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="2416:2709" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="2796:3404" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="3090:3305" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="3325:3394" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="3491:3583" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="3676:6227" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="3937:6217" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="6303:6385" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="6395:6561" ph="/// Starts to listen to events to the gateway server. ... " />
+            <marker date="1498423454712" expanded="true" signature="6603:7441" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="6831:7339" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="7102:7272" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="7451:7530" ph="/// Stop listening to the gateway. ... " />
+            <marker date="1498423454712" expanded="true" signature="7566:7949" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="7659:7850" ph="{...}" />
+            <marker date="1498423454712" expanded="true" signature="7870:7939" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/ZurvanBot.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1498290349000" expanded="true" signature="19:171" ph="{...}" />
+            <marker date="1498290349000" expanded="true" signature="48:169" ph="{...}" />
+            <marker date="1498290349000" expanded="true" signature="130:163" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <marker date="1498424083786" expanded="false" signature="6:296" ph="..." />
+            <marker date="1498424083786" expanded="true" signature="317:1048" ph="{...}" />
+            <marker date="1498424083786" expanded="true" signature="346:1046" ph="{...}" />
+            <marker date="1498424083786" expanded="true" signature="399:1040" ph="{...}" />
+            <marker date="1498424083786" expanded="true" signature="635:726" ph="{...}" />
+            <marker date="1498424083786" expanded="true" signature="753:934" ph="/* gateway.OnMessageCreate += eventArgs =&gt; ... */" />
           </folding>
         </state>
       </provider>

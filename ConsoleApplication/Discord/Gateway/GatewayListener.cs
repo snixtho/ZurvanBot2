@@ -17,9 +17,11 @@ namespace ZurvanBot.Discord.Gateway
         private readonly Uri _gatewayAddress;
         private WebSocket _websocket;
         private bool _isRunning = false;
+        private bool _isReady = false;
         private readonly string _authToken;
         private HeartBeater _heart;
         private object _mainWait = new object();
+        private object _readyWait = new object();
         
         /// <summary>
         /// The gateway procotol version to use.
@@ -155,7 +157,7 @@ namespace ZurvanBot.Discord.Gateway
                     Log.Debug("Event: VoiceServerRPing", "websocket.onmessage");
                     break;
                 case OpCode.VoiceStateUpdate:
-                    Log.Debug("Event: VoiceStateUpdate", "websocket.onmessage");
+                    Log.Debug("Event: VoiceStateUpdatePayload", "websocket.onmessage");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

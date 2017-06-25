@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using ZurvanBot.Discord.Gateway.Events;
 using ZurvanBot.Discord.Resources.Objects;
@@ -76,10 +77,18 @@ namespace ZurvanBot.Discord.Gateway
         {
             if (eventStr.Equals("READY"))
             {
-                if (eventStr.ToUpper().Equals("READY")) {
-                    _heart.StartAsync();
+                _heart.StartAsync();
+                Monitor.Enter(_readyWait);
+                try
+                {
+                    _isReady = true;
+                    Monitor.PulseAll(_readyWait);
                 }
-
+                finally
+                {
+                    Monitor.Exit(_readyWait);
+                }
+                    
                 var args = new ReadyEventArgs
                 {
                     V = (int) eventData["d"]["v"],
@@ -93,6 +102,7 @@ namespace ZurvanBot.Discord.Gateway
             }
             else if (eventStr.Equals("RESUMED"))
             {
+                _isReady = true;
                 var args = new ResumedEventArgs { _trace = eventData["d"]["_trace"].ToObject<string[]>() };
                 var et = new Task(() => OnResumed?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
@@ -264,7 +274,7 @@ namespace ZurvanBot.Discord.Gateway
                     UserId = (ulong)eventData["d"]["user_id"],
                     ChannelId = (ulong)eventData["d"]["channel_id"],
                     MessageId = (ulong)eventData["d"]["message_id"],
-                    Emoji = (ulong)eventData["d"]["emoji"].ToObject<EmojiObject>()
+                    Emoji = eventData["d"]["emoji"].ToObject<EmojiObject>()
                 };
                 var et = new Task(() => OnMessageReactionAdd?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
@@ -275,7 +285,7 @@ namespace ZurvanBot.Discord.Gateway
                     UserId = (ulong)eventData["d"]["user_id"],
                     ChannelId = (ulong)eventData["d"]["channel_id"],
                     MessageId = (ulong)eventData["d"]["message_id"],
-                    Emoji = (ulong)eventData["d"]["emoji"].ToObject<EmojiObject>()
+                    Emoji = eventData["d"]["emoji"].ToObject<EmojiObject>()
                 };
                 var et = new Task(() => OnMessageReactionRemove?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
@@ -295,7 +305,7 @@ namespace ZurvanBot.Discord.Gateway
                     User = eventData["d"]["user"].ToObject<UserObject>(),
                     Roles = eventData["d"]["roles"].ToObject<ulong[]>(),
                     Game = eventData["d"]["game"].ToObject<GameObject>(),
-                    GuildId = (int)eventData["d"]["guild_id"],
+                    GuildId = (ulong)eventData["d"]["guild_id"],
                     Status = (string)eventData["d"]["status"]
                 };
                 var et = new Task(() => OnPresenceUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();

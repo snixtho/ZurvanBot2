@@ -86,14 +86,17 @@
     <Compile Include="Discord\Gateway\Events\VoiceStateUpdateEventArgs.cs" />
     <Compile Include="Discord\Gateway\GameTypes.cs" />
     <Compile Include="Discord\Gateway\GatewayListener.cs" />
+    <Compile Include="Discord\Gateway\GatewayListenerActions.cs" />
     <Compile Include="Discord\Gateway\GatewayListenerEvents.cs" />
     <Compile Include="Discord\Gateway\HeartBeater.cs" />
     <Compile Include="Discord\Gateway\HeartbeatPayload.cs" />
     <Compile Include="Discord\Gateway\OpCode.cs" />
     <Compile Include="Discord\Gateway\Payloads\Data\DeviceData.cs" />
     <Compile Include="Discord\Gateway\Payloads\Data\IdentifyData.cs" />
+    <Compile Include="Discord\Gateway\Payloads\Data\VoiceStateUpdateData.cs" />
     <Compile Include="Discord\Gateway\Payloads\IdentifyPayload.cs" />
     <Compile Include="Discord\Gateway\Payloads\PayloadBase.cs" />
+    <Compile Include="Discord\Gateway\Payloads\VoiceStateUpdatePayload.cs" />
     <Compile Include="Discord\ResourceRequest.cs" />
     <Compile Include="Discord\Resources\Channel.cs" />
     <Compile Include="Discord\Resources\Guild.cs" />

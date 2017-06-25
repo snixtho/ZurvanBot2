@@ -9,11 +9,11 @@ namespace ZurvanBot.Discord.Gateway.Payloads
         public int s;
         public string t;
 
-        public string Serialized()
+        public string Serialized(bool ignoreNull=true)
         {
             var serialized = JsonConvert.SerializeObject(this, new JsonSerializerSettings
             {
-                NullValueHandling = NullValueHandling.Ignore
+                NullValueHandling = ignoreNull ? NullValueHandling.Ignore : NullValueHandling.Include
             });
             return serialized;
         }

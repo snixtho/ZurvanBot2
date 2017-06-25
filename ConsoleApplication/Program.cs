@@ -19,12 +19,17 @@ namespace ZurvanBot
         {   
             // Console.WriteLine(DateTime.Now.ToString("dd.MM.yyyy-HH:mm:ss"));
             
-            var gateway = new GatewayListener("wss://gateway.discord.gg/", "MzI4NjI0OTM4MzkzMjcyMzMx.DDGnXg.nx-9o5TEoW8dwFMwADoXqHtmzjk");
+            var gateway = new GatewayListener("wss://gateway.discord.gg/", "token");
+
+            gateway.OnReady += eventArgs =>
+            {
+                //gateway.JoinVoiceServer(130641144705974272);
+            };
             
-            gateway.OnMessageCreateEvent += eventArgs =>
+            /* gateway.OnMessageCreate += eventArgs =>
             {
                 Log.Info(eventArgs.Message.author.username + ": " + eventArgs.Message.content, "message");
-            };
+            }; */
             
             gateway.StartListeningAsync().Wait();
             Log.Info("Closed.");
