@@ -19,21 +19,11 @@ namespace ZurvanBot
         {   
             // Console.WriteLine(DateTime.Now.ToString("dd.MM.yyyy-HH:mm:ss"));
             
-            var gateway = new GatewayListener("wss://gateway.discord.gg/", "MjQzMDg0Nzc2NzkyMTI5NTM2.DDA97w.PH7KBiIIygTw3UXhU6F4Fg3r7vQ");
+            var gateway = new GatewayListener("wss://gateway.discord.gg/", "MzI4NjI0OTM4MzkzMjcyMzMx.DDGnXg.nx-9o5TEoW8dwFMwADoXqHtmzjk");
             
-            gateway.OnReadyEvent += eventArgs =>
+            gateway.OnMessageCreateEvent += eventArgs =>
             {
-                Log.Debug("event handler 1");
-            };
-            
-            gateway.OnReadyEvent += eventArgs =>
-            {
-                Log.Debug("event handler 2");
-            };
-            
-            gateway.OnReadyEvent += eventArgs =>
-            {
-                Log.Debug("event handler 3");
+                Log.Info(eventArgs.Message.author.username + ": " + eventArgs.Message.content, "message");
             };
             
             gateway.StartListeningAsync().Wait();

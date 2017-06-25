@@ -2,7 +2,7 @@
 {
     public class MessageDeleteBulkEventArgs: GatewayEventArgs
     {
-        public ulong?[] Ids;
+        public ulong[] Ids;
         public ulong? ChannelId;
     }
 }

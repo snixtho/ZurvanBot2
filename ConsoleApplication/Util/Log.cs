@@ -12,7 +12,7 @@ namespace ZurvanBot.Util
     /// <summary>
     /// Easy logging class. It also outputs a parse-able format which is in:
     /// [TIME_STAMP][LOG_LEVEL](CAT(E)(GORY): My Message
-    /// This class is also thread-safe.
+    /// The logging part is also thread-safe.
     /// </summary>
     public class Log
     {

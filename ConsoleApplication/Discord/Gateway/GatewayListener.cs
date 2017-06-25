@@ -53,8 +53,12 @@ namespace ZurvanBot.Discord.Gateway
 
         private void SetupNewSocket()
         {
+            Log.Debug("Setting up websocket ...");
             if (_websocket != null && _websocket.IsAlive)
+            {
+                Log.Debug("_websocket != null && _websocket.IsAlive: True, closing websocket ...");
                 _websocket.Close();
+            }
 
             var connUrl = buildConnectUrl();
             _websocket = new WebSocket(connUrl);
@@ -70,6 +74,7 @@ namespace ZurvanBot.Discord.Gateway
             var identifyPayload = new IdentifyPayload();
             identifyPayload.d.compress = false;
             identifyPayload.d.token = _authToken;
+            Log.Debug("Attempt: Send authentication ...");
             _websocket.Send(identifyPayload.Serialized());
         }
 
@@ -82,6 +87,7 @@ namespace ZurvanBot.Discord.Gateway
             
             try
             {
+                Log.Debug("Attempt: set _isRunning to false.");
                 Monitor.Enter(_mainWait);
                 _isRunning = false;
                 Monitor.PulseAll(_mainWait);
@@ -99,7 +105,7 @@ namespace ZurvanBot.Discord.Gateway
 
         private void WebsocketOnOnMessage(object sender, MessageEventArgs messageEventArgs)
         {
-            Log.Info("Message recieved from websocket.");
+            Log.Debug("Message recieved from websocket.");
             Log.Verbose("Message: " + messageEventArgs.Data);
             var jo = JObject.Parse(messageEventArgs.Data);
             var op = (OpCode) (int) jo["op"];
@@ -110,7 +116,7 @@ namespace ZurvanBot.Discord.Gateway
                     Log.Debug("Event: Dispatch", "websocket.onmessage");
                     var t = (string)jo["t"];
                     t = t.ToUpper();
-                    Log.Info("Event: " + t);
+                    Log.Debug("Event: " + t);
                     DispatchEvent(t, jo);
                     
                     break;
@@ -167,12 +173,14 @@ namespace ZurvanBot.Discord.Gateway
         /// <returns>The main thread which can be joined.</returns>
         public Task StartListeningAsync()
         {
+            Log.Debug("Attempt: start listning ...");
             if (_isRunning)
                 throw new Exception("This gateway listener has already been started.");
             
             var t = new Task(() =>
             {
                 SetupNewSocket();
+                Log.Debug("Starting websocket ...");
                 _websocket.Connect();
                 
                 // wait until _isRunning is false, which is usally when the connection closes.
@@ -196,6 +204,8 @@ namespace ZurvanBot.Discord.Gateway
         /// </summary>
         public void StopListening()
         {
+            Log.Debug("Attempt: stop listening ...");
+            
             try
             {
                 Monitor.Enter(_mainWait);

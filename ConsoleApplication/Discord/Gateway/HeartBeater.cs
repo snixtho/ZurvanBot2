@@ -24,7 +24,11 @@ namespace ZurvanBot.Discord.Gateway
         /// <returns>True on success, false if the send failed.</returns>
         private bool SendHeartbeat()
         {
-            if (!_ws.IsAlive) return false;
+            if (!_ws.IsAlive)
+            {
+                Log.Debug("Did not send heartbeat: websocket not alive.");
+                return false;
+            }
             if (!_gotEcho) {
                 Log.Error("Heartbeater got no echo, closing connection.", "heartbeater");
                 _ws.Close(CloseStatusCode.Normal);
@@ -32,6 +36,7 @@ namespace ZurvanBot.Discord.Gateway
             }
             
             var heartbeat = new HeartbeatPayload();
+            Log.Debug("Sending heartbeat ...");
             _ws.Send(heartbeat.Serialized());
             return true;
         }
@@ -72,6 +77,7 @@ namespace ZurvanBot.Discord.Gateway
                 catch (ThreadInterruptedException e) {}
             });
 
+            task.Start();
             return task;
         }
 
@@ -81,6 +87,7 @@ namespace ZurvanBot.Discord.Gateway
         /// </summary>
         public void EchoHeartbeat()
         {
+            Log.Debug("Got heartbeat echo.");
             _gotEcho = true;
         }
     }

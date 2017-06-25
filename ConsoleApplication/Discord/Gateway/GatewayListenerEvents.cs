@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using ZurvanBot.Discord.Gateway.Events;
 using ZurvanBot.Discord.Resources.Objects;
+using ZurvanBot.Util;
 
 namespace ZurvanBot.Discord.Gateway
 {
@@ -26,6 +27,7 @@ namespace ZurvanBot.Discord.Gateway
         public delegate void GuildRoleUpdateEvent(GuildRoleUpdateEventArgs e);
         public delegate void GuildUpdateEvent(GuildUpdateEventArgs e);
         public delegate void MessageCreateEvent(MessageCreateEventArgs e);
+        public delegate void MessageUpdateEvent(MessageUpdateEventArgs e);
         public delegate void MessageDeleteBulkEvent(MessageDeleteBulkEventArgs e);
         public delegate void MessageDeleteEvent(MessageDeleteEventArgs e);
         public delegate void MessageReactionAddEvent(MessageReactionAddEventArgs e);
@@ -38,36 +40,37 @@ namespace ZurvanBot.Discord.Gateway
         public delegate void VoiceServerUpdateEvent(VoiceServerUpdateEventArgs e);
         public delegate void VoiceStateUpdateEvent(VoiceStateUpdateEventArgs e);
         
-        public event ReadyEvent OnReadyEvent;
-        public event ChannelCreateEvent OnChannelCreateEvent;
-        public event ChannelDeleteEvent OnChannelDeleteEvent;
-        public event ChannelUpdateEvent OnChannelUpdateEvent;
-        public event GuildBanAddEvent OnGuildBanAddEvent;
-        public event GuildBanRemoveEvent OnGuildBanRemoveEvent;
-        public event GuildCreateEvent OnGuildCreateEvent;
-        public event GuildDeleteEvent OnGuildDeleteEvent;
-        public event GuildEmojisUpdateEvent OnGuildEmojisUpdateEvent;
-        public event GuildIntegrationsUpdateEvent OnGuildIntegrationsUpdateEvent;
-        public event GuildMemberAddEvent OnGuildMemberAddEvent;
-        public event GuildMemberRemoveEvent OnGuildMemberRemoveEvent;
-        public event GuildMembersChunkEvent OnGuildMembersChunkEvent;
-        public event GuildMemberUpdateEvent OnGuildMemberUpdateEvent;
-        public event GuildRoleCreateEvent OnGuildRoleCreateEvent;
-        public event GuildRoleDeleteEvent OnGuildRoleDeleteEvent;
-        public event GuildRoleUpdateEvent OnGuildRoleUpdateEvent;
-        public event GuildUpdateEvent OnGuildUpdateEvent;
-        public event MessageCreateEvent OnMessageCreateEvent;
-        public event MessageDeleteBulkEvent OnMessageDeleteBulkEvent;
-        public event MessageDeleteEvent OnMessageDeleteEvent;
-        public event MessageReactionAddEvent OnMessageReactionAddEvent;
-        public event MessageReactionRemoveAllEvent OnMessageReactionRemoveAllEvent;
-        public event MessageReactionRemoveEvent OnMessageReactionRemoveEvent;
-        public event PresenceUpdateEvent OnPresenceUpdateEvent;
-        public event ResumedEvent OnResumedEvent;
-        public event TypingStartEvent OnTypingStartEvent;
-        public event UserUpdateEvent OnUserUpdateEvent;
-        public event VoiceServerUpdateEvent OnVoiceServerUpdateEvent;
-        public event VoiceStateUpdateEvent OnVoiceStateUpdateEvent;
+        public event ReadyEvent OnReady;
+        public event ChannelCreateEvent OnChannelCreate;
+        public event ChannelDeleteEvent OnChannelDelete;
+        public event ChannelUpdateEvent OnChannelUpdate;
+        public event GuildBanAddEvent OnGuildBanAdd;
+        public event GuildBanRemoveEvent OnGuildBanRemove;
+        public event GuildCreateEvent OnGuildCreate;
+        public event GuildDeleteEvent OnGuildDelete;
+        public event GuildEmojisUpdateEvent OnGuildEmojisUpdate;
+        public event GuildIntegrationsUpdateEvent OnGuildIntegrationsUpdate;
+        public event GuildMemberAddEvent OnGuildMemberAdd;
+        public event GuildMemberRemoveEvent OnGuildMemberRemove;
+        public event GuildMembersChunkEvent OnGuildMembersChunk;
+        public event GuildMemberUpdateEvent OnGuildMemberUpdate;
+        public event GuildRoleCreateEvent OnGuildRoleCreate;
+        public event GuildRoleDeleteEvent OnGuildRoleDelete;
+        public event GuildRoleUpdateEvent OnGuildRoleUpdate;
+        public event GuildUpdateEvent OnGuildUpdate;
+        public event MessageCreateEvent OnMessageCreate;
+        public event MessageUpdateEvent OnMessageUpdate;
+        public event MessageDeleteBulkEvent OnMessageDeleteBulk;
+        public event MessageDeleteEvent OnMessageDelete;
+        public event MessageReactionAddEvent OnMessageReactionAdd;
+        public event MessageReactionRemoveAllEvent OnMessageReactionRemoveAll;
+        public event MessageReactionRemoveEvent OnMessageReactionRemove;
+        public event PresenceUpdateEvent OnPresenceUpdate;
+        public event ResumedEvent OnResumed;
+        public event TypingStartEvent OnTypingStart;
+        public event UserUpdateEvent OnUserUpdate;
+        public event VoiceServerUpdateEvent OnVoiceServerUpdate;
+        public event VoiceStateUpdateEvent OnVoiceStateUpdate;
         
         private void DispatchEvent(string eventStr, JObject eventData)
         {
@@ -86,12 +89,12 @@ namespace ZurvanBot.Discord.Gateway
                     SessionID = (string) eventData["d"]["session_id"],
                     _trace = eventData["d"]["_trace"].ToObject<string[]>()
                 };
-                var et = new Task(() => OnReadyEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnReady?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("RESUMED"))
             {
                 var args = new ResumedEventArgs { _trace = eventData["d"]["_trace"].ToObject<string[]>() };
-                var et = new Task(() => OnResumedEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnResumed?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("CHANNEL_CREATE"))
             {
@@ -99,12 +102,12 @@ namespace ZurvanBot.Discord.Gateway
                 var args = new ChannelCreateEventArgs{ Type = isDM ? ChannelType.DM : ChannelType.Guild };
                 if (isDM) args.DMChannel = eventData["d"].ToObject<DMChannelObject>();
                 else args.GuildChannel = eventData["d"].ToObject<GuildChannelObject>();
-                var et = new Task(() => OnChannelCreateEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnChannelCreate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("CHANNEL_UPDATE"))
             {
                 var args = new ChannelUpdateEventArgs { Guild = eventData["d"].ToObject<GuildChannelObject>() };
-                var et = new Task(() => OnChannelUpdateEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnChannelUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("CHANNEL_DELETE"))
             {
@@ -112,17 +115,17 @@ namespace ZurvanBot.Discord.Gateway
                 var args = new ChannelDeleteEventArgs{ Type = isDM ? ChannelType.DM : ChannelType.Guild };
                 if (isDM) args.DMChannel = eventData["d"].ToObject<DMChannelObject>();
                 else args.GuildChannel = eventData["d"].ToObject<GuildChannelObject>();
-                var et = new Task(() => OnChannelDeleteEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnChannelDelete?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_CREATE"))
             {
                 var args = new GuildCreateEventArgs { Guild = eventData["d"].ToObject<GuildObject>() };
-                var et = new Task(() => OnGuildCreateEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnGuildCreate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_UPDATE"))
             {
                 var args = new GuildUpdateEventArgs { Guild = eventData["d"].ToObject<GuildObject>() };
-                var et = new Task(() => OnGuildUpdateEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnGuildUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_DELETE"))
             {
@@ -131,7 +134,7 @@ namespace ZurvanBot.Discord.Gateway
                     Id = (ulong)eventData["d"]["id"],
                     Unavailable = (bool)eventData["d"]["id"]
                 };
-                var et = new Task(() => OnGuildDeleteEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnGuildDelete?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_BAN_ADD"))
             {
@@ -140,7 +143,7 @@ namespace ZurvanBot.Discord.Gateway
                     User = eventData["d"].ToObject<UserObject>(),
                     GuildId = (ulong)eventData["d"]["guild_id"]
                 };
-                var et = new Task(() => OnGuildBanAddEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnGuildBanAdd?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_BAN_REMOVE"))
             {
@@ -149,7 +152,7 @@ namespace ZurvanBot.Discord.Gateway
                     User = eventData["d"].ToObject<UserObject>(),
                     GuildId = (ulong)eventData["d"]["guild_id"]
                 };
-                var et = new Task(() => OnGuildBanRemoveEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnGuildBanRemove?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_EMOJIS_UPDATE"))
             {
@@ -158,17 +161,17 @@ namespace ZurvanBot.Discord.Gateway
                     GuildId = (ulong)eventData["d"]["guild_id"],
                     Emojis = eventData["d"]["emojis"].ToObject<EmojiObject[]>()
                 };
-                var et = new Task(() => OnGuildEmojisUpdateEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnGuildEmojisUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_INTEGRATIONS_UPDATE"))
             {
                 var args = new GuildIntegrationsUpdateEventArgs{ GuildId = (ulong)eventData["d"]["guild_id"] };
-                var et = new Task(() => OnGuildIntegrationsUpdateEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnGuildIntegrationsUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_MEMBER_ADD"))
             {
                 var args = new GuildMemberAddEventArgs{ GuildId = (ulong)eventData["d"]["guild_id"] };
-                var et = new Task(() => OnGuildMemberAddEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnGuildMemberAdd?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_MEMBER_REMOVE"))
             {
@@ -177,7 +180,7 @@ namespace ZurvanBot.Discord.Gateway
                     GuildId = (ulong)eventData["d"]["guild_id"],
                     User = eventData["d"]["user"].ToObject<UserObject>()
                 };
-                var et = new Task(() => OnGuildMemberRemoveEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnGuildMemberRemove?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_MEMBER_UPDATE"))
             {
@@ -188,27 +191,145 @@ namespace ZurvanBot.Discord.Gateway
                     Roles = eventData["d"]["roles"].ToObject<ulong[]>(),
                     Nick = (string) eventData["d"]["nick"]
                 };
-                var et = new Task(() => OnGuildMemberUpdateEvent?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+                var et = new Task(() => OnGuildMemberUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_MEMBERS_CHUNK"))
             {
-                
+                var args = new GuildMembersChunkEventArgs
+                {
+                    GuildId = (ulong) eventData["d"]["guild_id"],
+                    Members = eventData["d"]["members"].ToObject<GuildMemberObject[]>()
+                };
+                var et = new Task(() => OnGuildMembersChunk?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
             }
-            else if (eventStr.Equals("GUILD_ROLE_CREATE")) {}
-            else if (eventStr.Equals("GUILD_ROLE_UPDATE")) {}
-            else if (eventStr.Equals("GUILD_ROLE_DELETE")) {}
-            else if (eventStr.Equals("MESSAGE_CREATE")) {}
-            else if (eventStr.Equals("MESSAGE_UPDATE")) {}
-            else if (eventStr.Equals("MESSAGE_DELETE")) {}
-            else if (eventStr.Equals("MESSAGE_DELETE_BULK")) {}
-            else if (eventStr.Equals("MESSAGE_REACTION_ADD")) {}
-            else if (eventStr.Equals("MESSAGE_REACTION_REMOVE")) {}
-            else if (eventStr.Equals("MESSAGE_REACTION_REMOVE_ALL")) {}
-            else if (eventStr.Equals("PRESENCE_UPDATE")) {}
-            else if (eventStr.Equals("TYPING_START")) {}
-            else if (eventStr.Equals("USER_UPDATE")) {}
-            else if (eventStr.Equals("VOICE_STATE_UPDATE")) {}
-            else if (eventStr.Equals("VOICE_SERVER_UPDATE")) {}
+            else if (eventStr.Equals("GUILD_ROLE_CREATE"))
+            {
+                var args = new GuildRoleCreateEventArgs
+                {
+                    GuildId = (ulong) eventData["d"]["guild_id"],
+                    Role = eventData["d"]["role"].ToObject<RoleObject>()
+                };
+                var et = new Task(() => OnGuildRoleCreate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("GUILD_ROLE_UPDATE"))
+            {
+                var args = new GuildRoleUpdateEventArgs
+                {
+                    GuildId = (ulong) eventData["d"]["guild_id"],
+                    Role = eventData["d"]["role"].ToObject<RoleObject>()
+                };
+                var et = new Task(() => OnGuildRoleUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("GUILD_ROLE_DELETE"))
+            {
+                var args = new GuildRoleDeleteEventArgs
+                {
+                    GuildId = (ulong) eventData["d"]["guild_id"],
+                    RoleId = (ulong) eventData["d"]["role_id"],
+                };
+                var et = new Task(() => OnGuildRoleDelete?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("MESSAGE_CREATE"))
+            {
+                var args = new MessageCreateEventArgs { Message = eventData["d"].ToObject<MessageObject>() };
+                var et = new Task(() => OnMessageCreate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("MESSAGE_UPDATE"))
+            {
+                var args = new MessageUpdateEventArgs { Message = eventData["d"].ToObject<MessageObject>() };
+                var et = new Task(() => OnMessageUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("MESSAGE_DELETE"))
+            {
+                var args = new MessageDeleteEventArgs
+                {
+                    Id = (ulong)eventData["d"]["id"],
+                    ChannelId = (ulong)eventData["d"]["channel_id"]
+                };
+                var et = new Task(() => OnMessageDelete?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("MESSAGE_DELETE_BULK"))
+            {
+                var args = new MessageDeleteBulkEventArgs
+                {
+                    Ids = eventData["d"]["ids"].ToObject<ulong[]>(),
+                    ChannelId = (ulong)eventData["d"]["channel_id"]
+                };
+                var et = new Task(() => OnMessageDeleteBulk?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("MESSAGE_REACTION_ADD"))
+            {
+                var args = new MessageReactionAddEventArgs
+                {
+                    UserId = (ulong)eventData["d"]["user_id"],
+                    ChannelId = (ulong)eventData["d"]["channel_id"],
+                    MessageId = (ulong)eventData["d"]["message_id"],
+                    Emoji = (ulong)eventData["d"]["emoji"].ToObject<EmojiObject>()
+                };
+                var et = new Task(() => OnMessageReactionAdd?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("MESSAGE_REACTION_REMOVE"))
+            {
+                var args = new MessageReactionRemoveEventArgs
+                {
+                    UserId = (ulong)eventData["d"]["user_id"],
+                    ChannelId = (ulong)eventData["d"]["channel_id"],
+                    MessageId = (ulong)eventData["d"]["message_id"],
+                    Emoji = (ulong)eventData["d"]["emoji"].ToObject<EmojiObject>()
+                };
+                var et = new Task(() => OnMessageReactionRemove?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("MESSAGE_REACTION_REMOVE_ALL"))
+            {
+                var args = new MessageReactionRemoveAllEventArgs
+                {
+                    ChannelId = (ulong)eventData["d"]["channel_id"],
+                    MessageId = (ulong)eventData["d"]["message_id"]
+                };
+                var et = new Task(() => OnMessageReactionRemoveAll?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("PRESENCE_UPDATE"))
+            {
+                var args = new PresenceUpdateEventArgs
+                {
+                    User = eventData["d"]["user"].ToObject<UserObject>(),
+                    Roles = eventData["d"]["roles"].ToObject<ulong[]>(),
+                    Game = eventData["d"]["game"].ToObject<GameObject>(),
+                    GuildId = (int)eventData["d"]["guild_id"],
+                    Status = (string)eventData["d"]["status"]
+                };
+                var et = new Task(() => OnPresenceUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("TYPING_START"))
+            {
+                var args = new TypingStartEventArgs
+                {
+                    ChannelId = (ulong)eventData["d"]["channel_id"],
+                    UserId = (ulong)eventData["d"]["user_id"],
+                    Timestamp = (int)eventData["d"]["timestamp"]
+                };
+                var et = new Task(() => OnTypingStart?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("USER_UPDATE"))
+            {
+                var args = new UserUpdateEventArgs { User = eventData["d"].ToObject<UserObject>() };
+                var et = new Task(() => OnUserUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("VOICE_STATE_UPDATE"))
+            {
+                var args = new VoiceStateUpdateEventArgs { VoiceState = eventData["d"].ToObject<VoiceStateObject>() };
+                var et = new Task(() => OnVoiceStateUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
+            else if (eventStr.Equals("VOICE_SERVER_UPDATE"))
+            {
+                var args = new VoiceServerUpdateEventArgs
+                {
+                    Token = (string)eventData["d"]["token"],
+                    GuildId = (ulong)eventData["d"]["guild_id"],
+                    Endpoint = (string)eventData["d"]["endpoint"]
+                };
+                var et = new Task(() => OnVoiceServerUpdate?.Invoke(args));et.Start();if (AsyncEvents) et.Wait();
+            }
         }
     }
 }
