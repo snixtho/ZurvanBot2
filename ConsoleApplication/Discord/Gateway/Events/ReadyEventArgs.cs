@@ -4,7 +4,7 @@ namespace ZurvanBot.Discord.Gateway.Events
 {
     public class ReadyEventArgs: GatewayEventArgs
     {
-        public int V;
+        public int? V;
         public UserObject User;
         public DMChannelObject[] PrivateChannels;
         public UnavailableGuildObject[] Guilds;

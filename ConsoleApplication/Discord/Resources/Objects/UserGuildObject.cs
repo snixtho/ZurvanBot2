@@ -4,7 +4,7 @@
     {
         public string name;
         public string icon;
-        public bool owner;
-        public int permissions;
+        public bool? owner;
+        public int? permissions;
     }
 }

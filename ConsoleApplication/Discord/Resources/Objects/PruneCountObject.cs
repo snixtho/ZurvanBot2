@@ -2,6 +2,6 @@
 {
     public class PruneCountObject: ResObject
     {
-        public int pruned;
+        public int? pruned;
     }
 }

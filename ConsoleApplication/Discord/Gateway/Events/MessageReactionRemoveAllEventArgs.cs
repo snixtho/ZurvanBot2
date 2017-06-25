@@ -2,7 +2,7 @@
 {
     public class MessageReactionRemoveAllEventArgs: GatewayEventArgs
     {
-        public ulong ChannelId;
-        public ulong MessageId;
+        public ulong? ChannelId;
+        public ulong? MessageId;
     }
 }

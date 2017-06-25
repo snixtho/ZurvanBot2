@@ -4,8 +4,8 @@ namespace ZurvanBot.Discord.Gateway.Events
 {
     public class GuildMemberUpdateEventArgs: GatewayEventArgs
     {
-        public ulong GuildId;
-        public RoleObject[] Roles;
+        public ulong? GuildId;
+        public ulong[] Roles;
         public UserObject User;
         public string Nick;
     }

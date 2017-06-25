@@ -4,9 +4,9 @@
     {
         public UserObject user;
         public string nick;
-        public RoleObject[] roles;
+        public string[] roles;
         public string joined_at;
-        public bool deaf;
-        public bool mute;
+        public bool? deaf;
+        public bool? mute;
     }
 }

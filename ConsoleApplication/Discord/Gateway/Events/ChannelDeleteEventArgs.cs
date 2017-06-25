@@ -4,9 +4,8 @@ namespace ZurvanBot.Discord.Gateway.Events
 {
     public class ChannelDeleteEventArgs: GatewayEventArgs
     {
-        public enum ChannelType {DM, Guild}
-        
         public DMChannelObject DMChannel;
         public GuildChannelObject GuildChannel;
+        public ChannelType Type;
     }
 }

@@ -5,7 +5,7 @@
         public new string id;
         public string name;
         public string type;
-        public bool revoked;
+        public bool? revoked;
         public IntegrationObject[] integrations;
     }
 }

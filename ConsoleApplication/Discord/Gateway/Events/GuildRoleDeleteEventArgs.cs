@@ -2,7 +2,7 @@
 {
     public class GuildRoleDeleteEventArgs: GatewayEventArgs
     {
-        public ulong GuildId;
-        public ulong RoleId;
+        public ulong? GuildId;
+        public ulong? RoleId;
     }
 }

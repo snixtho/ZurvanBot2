@@ -2,7 +2,7 @@
 {
     public class MessageDeleteEventArgs: GatewayEventArgs
     {
-        public ulong Id;
-        public ulong ChannelId;
+        public ulong? Id;
+        public ulong? ChannelId;
     }
 }

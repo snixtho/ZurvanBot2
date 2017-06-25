@@ -2,6 +2,6 @@
 {
     public class UnavailableGuildObject: ResObject
     {
-        public bool unavailable;
+        public bool? unavailable;
     }
 }

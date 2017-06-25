@@ -2,8 +2,8 @@
 {
     public class TypingStartEventArgs: GatewayEventArgs
     {
-        public ulong ChannelId;
-        public ulong UserId;
-        public int Timestamp;
+        public ulong? ChannelId;
+        public ulong? UserId;
+        public int? Timestamp;
     }
 }

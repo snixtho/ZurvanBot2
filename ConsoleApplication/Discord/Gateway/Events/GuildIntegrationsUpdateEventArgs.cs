@@ -2,6 +2,6 @@
 {
     public class GuildIntegrationsUpdateEventArgs: GatewayEventArgs
     {
-        public ulong GuildId;
+        public ulong? GuildId;
     }
 }

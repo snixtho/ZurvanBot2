@@ -2,8 +2,8 @@
 {
     public class ReactionObject: ResObject
     {
-        public int count;
-        public bool me;
+        public int? count;
+        public bool? me;
         public EmojiObject emoji;
     }
 }

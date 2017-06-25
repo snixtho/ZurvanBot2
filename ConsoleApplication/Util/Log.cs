@@ -10,7 +10,9 @@ using System.Text;
 namespace ZurvanBot.Util
 {
     /// <summary>
-    /// Easy logging class.
+    /// Easy logging class. It also outputs a parse-able format which is in:
+    /// [TIME_STAMP][LOG_LEVEL](CAT(E)(GORY): My Message
+    /// This class is also thread-safe.
     /// </summary>
     public class Log
     {
@@ -19,7 +21,8 @@ namespace ZurvanBot.Util
             Info = 1,
             Error = 2,
             Warning = 3,
-            Debug = 4
+            Debug = 4,
+            Verbose = 5
         }
         
         private static Log _instance;
@@ -36,9 +39,22 @@ namespace ZurvanBot.Util
         /// <summary>
         /// The log level that is required for outputting log lines.
         /// Debug is highest, info is lowest. All logs lower or equal to the
-        /// specified log level will be written. Highest log level is default.
+        /// specified log level will be written. Debug log level is default.
         /// </summary>
         public Elevation LogLevel { get; set; }
+        
+        /// <summary>
+        /// Set to true to prepend a timestamp to the log lines.
+        /// Set to false to not have a timestamp. Default is true.
+        /// </summary>
+        public bool AddTimestamp { get; set; }
+        
+        /// <summary>
+        /// The format of the timestamp. It uses the format specified here:
+        /// https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+        /// Default is: dd.MM.yyyy-HH:mm:ss
+        /// </summary>
+        public string TimestampFormat { get; set; }
 
         /// <summary>
         /// Whether to enable console output while logging.
@@ -72,6 +88,8 @@ namespace ZurvanBot.Util
         {
             OutputStreams.Add(_consoleOutput);
             LogLevel = Elevation.Debug;
+            AddTimestamp = true;
+            TimestampFormat = "dd.MM.yyyy-HH:mm:ss";
         }
 
         public static Log Instance()
@@ -99,6 +117,17 @@ namespace ZurvanBot.Util
                     stream.Flush();
                 }
             }
+        }
+
+        /// <summary>
+        /// Logs a line, formatted with some info like timestamp etc.
+        /// </summary>
+        /// <param name="msg">The message to format.</param>
+        private void _logLineFormatted(string msg)
+        {
+            if (AddTimestamp)
+                msg = getTimestamp() + msg;
+            _logLine(msg);
         }
 
         /// <summary>
@@ -145,6 +174,15 @@ namespace ZurvanBot.Util
             }
             return o;
         }
+
+        /// <summary>
+        /// Generate a timestamp for the logline.
+        /// </summary>
+        /// <returns>The timestamp for the log line.</returns>
+        private string getTimestamp()
+        {
+            return "[" + DateTime.Now.ToString(TimestampFormat) + "]";
+        }
         
         /// <summary>
         /// Log a info message.
@@ -156,7 +194,7 @@ namespace ZurvanBot.Util
             if (_instance == null)
                 _instance = new Log();
             if ((int) _instance.LogLevel < (int)Elevation.Info) return;
-            _instance._logLine("[I]" + generateCat(cat) + " " + msg);
+            _instance._logLineFormatted("[I]" + generateCat(cat) + ": " + msg);
         }
         
         /// <summary>
@@ -169,7 +207,7 @@ namespace ZurvanBot.Util
             if (_instance == null)
                 _instance = new Log();
             if ((int) _instance.LogLevel < (int)Elevation.Error) return;
-            _instance._logLine("[E]" + generateCat(cat) + " " + msg);
+            _instance._logLineFormatted("[E]" + generateCat(cat) + ": " + msg);
         }
         
         /// <summary>
@@ -182,7 +220,7 @@ namespace ZurvanBot.Util
             if (_instance == null)
                 _instance = new Log();
             if ((int) _instance.LogLevel < (int)Elevation.Warning) return;
-            _instance._logLine("[W]" + generateCat(cat) + " " + msg);
+            _instance._logLineFormatted("[W]" + generateCat(cat) + ": " + msg);
         }
         
         /// <summary>
@@ -195,7 +233,20 @@ namespace ZurvanBot.Util
             if (_instance == null)
                 _instance = new Log();
             if ((int) _instance.LogLevel < (int)Elevation.Debug) return;
-            _instance._logLine("[D]" + generateCat(cat) + " " + msg);
+            _instance._logLineFormatted("[D]" + generateCat(cat) + ": " + msg);
+        }
+        
+        /// <summary>
+        /// Log a warning.
+        /// </summary>
+        /// <param name="msg">The message to log.</param>
+        /// <param name="cat">The category of the message.</param>
+        public static void Verbose(string msg, string cat="")
+        {
+            if (_instance == null)
+                _instance = new Log();
+            if ((int) _instance.LogLevel < (int)Elevation.Verbose) return;
+            _instance._logLineFormatted("[V]" + generateCat(cat) + ": " + msg);
         }
 
         /// <summary>

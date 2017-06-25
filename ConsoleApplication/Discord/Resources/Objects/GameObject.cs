@@ -3,7 +3,7 @@
     public class GameObject: ResObject
     {
         public string name;
-        public int type;
+        public int? type;
         public string url;
     }
 }

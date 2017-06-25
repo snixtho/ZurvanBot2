@@ -4,7 +4,7 @@
     {
         public string name;
         public RoleObject[] roles;
-        public bool require_colons;
-        public bool managed;
+        public bool? require_colons;
+        public bool? managed;
     }
 }

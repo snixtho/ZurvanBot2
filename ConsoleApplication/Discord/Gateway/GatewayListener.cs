@@ -12,70 +12,8 @@ using ZurvanBot.Util;
 
 namespace ZurvanBot.Discord.Gateway
 {
-    public class GatewayListener
+    public partial class GatewayListener
     {
-        public delegate void ReadyEvent(ReadyEventArgs e);
-        public delegate void ChannelCreateEvent(ChannelCreateEventArgs e);
-        public delegate void ChannelDeleteEvent(ChannelDeleteEventArgs e);
-        public delegate void ChannelUpdateEvent(ChannelUpdateEventArgs e);
-        public delegate void GuildBanAddEvent(GuildBanAddEventArgs e);
-        public delegate void GuildBanRemoveEvent(GuildBanRemoveEventArgs e);
-        public delegate void GuildCreateEvent(GuildCreateEventArgs e);
-        public delegate void GuildDeleteEvent(GuildDeleteEventArgs e);
-        public delegate void GuildEmojisUpdateEvent(GuildEmojisUpdateEventArgs e);
-        public delegate void GuildIntegrationsUpdateEvent(GuildIntegrationsUpdateEventArgs e);
-        public delegate void GuildMemberAddEvent(GuildMemberAddEventArgs e);
-        public delegate void GuildMemberRemoveEvent(GuildMemberRemoveEventArgs e);
-        public delegate void GuildMembersChunkEvent(GuildMembersChunkEventArgs e);
-        public delegate void GuildMemberUpdateEvent(GuildMemberUpdateEventArgs e);
-        public delegate void GuildRoleCreateEvent(GuildRoleCreateEventArgs e);
-        public delegate void GuildRoleDeleteEvent(GuildRoleDeleteEventArgs e);
-        public delegate void GuildRoleUpdateEvent(GuildRoleUpdateEventArgs e);
-        public delegate void GuildUpdateEvent(GuildUpdateEventArgs e);
-        public delegate void MessageCreateEvent(MessageCreateEventArgs e);
-        public delegate void MessageDeleteBulkEvent(MessageDeleteBulkEventArgs e);
-        public delegate void MessageDeleteEvent(MessageDeleteEventArgs e);
-        public delegate void MessageReactionAddEvent(MessageReactionAddEventArgs e);
-        public delegate void MessageReactionRemoveAllEvent(MessageReactionRemoveAllEventArgs e);
-        public delegate void MessageReactionRemoveEvent(MessageReactionRemoveEventArgs e);
-        public delegate void PresenceUpdateEvent(PresenceUpdateEventArgs e);
-        public delegate void ResumedEvent(ResumedEventArgs e);
-        public delegate void TypingStartEvent(TypingStartEventArgs e);
-        public delegate void UserUpdateEvent(UserUpdateEventArgs e);
-        public delegate void VoiceServerUpdateEvent(VoiceServerUpdateEventArgs e);
-        public delegate void VoiceStateUpdateEvent(VoiceStateUpdateEventArgs e);
-        
-        public event ReadyEvent OnReadyEvent;
-        public event ChannelCreateEvent OnChannelCreateEvent;
-        public event ChannelDeleteEvent OnChannelDeleteEvent;
-        public event ChannelUpdateEvent OnChannelUpdateEvent;
-        public event GuildBanAddEvent OnGuildBanAddEvent;
-        public event GuildBanRemoveEvent OnGuildBanRemoveEvent;
-        public event GuildCreateEvent OnGuildCreateEvent;
-        public event GuildDeleteEvent OnGuildDeleteEvent;
-        public event GuildEmojisUpdateEvent OnGuildEmojisUpdateEvent;
-        public event GuildIntegrationsUpdateEvent OnGuildIntegrationsUpdateEvent;
-        public event GuildMemberAddEvent OnGuildMemberAddEvent;
-        public event GuildMemberRemoveEvent OnGuildMemberRemoveEvent;
-        public event GuildMembersChunkEvent OnGuildMembersChunkEvent;
-        public event GuildMemberUpdateEvent OnGuildMemberUpdateEvent;
-        public event GuildRoleCreateEvent OnGuildRoleCreateEvent;
-        public event GuildRoleDeleteEvent OnGuildRoleDeleteEvent;
-        public event GuildRoleUpdateEvent OnGuildRoleUpdateEvent;
-        public event GuildUpdateEvent OnGuildUpdateEvent;
-        public event MessageCreateEvent OnMessageCreateEvent;
-        public event MessageDeleteBulkEvent OnMessageDeleteBulkEvent;
-        public event MessageDeleteEvent OnMessageDeleteEvent;
-        public event MessageReactionAddEvent OnMessageReactionAddEvent;
-        public event MessageReactionRemoveAllEvent OnMessageReactionRemoveAllEvent;
-        public event MessageReactionRemoveEvent OnMessageReactionRemoveEvent;
-        public event PresenceUpdateEvent OnPresenceUpdateEvent;
-        public event ResumedEvent OnResumedEvent;
-        public event TypingStartEvent OnTypingStartEvent;
-        public event UserUpdateEvent OnUserUpdateEvent;
-        public event VoiceServerUpdateEvent OnVoiceServerUpdateEvent;
-        public event VoiceStateUpdateEvent OnVoiceStateUpdateEvent;
-        
         private readonly Uri _gatewayAddress;
         private WebSocket _websocket;
         private bool _isRunning = false;
@@ -83,13 +21,21 @@ namespace ZurvanBot.Discord.Gateway
         private HeartBeater _heart;
         private object _mainWait = new object();
         
+        /// <summary>
+        /// The gateway procotol version to use.
+        /// </summary>
         public int ProtocolVersion { get; private set; }
+        /// <summary>
+        /// Set to true to call events asynchronously, false to wait for completion.
+        /// </summary>
+        public bool AsyncEvents { get; set; }
         
         public GatewayListener(string gatewayUrl, string authToken)
         {
             ProtocolVersion = 5;
             _gatewayAddress = new Uri(gatewayUrl);
             _authToken = authToken;
+            AsyncEvents = true;
         }
 
         /// <summary>
@@ -154,7 +100,7 @@ namespace ZurvanBot.Discord.Gateway
         private void WebsocketOnOnMessage(object sender, MessageEventArgs messageEventArgs)
         {
             Log.Info("Message recieved from websocket.");
-            Log.Debug("Message: " + messageEventArgs.Data);
+            Log.Verbose("Message: " + messageEventArgs.Data);
             var jo = JObject.Parse(messageEventArgs.Data);
             var op = (OpCode) (int) jo["op"];
 
@@ -165,53 +111,7 @@ namespace ZurvanBot.Discord.Gateway
                     var t = (string)jo["t"];
                     t = t.ToUpper();
                     Log.Info("Event: " + t);
-                    
-                    if (t.Equals("READY"))
-                    {
-                        if (t.ToUpper().Equals("READY")) {
-                            _heart.StartAsync();
-                        }
-                        
-                        var args = new ReadyEventArgs();
-                        args.V = (int) jo["d"]["v"];
-                        args.User = jo["d"]["user"].ToObject<UserObject>();
-                        args.PrivateChannels = jo["d"]["private_channels"].ToObject<DMChannelObject[]>();
-                        args.Guilds = jo["d"]["guilds"].ToObject<UnavailableGuildObject[]>();
-                        args.SessionID = (string) jo["d"]["session_id"];
-                        args._trace = jo["d"]["_trace"].ToObject<string[]>();
-                        
-                        OnReadyEvent?.Invoke(args);
-                    }
-                    else if (t.Equals("RESUMED")) {}
-                    else if (t.Equals("CHANNEL_CREATE")) {}
-                    else if (t.Equals("CHANNEL_UPDATE")) {}
-                    else if (t.Equals("CHANNEL_DELETE")) {}
-                    else if (t.Equals("GUILD_CREATE")) {}
-                    else if (t.Equals("GUILD_UPDATE")) {}
-                    else if (t.Equals("GUILD_DELETE")) {}
-                    else if (t.Equals("GUILD_BAN_ADD")) {}
-                    else if (t.Equals("GUILD_BAN_REMOVE")) {}
-                    else if (t.Equals("GUILD_EMOJIS_UPDATE")) {}
-                    else if (t.Equals("GUILD_INTEGRATIONS_UPDATE")) {}
-                    else if (t.Equals("GUILD_MEMBER_ADD")) {}
-                    else if (t.Equals("GUILD_MEMBER_REMOVE")) {}
-                    else if (t.Equals("GUILD_MEMBER_UPDATE")) {}
-                    else if (t.Equals("GUILD_MEMBERS_CHUNK")) {}
-                    else if (t.Equals("GUILD_ROLE_CREATE")) {}
-                    else if (t.Equals("GUILD_ROLE_UPDATE")) {}
-                    else if (t.Equals("GUILD_ROLE_DELETE")) {}
-                    else if (t.Equals("MESSAGE_CREATE")) {}
-                    else if (t.Equals("MESSAGE_UPDATE")) {}
-                    else if (t.Equals("MESSAGE_DELETE")) {}
-                    else if (t.Equals("MESSAGE_DELETE_BULK")) {}
-                    else if (t.Equals("MESSAGE_REACTION_ADD")) {}
-                    else if (t.Equals("MESSAGE_REACTION_REMOVE")) {}
-                    else if (t.Equals("MESSAGE_REACTION_REMOVE_ALL")) {}
-                    else if (t.Equals("PRESENCE_UPDATE")) {}
-                    else if (t.Equals("TYPING_START")) {}
-                    else if (t.Equals("USER_UPDATE")) {}
-                    else if (t.Equals("VOICE_STATE_UPDATE")) {}
-                    else if (t.Equals("VOICE_SERVER_UPDATE")) {}
+                    DispatchEvent(t, jo);
                     
                     break;
                 case OpCode.Heartbeat:
@@ -267,6 +167,9 @@ namespace ZurvanBot.Discord.Gateway
         /// <returns>The main thread which can be joined.</returns>
         public Task StartListeningAsync()
         {
+            if (_isRunning)
+                throw new Exception("This gateway listener has already been started.");
+            
             var t = new Task(() =>
             {
                 SetupNewSocket();
@@ -286,6 +189,24 @@ namespace ZurvanBot.Discord.Gateway
             _isRunning = true;
 
             return t;
+        }
+
+        /// <summary>
+        /// Stop listening to the gateway.
+        /// </summary>
+        public void StopListening()
+        {
+            try
+            {
+                Monitor.Enter(_mainWait);
+                _isRunning = false;
+                Monitor.PulseAll(_mainWait);
+                _websocket.Close(1000);
+            }
+            finally
+            {
+                Monitor.Exit(_mainWait);
+            }
         }
     }
 }

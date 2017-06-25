@@ -2,7 +2,7 @@
 {
     public class GuildEmbedObject: ResObject
     {
-        public bool enabled;
-        public ulong channel_id;
+        public bool? enabled;
+        public ulong? channel_id;
     }
 }

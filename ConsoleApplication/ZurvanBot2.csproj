@@ -50,6 +50,7 @@
     <Compile Include="Discord\API.cs" />
     <Compile Include="Discord\Authentication.cs" />
     <Compile Include="Discord\BasicRequestResponse.cs" />
+    <Compile Include="Discord\Gateway\ChannelType.cs" />
     <Compile Include="Discord\Gateway\ErrorCode.cs" />
     <Compile Include="Discord\Gateway\Events\ChannelCreateEventArgs.cs" />
     <Compile Include="Discord\Gateway\Events\ChannelDeleteEventArgs.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Discord\Gateway\Events\VoiceServerUpdateEventArgs.cs" />
     <Compile Include="Discord\Gateway\Events\VoiceStateUpdateEventArgs.cs" />
     <Compile Include="Discord\Gateway\GatewayListener.cs" />
+    <Compile Include="Discord\Gateway\GatewayListenerEvents.cs" />
     <Compile Include="Discord\Gateway\HeartBeater.cs" />
     <Compile Include="Discord\Gateway\HeartbeatPayload.cs" />
     <Compile Include="Discord\Gateway\OpCode.cs" />

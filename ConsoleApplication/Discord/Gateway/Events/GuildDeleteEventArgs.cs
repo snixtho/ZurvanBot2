@@ -2,7 +2,7 @@
 {
     public class GuildDeleteEventArgs: GatewayEventArgs
     {
-        public int Id;
-        public bool Unavailable;
+        public ulong? Id;
+        public bool? Unavailable;
     }
 }

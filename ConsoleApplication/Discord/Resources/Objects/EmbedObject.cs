@@ -7,7 +7,7 @@
         public string description;
         public string url;
         public string timestamp;
-        public int color;
+        public int? color;
         public EmbedFooterObject footer;
         public EmbedImageObject image;
         public EmbedThumbnailObject thumbnail;
