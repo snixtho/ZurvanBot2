@@ -9,3 +9,6 @@ a custom implementation for the Discord API.
 - WebSocketSharp (For the websockets client)
 
 #### NOTE: Under very early development and is super unstable and does not implement all required features yet, so do not use it for production.
+
+### Current State
+Just trying to get everything working, with a somewhat messy code. Which will be cleaned up later.
