@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using ZurvanBot.Discord.Resources.Objects;
 using ZurvanBot.Discord.Resources.Params;
+using ZurvanBot.Util;
 
 namespace ZurvanBot.Discord.Resources
 {
@@ -69,10 +70,17 @@ namespace ZurvanBot.Discord.Resources
 
         public MessageObject CreateMessage(UInt64 channelId, CreateMessageParams pars)
         {
+            Log.Verbose("Create message: PostRequest");
             var response = _request.PostRequest("/channels/" + channelId + "/messages", pars);
+            Log.Verbose("Create message: PostRequest.Done");
             if (response.Code != 200)
+            {
+                Log.Verbose("Create message: ErrorCode: " + response.Code);
                 return null; // handle these errors ?
+            }
+            Log.Verbose("Create message: Deserializing");
             var messages = JsonConvert.DeserializeObject<MessageObject>(response.Contents);
+            Log.Verbose("Create message: Deserializing.Done");
             return messages;
         }
 
@@ -81,7 +89,7 @@ namespace ZurvanBot.Discord.Resources
         /// </summary>
         /// <param name="channelId"></param>
         /// <param name="messageId"></param>
-        /// <param name="emoji"></param>
+        /// <param name="emoji"s></param>
         /// <returns>Returns true on success.</returns>
         public bool CreateReaction(UInt64 channelId, UInt64 messageId, string emoji)
         {

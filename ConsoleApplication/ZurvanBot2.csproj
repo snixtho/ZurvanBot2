@@ -97,6 +97,7 @@
     <Compile Include="Discord\Gateway\Payloads\IdentifyPayload.cs" />
     <Compile Include="Discord\Gateway\Payloads\PayloadBase.cs" />
     <Compile Include="Discord\Gateway\Payloads\VoiceStateUpdatePayload.cs" />
+    <Compile Include="Discord\RateLimiter.cs" />
     <Compile Include="Discord\ResourceRequest.cs" />
     <Compile Include="Discord\Resources\Channel.cs" />
     <Compile Include="Discord\Resources\Guild.cs" />

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
+using Newtonsoft.Json.Serialization;
 
 namespace ZurvanBot.Util
 {
@@ -142,8 +143,15 @@ namespace ZurvanBot.Util
                 throw new DirectoryNotFoundException("The specified directory does not exist.");
 
             Stream stream;
-            if (!file.Exists) stream = file.Create();
-            else stream = file.OpenWrite();
+            if (!file.Exists)
+            {
+                stream = file.Create();
+            }
+            else
+            {
+                File.Move(file.FullName, file.FullName + ".archive" + new Random().Next(1000000000));
+                stream = file.OpenWrite();
+            }
 
             lock (_sync)
             {
