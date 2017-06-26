@@ -8,7 +8,7 @@ namespace ZurvanBot.Discord.Resources
     {
         public UserObject GetCurrentUser()
         {
-            var re = _request.GetRequest("/users/@me");
+            var re = _request.GetRequestAsync("/users/@me").Result;
             if (re.Code != 200)
                 return null; // handle these errors ?
             var r = JsonConvert.DeserializeObject<UserObject>(re.Contents);
@@ -17,7 +17,7 @@ namespace ZurvanBot.Discord.Resources
 
         public UserObject GetUser(ulong userId)
         {
-            var re = _request.GetRequest("/users/" + userId);
+            var re = _request.GetRequestAsync("/users/" + userId).Result;
             if (re.Code != 200)
                 return null; // handle these errors ?
             var r = JsonConvert.DeserializeObject<UserObject>(re.Contents);
@@ -26,7 +26,7 @@ namespace ZurvanBot.Discord.Resources
 
         public UserObject ModifyCurrentUser(ModifyChannelParams pars)
         {
-            var re = _request.PatchRequest("/users/@me", pars);
+            var re = _request.PatchRequestAsync("/users/@me", pars).Result;
             if (re.Code != 200)
                 return null; // handle these errors ?
             var r = JsonConvert.DeserializeObject<UserObject>(re.Contents);
@@ -47,7 +47,7 @@ namespace ZurvanBot.Discord.Resources
                     q += "limit=" + pars.limit;
             }
             
-            var re = _request.GetRequest("/users/@me/guilds" + q);
+            var re = _request.GetRequestAsync("/users/@me/guilds" + q).Result;
             if (re.Code != 200)
                 return null; // handle these errors ?
             var r = JsonConvert.DeserializeObject<UserGuildObject[]>(re.Contents);
@@ -56,7 +56,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool LeaveGuild(ulong guildId)
         {
-            var re = _request.DeleteRequest("users/@me/guilds/" + guildId);
+            var re = _request.DeleteRequestAsync("users/@me/guilds/" + guildId).Result;
             if (re.Code == 204 || re.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -64,7 +64,7 @@ namespace ZurvanBot.Discord.Resources
 
         public DMChannelObject[] GetUserDMs()
         {
-            var re = _request.GetRequest("/users/@me/channels");
+            var re = _request.GetRequestAsync("/users/@me/channels").Result;
             if (re.Code != 200)
                 return null; // handle these errors ?
             var r = JsonConvert.DeserializeObject<DMChannelObject[]>(re.Contents);
@@ -73,7 +73,7 @@ namespace ZurvanBot.Discord.Resources
 
         public DMChannelObject CreateDM(CreateDMParams pars)
         {
-            var re = _request.PostRequest("/users/@me/channels", pars);
+            var re = _request.PostRequestAsync("/users/@me/channels", pars).Result;
             if (re.Code != 200)
                 return null; // handle these errors ?
             var r = JsonConvert.DeserializeObject<DMChannelObject>(re.Contents);
@@ -82,7 +82,7 @@ namespace ZurvanBot.Discord.Resources
 
         public DMChannelObject CreateGroupDM(CreateGroupDMParams pars)
         {
-            var re = _request.PostRequest("/users/@me/channels", pars);
+            var re = _request.PostRequestAsync("/users/@me/channels", pars).Result;
             if (re.Code != 200)
                 return null; // handle these errors ?
             var r = JsonConvert.DeserializeObject<DMChannelObject>(re.Contents);
@@ -91,7 +91,7 @@ namespace ZurvanBot.Discord.Resources
 
         public ConnectionObject[] GetUsersConnections()
         {
-            var re = _request.GetRequest("/users/@me/connections");
+            var re = _request.GetRequestAsync("/users/@me/connections").Result;
             if (re.Code != 200)
                 return null; // handle these errors ?
             var r = JsonConvert.DeserializeObject<ConnectionObject[]>(re.Contents);

@@ -7,7 +7,7 @@ namespace ZurvanBot.Discord.Resources
     {
         public InviteObject GetInvite(string inviteCode)
         {
-            var response = _request.GetRequest("/invites/" + inviteCode);
+            var response = _request.GetRequestAsync("/invites/" + inviteCode).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var inviteObject = JsonConvert.DeserializeObject<InviteObject>(response.Contents);
@@ -16,7 +16,7 @@ namespace ZurvanBot.Discord.Resources
 
         public InviteObject DeleteInvite(string inviteCode)
         {
-            var response = _request.DeleteRequest("/invites/" + inviteCode);
+            var response = _request.DeleteRequestAsync("/invites/" + inviteCode).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var inviteObject = JsonConvert.DeserializeObject<InviteObject>(response.Contents);
@@ -25,7 +25,7 @@ namespace ZurvanBot.Discord.Resources
 
         public InviteObject AcceptInvite(string inviteCode)
         {
-            var response = _request.PostRequest("/invites/" + inviteCode);
+            var response = _request.PostRequestAsync("/invites/" + inviteCode).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var inviteObject = JsonConvert.DeserializeObject<InviteObject>(response.Contents);

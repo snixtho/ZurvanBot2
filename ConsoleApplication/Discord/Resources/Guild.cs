@@ -9,7 +9,7 @@ namespace ZurvanBot.Discord.Resources
     {
         public GuildObject CreateGuild(CreateGuildParams pars)
         {
-            var response = _request.PostRequest("/guilds", pars);
+            var response = _request.PostRequestAsync("/guilds", pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildObject>(response.Contents);
@@ -18,7 +18,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildObject GetGuild(ulong guildId)
         {
-            var response = _request.GetRequest("/guilds/" + guildId);
+            var response = _request.GetRequestAsync("/guilds/" + guildId).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildObject>(response.Contents);
@@ -27,7 +27,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildObject ModifyGuild(ulong guildId, ModifyGuildObject pars)
         {
-            var response = _request.PatchRequest("/guilds/" + guildId, pars);
+            var response = _request.PatchRequestAsync("/guilds/" + guildId, pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildObject>(response.Contents);
@@ -36,7 +36,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildObject DeleteGuild(ulong guildId)
         {
-            var response = _request.DeleteRequest("/guilds/" + guildId);
+            var response = _request.DeleteRequestAsync("/guilds/" + guildId).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildObject>(response.Contents);
@@ -45,7 +45,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildChannelObject[] GetGuildChannel(ulong guildId)
         {
-            var response = _request.GetRequest("/guilds/" + guildId + "/channels");
+            var response = _request.GetRequestAsync("/guilds/" + guildId + "/channels").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildChannelObject[]>(response.Contents);
@@ -54,7 +54,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildChannelObject CreateGuildChannel(ulong guildId, CreateGuildChannelParams pars)
         {
-            var response = _request.PostRequest("/guilds/" + guildId + "/channels", pars);
+            var response = _request.PostRequestAsync("/guilds/" + guildId + "/channels", pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildChannelObject>(response.Contents);
@@ -63,7 +63,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildChannelObject[] ModifyGuildChannelPositions(ulong guildId, ModifyGuildChannelPositionsObject pars)
         {
-            var response = _request.PatchRequest("/guilds/" + guildId + "/channels", pars);
+            var response = _request.PatchRequestAsync("/guilds/" + guildId + "/channels", pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildChannelObject[]>(response.Contents);
@@ -72,7 +72,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildMemberObject GetGuildMember(ulong guildId, ulong userId)
         {
-            var response = _request.GetRequest("/guilds/" + guildId + "/members/" + userId);
+            var response = _request.GetRequestAsync("/guilds/" + guildId + "/members/" + userId).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildMemberObject>(response.Contents);
@@ -91,7 +91,7 @@ namespace ZurvanBot.Discord.Resources
                     query += "limit=" + pars.limit;
             }
             
-            var response = _request.GetRequest("/guilds/" + guildId + "/members" + query);
+            var response = _request.GetRequestAsync("/guilds/" + guildId + "/members" + query).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildMemberObject[]>(response.Contents);
@@ -100,7 +100,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildMemberObject AddGuildMember(ulong guildId, ulong userId, AddGuildMemberParams pars)
         {
-            var response = _request.PutRequest("/guilds/" + guildId + "/members/" + userId, pars);
+            var response = _request.PutRequestAsync("/guilds/" + guildId + "/members/" + userId, pars).Result;
             if (response.Code != 201)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildMemberObject>(response.Contents);
@@ -109,7 +109,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool ModifyGuildMember(ulong guildId, ulong userId, ModifyGuildMemberParams pars)
         {
-            var response = _request.PatchRequest("/guilds/" + guildId + "/members/" + userId, pars);
+            var response = _request.PatchRequestAsync("/guilds/" + guildId + "/members/" + userId, pars).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -117,7 +117,7 @@ namespace ZurvanBot.Discord.Resources
 
         public string ModifyCurrentUserNick(ulong guildId, ModifyCurrentUserNickParams pars)
         {
-            var response = _request.PatchRequest("/guilds/" + guildId + "/members/@me/nick", pars);
+            var response = _request.PatchRequestAsync("/guilds/" + guildId + "/members/@me/nick", pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             return response.Contents;
@@ -125,7 +125,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool AddGuildMemberRole(ulong guildId, ulong userId, ulong roleId)
         {
-            var response = _request.PutRequest("/guilds/" + guildId + "/members/" + userId + "/roles/" + roleId);
+            var response = _request.PutRequestAsync("/guilds/" + guildId + "/members/" + userId + "/roles/" + roleId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -133,7 +133,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool RemoveGuildMemberRole(ulong guildId, ulong userId, ulong roleId)
         {
-            var response = _request.DeleteRequest("/guilds/" + guildId + "/members/" + userId + "/roles/" + roleId);
+            var response = _request.DeleteRequestAsync("/guilds/" + guildId + "/members/" + userId + "/roles/" + roleId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -141,7 +141,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool RemoveGuildMember(ulong guildId, ulong userId)
         {
-            var response = _request.DeleteRequest("/guilds/" + guildId + "/members/" + userId);
+            var response = _request.DeleteRequestAsync("/guilds/" + guildId + "/members/" + userId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -149,7 +149,7 @@ namespace ZurvanBot.Discord.Resources
 
         public UserObject[] GetGuildBans(ulong guildId)
         {
-            var response = _request.GetRequest("/guilds/" + guildId + "/bans");
+            var response = _request.GetRequestAsync("/guilds/" + guildId + "/bans").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<UserObject[]>(response.Contents);
@@ -158,7 +158,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool CreateGuildBan(ulong guildId, ulong userId)
         {
-            var response = _request.PutRequest("/guilds/" + guildId + "/bans/" + userId);
+            var response = _request.PutRequestAsync("/guilds/" + guildId + "/bans/" + userId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -166,7 +166,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool RemoveGuildBan(ulong guildId, ulong userId)
         {
-            var response = _request.DeleteRequest("/guilds/" + guildId + "/bans/" + userId);
+            var response = _request.DeleteRequestAsync("/guilds/" + guildId + "/bans/" + userId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -174,7 +174,7 @@ namespace ZurvanBot.Discord.Resources
 
         public RoleObject[] GetGuildRoles(ulong guildId)
         {
-            var response = _request.GetRequest("/guilds/" + guildId + "/roles");
+            var response = _request.GetRequestAsync("/guilds/" + guildId + "/roles").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<RoleObject[]>(response.Contents);
@@ -183,7 +183,7 @@ namespace ZurvanBot.Discord.Resources
 
         public RoleObject CreateGuildRole(ulong guildId, CreateGuildRoleParams pars)
         {
-            var response = _request.PostRequest("/guilds/" + guildId + "/roles", pars);
+            var response = _request.PostRequestAsync("/guilds/" + guildId + "/roles", pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<RoleObject>(response.Contents);
@@ -192,7 +192,7 @@ namespace ZurvanBot.Discord.Resources
 
         public RoleObject[] ModifyGuildRolePositions(ulong guildId, ModifyGuildRolePositionsParams pars)
         {
-            var response = _request.PatchRequest("/guilds/" + guildId + "/roles", pars);
+            var response = _request.PatchRequestAsync("/guilds/" + guildId + "/roles", pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<RoleObject[]>(response.Contents);
@@ -201,7 +201,7 @@ namespace ZurvanBot.Discord.Resources
 
         public RoleObject ModifyGuildRole(ulong guildId, ulong roleId, ModifyGuildRoleParams pars)
         {
-            var response = _request.PatchRequest("/guilds/" + guildId + "/roles/" + roleId, pars);
+            var response = _request.PatchRequestAsync("/guilds/" + guildId + "/roles/" + roleId, pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<RoleObject>(response.Contents);
@@ -210,7 +210,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool DeleteGuildRole(ulong guildId, ulong roleId)
         {
-            var response = _request.DeleteRequest("/guilds/" + guildId + "/roles/" + roleId);
+            var response = _request.DeleteRequestAsync("/guilds/" + guildId + "/roles/" + roleId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -222,7 +222,7 @@ namespace ZurvanBot.Discord.Resources
             if (pars.days != null)
                 query = "?days" + pars.days;
             
-            var response = _request.GetRequest("/guilds/" + guildId + "/prune/" + query);
+            var response = _request.GetRequestAsync("/guilds/" + guildId + "/prune/" + query).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<PruneCountObject>(response.Contents);
@@ -235,7 +235,7 @@ namespace ZurvanBot.Discord.Resources
             if (pars.days != null)
                 query = "?days" + pars.days;
             
-            var response = _request.PostRequest("/guilds/" + guildId + "/prune/" + query);
+            var response = _request.PostRequestAsync("/guilds/" + guildId + "/prune/" + query).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<PruneCountObject>(response.Contents);
@@ -244,7 +244,7 @@ namespace ZurvanBot.Discord.Resources
 
         public VoiceRegionObject[] GetGuildVoiceRegions(ulong guildId)
         {
-            var response = _request.GetRequest("/guilds/" + guildId + "/regions");
+            var response = _request.GetRequestAsync("/guilds/" + guildId + "/regions").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<VoiceRegionObject[]>(response.Contents);
@@ -253,7 +253,7 @@ namespace ZurvanBot.Discord.Resources
 
         public InviteWithMetadataObject[] GetGuildInvites(ulong guildId)
         {
-            var response = _request.GetRequest("/guilds/" + guildId + "/invites");
+            var response = _request.GetRequestAsync("/guilds/" + guildId + "/invites").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<InviteWithMetadataObject[]>(response.Contents);
@@ -262,7 +262,7 @@ namespace ZurvanBot.Discord.Resources
 
         public IntegrationObject[] GetGuildIntegrations(ulong guildId)
         {
-            var response = _request.GetRequest("/guilds/" + guildId + "/integrations");
+            var response = _request.GetRequestAsync("/guilds/" + guildId + "/integrations").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<IntegrationObject[]>(response.Contents);
@@ -271,7 +271,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool CreateGuildIntegration(ulong guildId, CreateGuildIntegrationParams pars)
         {
-            var response = _request.PostRequest("/guilds/" + guildId + "/integrations", pars);
+            var response = _request.PostRequestAsync("/guilds/" + guildId + "/integrations", pars).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -279,7 +279,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool ModifyGuildIntegration(ulong guildId, ulong integrationId, ModifyGuildIntegrationParams pars)
         {
-            var response = _request.PatchRequest("/guilds/" + guildId + "/integrations/" + integrationId, pars);
+            var response = _request.PatchRequestAsync("/guilds/" + guildId + "/integrations/" + integrationId, pars).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -287,7 +287,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool DeleteGuildIntegration(ulong guildId, ulong integrationId)
         {
-            var response = _request.DeleteRequest("/guilds/" + guildId + "/integrations/" + integrationId);
+            var response = _request.DeleteRequestAsync("/guilds/" + guildId + "/integrations/" + integrationId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -295,7 +295,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool SyncGuildIntegration(ulong guildId, ulong integrationId)
         {
-            var response = _request.PostRequest("/guilds/" + guildId + "/integrations/" + integrationId + "/sync");
+            var response = _request.PostRequestAsync("/guilds/" + guildId + "/integrations/" + integrationId + "/sync").Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -303,7 +303,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildEmbedObject GetGuildEmbet(ulong guildId)
         {
-            var response = _request.GetRequest("/guilds/" + guildId + "/embed");
+            var response = _request.GetRequestAsync("/guilds/" + guildId + "/embed").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildEmbedObject>(response.Contents);
@@ -312,7 +312,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildEmbedObject ModifyGuildEmbet(ulong guildId, ModifyGuildEmbedParams pars)
         {
-            var response = _request.PatchRequest("/guilds/" + guildId + "/embed", pars);
+            var response = _request.PatchRequestAsync("/guilds/" + guildId + "/embed", pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildEmbedObject>(response.Contents);

@@ -7,7 +7,7 @@ namespace ZurvanBot.Discord.Resources
     {
         public VoiceRegionObject[] ListVoiceRegions()
         {
-            var re = _request.GetRequest("/voice/regions");
+            var re = _request.GetRequestAsync("/voice/regions").Result;
             if (re.Code != 200)
                 return null; // handle these errors ?
             var r = JsonConvert.DeserializeObject<VoiceRegionObject[]>(re.Contents);

@@ -10,7 +10,7 @@ namespace ZurvanBot.Discord.Resources
     {
         public GuildChannelObject GetChannel(UInt64 channelId)
         {
-            var response = _request.GetRequest("/channels/" + channelId);
+            var response = _request.GetRequestAsync("/channels/" + channelId).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildChannelObject>(response.Contents);
@@ -19,7 +19,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildChannelObject ModifyChannel(UInt64 channelId, ModifyChannelParams pars)
         {
-            var response = _request.PatchRequest("/channels/" + channelId, pars);
+            var response = _request.PatchRequestAsync("/channels/" + channelId, pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildChannelObject>(response.Contents);
@@ -28,7 +28,7 @@ namespace ZurvanBot.Discord.Resources
 
         public GuildChannelObject DeleteChannel(UInt64 channelId)
         {
-            var response = _request.DeleteRequest("/channels/" + channelId);
+            var response = _request.DeleteRequestAsync("/channels/" + channelId).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var guildObj = JsonConvert.DeserializeObject<GuildChannelObject>(response.Contents);
@@ -52,7 +52,7 @@ namespace ZurvanBot.Discord.Resources
             }
             
             
-            var response = _request.GetRequest("/channels/" + channelId + "/messages" + query);
+            var response = _request.GetRequestAsync("/channels/" + channelId + "/messages" + query).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var messages = JsonConvert.DeserializeObject<MessageObject[]>(response.Contents);
@@ -61,7 +61,7 @@ namespace ZurvanBot.Discord.Resources
 
         public MessageObject GetChannelMessage(UInt64 channelId, UInt64 messageId)
         {
-            var response = _request.GetRequest("/channels/" + channelId + "/messages/" + messageId);
+            var response = _request.GetRequestAsync("/channels/" + channelId + "/messages/" + messageId).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var messages = JsonConvert.DeserializeObject<MessageObject>(response.Contents);
@@ -71,7 +71,7 @@ namespace ZurvanBot.Discord.Resources
         public MessageObject CreateMessage(UInt64 channelId, CreateMessageParams pars)
         {
             Log.Verbose("Create message: PostRequest");
-            var response = _request.PostRequest("/channels/" + channelId + "/messages", pars);
+            var response = _request.PostRequestAsync("/channels/" + channelId + "/messages", pars).Result;
             Log.Verbose("Create message: PostRequest.Done");
             if (response.Code != 200)
             {
@@ -93,7 +93,7 @@ namespace ZurvanBot.Discord.Resources
         /// <returns>Returns true on success.</returns>
         public bool CreateReaction(UInt64 channelId, UInt64 messageId, string emoji)
         {
-            var response = _request.PutRequest("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + "/@me");
+            var response = _request.PutRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + "/@me").Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -101,7 +101,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool DeleteOwnReaction(UInt64 channelId, UInt64 messageId, string emoji)
         {
-            var response = _request.DeleteRequest("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + "/@me");
+            var response = _request.DeleteRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + "/@me").Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -109,7 +109,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool DeleteUserReaction(UInt64 channelId, UInt64 messageId, string emoji, UInt64 userId)
         {
-            var response = _request.DeleteRequest("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + userId);
+            var response = _request.DeleteRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + userId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -117,7 +117,7 @@ namespace ZurvanBot.Discord.Resources
 
         public UserObject[] GetReactions(UInt64 channelId, UInt64 messageId, string emoji)
         {
-            var response = _request.GetRequest("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji);
+            var response = _request.GetRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var messages = JsonConvert.DeserializeObject<UserObject[]>(response.Contents);
@@ -126,7 +126,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool DeleteAllReactions(UInt64 channelId, UInt64 messageId)
         {
-            var response = _request.DeleteRequest("/channels/" + channelId + "/messages/" + messageId + "/reactions");
+            var response = _request.DeleteRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions").Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -134,7 +134,7 @@ namespace ZurvanBot.Discord.Resources
 
         public MessageObject EditMessage(UInt64 channelId, UInt64 messageId, EditMessageParams pars)
         {
-            var response = _request.PatchRequest("/channels/" + channelId + "/messages/" + messageId, pars);
+            var response = _request.PatchRequestAsync("/channels/" + channelId + "/messages/" + messageId, pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var message = JsonConvert.DeserializeObject<MessageObject>(response.Contents);
@@ -143,7 +143,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool DeleteMessage(UInt64 channelId, UInt64 messageId)
         {
-            var response = _request.DeleteRequest("/channels/" + channelId + "/messages/" + messageId);
+            var response = _request.DeleteRequestAsync("/channels/" + channelId + "/messages/" + messageId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -151,7 +151,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool BulkDeleteMessages(UInt64 channelId, BulkDeleteMessagesParams pars)
         {
-            var response = _request.PostRequest("/channels/" + channelId + "/messages/bulk-delete", pars);
+            var response = _request.PostRequestAsync("/channels/" + channelId + "/messages/bulk-delete", pars).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -159,7 +159,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool EditChannelPermissions(UInt64 channelId, UInt64 overwriteId, EditChannelPermissionsParams pars)
         {
-            var response = _request.PutRequest("/channels/" + channelId + "/permissions/" + overwriteId, pars);
+            var response = _request.PutRequestAsync("/channels/" + channelId + "/permissions/" + overwriteId, pars).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -167,7 +167,7 @@ namespace ZurvanBot.Discord.Resources
 
         public InviteObject[] GetChannelInvites(UInt64 channelId)
         {
-            var response = _request.GetRequest("/channels/" + channelId + "/invites");
+            var response = _request.GetRequestAsync("/channels/" + channelId + "/invites").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var message = JsonConvert.DeserializeObject<InviteObject[]>(response.Contents);
@@ -176,7 +176,7 @@ namespace ZurvanBot.Discord.Resources
 
         public InviteObject CreateChannelInvite(UInt64 channelId, CreateChannelInviteParams pars)
         {
-            var response = _request.PostRequest("/channels/" + channelId + "/invites", pars);
+            var response = _request.PostRequestAsync("/channels/" + channelId + "/invites", pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var message = JsonConvert.DeserializeObject<InviteObject>(response.Contents);
@@ -185,7 +185,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool DeleteChannelPermission(UInt64 channelId, UInt64 overwriteId)
         {
-            var response = _request.DeleteRequest("/channels/" + channelId + "/invites/" + overwriteId);
+            var response = _request.DeleteRequestAsync("/channels/" + channelId + "/invites/" + overwriteId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -193,7 +193,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool TriggerTypingIndicator(UInt64 channelId)
         {
-            var response = _request.PostRequest("/channels/" + channelId + "/typing");
+            var response = _request.PostRequestAsync("/channels/" + channelId + "/typing").Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -201,7 +201,7 @@ namespace ZurvanBot.Discord.Resources
 
         public MessageObject[] GetPinnedMessages(UInt64 channelId)
         {
-            var response = _request.GetRequest("/channels/" + channelId + "/pins");
+            var response = _request.GetRequestAsync("/channels/" + channelId + "/pins").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var message = JsonConvert.DeserializeObject<MessageObject[]>(response.Contents);
@@ -210,7 +210,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool AddPinnedChannelMessage(UInt64 channelId, UInt64 messageId)
         {
-            var response = _request.PutRequest("/channels/" + channelId + "/pins/" + messageId);
+            var response = _request.PutRequestAsync("/channels/" + channelId + "/pins/" + messageId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
@@ -218,7 +218,7 @@ namespace ZurvanBot.Discord.Resources
 
         public bool DeletePinnedChannelMessage(UInt64 channelId, UInt64 messageId)
         {
-            var response = _request.DeleteRequest("/channels/" + channelId + "/pins/" + messageId);
+            var response = _request.DeleteRequestAsync("/channels/" + channelId + "/pins/" + messageId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
