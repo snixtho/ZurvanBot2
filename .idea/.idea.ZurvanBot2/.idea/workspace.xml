@@ -2,11 +2,147 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e0e615b-ac48-4abe-bb44-ddb6f8f04d6f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Channel.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Channel.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Guild.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Guild.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Invite.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Invite.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/User.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/User.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Voice.cs" afterPath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Voice.cs" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/API.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Authentication.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/BasicRequestResponse.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/ChannelType.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/ErrorCode.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/ChannelCreateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/ChannelDeleteEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/ChannelUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GatewayEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildBanAddEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildBanRemoveEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildCreateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildDeleteEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildEmojisUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildIntegrationsUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildMemberAddEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildMemberRemoveEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildMemberUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildMembersChunkEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildRoleCreateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildRoleDeleteEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildRoleUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/GuildUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageCreateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageDeleteBulkEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageDeleteEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageReactionAddEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageReactionRemoveAllEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageReactionRemoveEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/PresenceUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/ReadyEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/ResumedEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/TypingStartEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/UserUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/VoiceServerUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/VoiceStateUpdateEventArgs.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GameTypes.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerActions.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerEvents.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartbeatPayload.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/OpCode.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/DeviceData.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/IdentifyData.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/VoiceStateUpdateData.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyPayload.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/VoiceStateUpdatePayload.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/RateLimiter.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/ResourceRequest.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Channel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Guild.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Invite.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/AccountObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/AttachmentObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/BeginGuildPruneParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/ConnectionObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/DMChannelObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmbedAuthorObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmbedFieldObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmbedFooterObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmbedImageObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmbedObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmbedProviderObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmbedThumbnailObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmbedVideoObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/EmojiObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GameObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GetGuildPruneCountParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildChannelObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildEmbedObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildMemberObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/IntegrationObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/InviteChannelObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/InviteGuildObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/InviteMetadataObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/InviteObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/InviteWithMetadataObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/MessageObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/OverwriteObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/PresenceObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/PruneCountObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/ReactionObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/ResObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/RoleObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/UnavailableGuildObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/UserGuildObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/UserObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/VoiceRegionObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/VoiceStateObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/AddGuildMemberParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/BulkDeleteMessagesParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/CreateChannelInviteParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/CreateDMParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/CreateGroupDMParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/CreateGuildBanParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/CreateGuildChannelParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/CreateGuildIntegrationParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/CreateGuildParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/CreateGuildRoleParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/CreateMessageParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/EditChannelPermissionsParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/EditMessageParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/GetChannelMessagesParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/GetCurrentUserGuildsParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/GroupDMAddRecipientParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ListGuildMembersParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ModifyChannelParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ModifyCurrentUserNickParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ModifyCurrentUserParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ModifyGuildChannelPositionsObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ModifyGuildEmbedParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ModifyGuildIntegrationParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ModifyGuildMemberParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ModifyGuildObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ModifyGuildRoleParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Params/ModifyGuildRolePositionsParams.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Resource.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/User.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Voice.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Plugins/Collections/PluginCollection.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Plugins/Collections/PluginsFileCollection.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Plugins/Plugin.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Plugins/PluginDirectory.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Plugins/PluginInterfaces/IEventsInitialization.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Plugins/PluginSystem.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Program.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Properties/AssemblyInfo.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Util/HTTP/HTTPSRequest.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Util/HTTP/HTTPSResponse.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Util/Log.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/Util/PlatformDetect.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/ZurvanBot.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/ZurvanBot2.csproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConsoleApplication/packages.config" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.ZurvanBot2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ZurvanBot2/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZurvanBot2.sln" afterPath="$PROJECT_DIR$/ZurvanBot2.sln" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,300 +153,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="899">
-              <caret line="1108" column="12" lean-forward="true" selection-start-line="1108" selection-start-column="12" selection-end-line="1108" selection-end-column="12" />
-              <folding>
-                <marker date="1498485880637" expanded="false" signature="6:392" ph="..." />
-                <marker date="1498485880637" expanded="true" signature="413:61893" ph="{...}" />
-                <marker date="1498485880637" expanded="true" signature="442:61891" ph="{...}" />
-                <marker date="1498485880637" expanded="true" signature="495:61885" ph="{...}" />
-                <marker date="1498485880637" expanded="true" signature="851:56913" ph="{...}" />
-                <marker date="1498485880637" expanded="true" signature="57446:58595" ph="{...}" />
-                <marker date="1498485880637" expanded="true" signature="57951:58092" ph="{...}" />
-                <marker date="1498485880637" expanded="true" signature="58622:58803" ph="/* gateway.OnMessageCreate += eventArgs =&gt; ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Channel.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Channel.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="199" column="9" lean-forward="false" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
-              <folding>
-                <marker date="1498486984608" expanded="true" signature="6:143" ph="..." />
-                <marker date="1498486984608" expanded="true" signature="182:10932" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="219:10930" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="288:612" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="705:1037" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="1104:1431" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="1531:2474" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="1673:2115" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="2558:2904" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="2992:3674" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="3264:3422" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="3684:3921" ph="///  ... " />
-                <marker date="1498486984608" expanded="true" signature="4006:4314" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="4403:4714" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="4819:5130" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="5222:5591" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="5667:5960" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="6062:6414" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="6485:6763" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="6852:7133" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="7250:7536" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="7603:7934" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="8033:8369" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="8452:8731" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="8793:9054" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="9122:9451" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="9532:9803" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="9887:10161" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="10235:10497" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="10574:10839" ph="{...}" />
-                <marker date="1498486984608" expanded="true" signature="10904:10924" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Guild.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Guild.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="848">
-              <caret line="318" column="28" lean-forward="false" selection-start-line="318" selection-start-column="28" selection-end-line="318" selection-end-column="28" />
-              <folding>
-                <marker date="1498487121523" expanded="false" signature="6:160" ph="..." />
-                <marker date="1498487121523" expanded="true" signature="199:14330" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="235:14328" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="304:613" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="665:978" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="1057:1378" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="1433:1749" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="1817:2153" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="2253:2594" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="2714:3058" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="3136:3478" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="3575:4258" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="3671:3913" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="4363:4711" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="4809:5084" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="5178:5440" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="5523:5811" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="5897:6188" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="6256:6526" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="6583:6907" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="6972:7236" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="7301:7568" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="7626:7951" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="8037:8367" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="8473:8806" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="8906:9247" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="9313:9581" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="9679:10138" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="10230:10690" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="10762:11096" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="11170:11511" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="11583:11922" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="12016:12285" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="12400:12687" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="12767:13049" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="13127:13417" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="13479:13808" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="13902:14239" ph="{...}" />
-                <marker date="1498487121523" expanded="true" signature="14302:14322" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Invite.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Invite.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="27" column="85" lean-forward="false" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
-              <folding>
-                <marker date="1498487133480" expanded="false" signature="6:65" ph="..." />
-                <marker date="1498487133480" expanded="true" signature="104:1399" ph="{...}" />
-                <marker date="1498487133480" expanded="true" signature="140:1397" ph="{...}" />
-                <marker date="1498487133480" expanded="true" signature="203:529" ph="{...}" />
-                <marker date="1498487133480" expanded="true" signature="590:919" ph="{...}" />
-                <marker date="1498487133480" expanded="true" signature="980:1307" ph="{...}" />
-                <marker date="1498487133480" expanded="true" signature="1371:1391" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceRequest.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/ResourceRequest.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-              <folding>
-                <marker date="1498486733386" expanded="false" signature="6:139" ph="..." />
-                <marker date="1498486733386" expanded="true" signature="168:14414" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="203:14412" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="448:706" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="716:963" ph="/// Creates a request for use with the discord api. ... " />
-                <marker date="1498486733386" expanded="true" signature="1020:1422" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="1432:1654" ph="/// Executes a http request and get its response. ... " />
-                <marker date="1498486733386" expanded="true" signature="1725:2627" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="1806:1930" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="1948:2276" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="2311:2569" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="2637:2861" ph="/// Does a GET request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="2921:3114" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="3132:3356" ph="/// Does a GET request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="3427:3535" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="3545:3750" ph="/// Do a put request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="3810:3991" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="4009:4214" ph="/// Do a put request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="4285:4393" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="4411:4860" ph="/// Do a put request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="4932:5674" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="5092:5168" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="5443:5586" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="5692:6141" ph="/// Do a put request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="6224:6339" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="6349:6558" ph="/// Do a patch request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="6620:6803" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="6821:7030" ph="/// Do a patch request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="7103:7213" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="7231:7686" ph="/// Do a patch request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="7760:8504" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="7920:7996" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="8273:8416" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="8522:8977" ph="/// Do a patch request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="9062:9179" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="9189:9424" ph="/// Sends a delete request to the api server. ... " />
-                <marker date="1498486733386" expanded="true" signature="9487:9671" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="9689:9924" ph="/// Sends a delete request to the api server. ... " />
-                <marker date="1498486733386" expanded="true" signature="9998:10109" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="10127:10362" ph="/// Sends a delete request to the api server. ... " />
-                <marker date="1498486733386" expanded="true" signature="10437:11182" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="10597:10673" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="10951:11094" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="11200:11435" ph="/// Sends a delete request to the api server. ... " />
-                <marker date="1498486733386" expanded="true" signature="11521:11639" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="11649:12101" ph="/// Do a post request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="12174:12862" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="12334:12410" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="12631:12774" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="12880:13332" ph="/// Do a post request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="13416:13532" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="13550:13757" ph="/// Do a post request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="13818:14000" ph="{...}" />
-                <marker date="1498486733386" expanded="true" signature="14018:14225" ph="/// Do a post request against the api. ... " />
-                <marker date="1498486733386" expanded="true" signature="14297:14406" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="API.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/API.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1498290353000" expanded="false" signature="6:59" ph="..." />
-                <marker date="1498290353000" expanded="true" signature="88:1170" ph="{...}" />
-                <marker date="1498290353000" expanded="true" signature="95:171" ph="/// Main API class for the discord API. ... " />
-                <marker date="1498290353000" expanded="true" signature="192:1168" ph="{...}" />
-                <marker date="1498290353000" expanded="true" signature="252:329" ph="/// REST for channel management. ... " />
-                <marker date="1498290353000" expanded="true" signature="370:445" ph="/// REST for guild management. ... " />
-                <marker date="1498290353000" expanded="true" signature="482:558" ph="/// REST for invite management. ... " />
-                <marker date="1498290353000" expanded="true" signature="597:671" ph="/// REST for user management. ... " />
-                <marker date="1498290353000" expanded="true" signature="706:781" ph="/// Rest for voice management. ... " />
-                <marker date="1498290353000" expanded="true" signature="858:1162" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Authentication.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Authentication.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1498290353000" expanded="true" signature="42:1173" ph="{...}" />
-                <marker date="1498290353000" expanded="true" signature="49:131" ph="/// Holds discord authentication information. ... " />
-                <marker date="1498290353000" expanded="true" signature="163:1171" ph="{...}" />
-                <marker date="1498290353000" expanded="true" signature="198:254" ph="{...}" />
-                <marker date="1498290353000" expanded="true" signature="309:401" ph="/// The authentication token/identifier string. ... " />
-                <marker date="1498290353000" expanded="true" signature="453:630" ph="/// The type of authentication. Usually Bot for bot accounts. ... " />
-                <marker date="1498290353000" expanded="true" signature="664:1005" ph="{...}" />
-                <marker date="1498290353000" expanded="true" signature="690:995" ph="{...}" />
-                <marker date="1498290353000" expanded="true" signature="739:981" ph="{...}" />
-                <marker date="1498290353000" expanded="true" signature="1074:1165" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Resource.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Resource.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-              <folding>
-                <marker date="1498290350000" expanded="true" signature="37:233" ph="{...}" />
-                <marker date="1498290350000" expanded="true" signature="65:231" ph="{...}" />
-                <marker date="1498290350000" expanded="true" signature="173:225" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/User.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
-              <folding>
-                <marker date="1498487169202" expanded="false" signature="6:107" ph="..." />
-                <marker date="1498487169202" expanded="true" signature="146:3781" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="180:3779" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="229:501" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="550:828" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="899:1179" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="1267:2002" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="1382:1709" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="2049:2287" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="2334:2622" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="2684:2977" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="3049:3342" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="3399:3691" ph="{...}" />
-                <marker date="1498487169202" expanded="true" signature="3753:3773" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Voice.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Voice.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="70" lean-forward="false" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
-              <folding>
-                <marker date="1498487174309" expanded="false" signature="6:65" ph="..." />
-                <marker date="1498487174309" expanded="true" signature="104:575" ph="{...}" />
-                <marker date="1498487174309" expanded="true" signature="139:573" ph="{...}" />
-                <marker date="1498487174309" expanded="true" signature="199:484" ph="{...}" />
-                <marker date="1498487174309" expanded="true" signature="547:567" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -370,7 +213,6 @@
         <option value="$PROJECT_DIR$/ConsoleApplication/Util/Log.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerEvents.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/RateLimiter.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A213B2F-F9E5-42E9-96F5-64A940C18609/9e/23675205/WebRequest.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/ResourceRequest.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AC28C8DB-D887-487E-8DCF-CE2C70F95670/c3/e134aeeb/Task`1.cs" />
@@ -379,6 +221,7 @@
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Invite.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/User.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Voice.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
       </list>
     </option>
   </component>
@@ -389,9 +232,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="176" />
-    <option name="width" value="1702" />
-    <option name="height" value="1400" />
+    <option name="x" value="156" />
+    <option name="y" value="178" />
+    <option name="width" value="1566" />
+    <option name="height" value="1009" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -411,7 +255,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <PATH>
@@ -442,7 +285,7 @@
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Util" />
+              <option name="myItemId" value="Plugins" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -460,7 +303,11 @@
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Discord" />
+              <option name="myItemId" value="Plugins" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PluginInterfaces" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -478,11 +325,11 @@
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Discord" />
+              <option name="myItemId" value="Plugins" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
+              <option name="myItemId" value="Collections" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -490,6 +337,7 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -599,12 +447,14 @@
       <workItem from="1498386987593" duration="626000" />
       <workItem from="1498387644625" duration="19425000" />
       <workItem from="1498481644928" duration="485000" />
-      <workItem from="1498482141022" duration="5080000" />
+      <workItem from="1498482141022" duration="5704000" />
+      <workItem from="1498488007501" duration="123000" />
+      <workItem from="1498488188079" duration="24000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48251000" />
+    <option name="totallyTimeSpent" value="49022000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,23 +466,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="176" y="0" width="1702" height="1400" extended-state="0" />
-    <editor active="true" />
+    <frame x="156" y="178" width="1566" height="1009" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23863636" sideWeight="0.5023569" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1394268" sideWeight="0.49764308" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1394268" sideWeight="0.49764308" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22445081" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18623962" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23870967" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16618076" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -655,125 +504,23 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/InviteChannelObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/IntegrationObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/MessageObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/OverwriteObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/PruneCountObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/ReactionObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/UserGuildObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/UserObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/VoiceRegionObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/VoiceStateObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/UnavailableGuildObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/ResObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/AttachmentObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/AccountObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/RoleObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildMemberObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/InviteChannelObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/IntegrationObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/MessageObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/OverwriteObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/PruneCountObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/ReactionObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/UserGuildObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/UserObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/VoiceRegionObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/VoiceStateObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/UnavailableGuildObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/ResObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/AttachmentObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/AccountObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/RoleObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GuildMemberObject.cs" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/38D3CEF1-4C5A-4FC9-A92D-E0991034BC1A/26/8ed0017d/CloseStatusCode.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -782,584 +529,49 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ConsoleApplication/Util/Eval.cs" />
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="91" column="9" lean-forward="false" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageDeleteBulkEventArgs.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/PresenceObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GameObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/PresenceUpdateEventArgs.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/IdentifyData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GameTypes.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="101" lean-forward="true" selection-start-line="15" selection-start-column="101" selection-end-line="15" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/VoiceStateUpdatePayload.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/VoiceStateUpdateData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/ZurvanBot.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498290349000" expanded="true" signature="19:171" ph="{...}" />
-            <marker date="1498290349000" expanded="true" signature="48:169" ph="{...}" />
-            <marker date="1498290349000" expanded="true" signature="130:163" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyPayload.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498327300054" expanded="true" signature="92:191" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/BasicRequestResponse.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498290353000" expanded="true" signature="53:147" ph="/// Holds basic response information from a HTTP request. ... " />
-            <marker date="1498290353000" expanded="true" signature="185:298" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerActions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-          <folding>
-            <marker date="1498425868026" expanded="false" signature="6:65" ph="..." />
-            <marker date="1498425868026" expanded="true" signature="145:1800" ph="{...}" />
-            <marker date="1498425868026" expanded="true" signature="160:454" ph="/// Joins/Moves/Leaves a voice channel. ... " />
-            <marker date="1498425868026" expanded="true" signature="531:1098" ph="{...}" />
-            <marker date="1498425868026" expanded="true" signature="835:989" ph="{...}" />
-            <marker date="1498425868026" expanded="true" signature="873:975" ph="{...}" />
-            <marker date="1498425868026" expanded="true" signature="1116:1357" ph="/// Join a voice channel, or move to another. ... " />
-            <marker date="1498425868026" expanded="true" signature="1426:1497" ph="{...}" />
-            <marker date="1498425868026" expanded="true" signature="1507:1679" ph="/// Disconnect from the current voice channel. ... " />
-            <marker date="1498425868026" expanded="true" signature="1734:1794" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/HeartBeater.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/MessageDeleteBulkEventArgs.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/PresenceObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Objects/GameObject.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Events/PresenceUpdateEventArgs.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/IdentifyData.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GameTypes.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/PayloadBase.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/VoiceStateUpdatePayload.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/Data/VoiceStateUpdateData.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/ZurvanBot.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Payloads/IdentifyPayload.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/BasicRequestResponse.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerActions.cs" />
     <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/Listener.cs" />
     <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/VoiceListener.cs" />
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="150" column="32" lean-forward="false" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
-          <folding>
-            <marker date="1498425585802" expanded="false" signature="6:327" ph="..." />
-            <marker date="1498425585802" expanded="true" signature="364:7957" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="407:7955" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="774:859" ph="/// The gateway procotol version to use. ... " />
-            <marker date="1498425585802" expanded="true" signature="925:1046" ph="/// Set to true to call events asynchronously, false to wait for completion. ... " />
-            <marker date="1498425585802" expanded="true" signature="1169:1341" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="1351:1475" ph="/// Gets the connection url. ... " />
-            <marker date="1498425585802" expanded="true" signature="1516:1715" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="1754:2373" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="1873:2037" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="2416:2709" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="2796:3404" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="3090:3305" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="3325:3394" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="3491:3583" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="3676:6227" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="3937:6217" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="6303:6385" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="6395:6561" ph="/// Starts to listen to events to the gateway server. ... " />
-            <marker date="1498425585802" expanded="true" signature="6603:7441" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="6831:7339" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="7102:7272" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="7451:7530" ph="/// Stop listening to the gateway. ... " />
-            <marker date="1498425585802" expanded="true" signature="7566:7949" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="7659:7850" ph="{...}" />
-            <marker date="1498425585802" expanded="true" signature="7870:7939" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Util/Log.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="129" column="43" lean-forward="false" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
-          <folding>
-            <marker date="1498482434163" expanded="true" signature="6:237" ph="..." />
-            <marker date="1498482434163" expanded="true" signature="263:8933" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="270:482" ph="/// Easy logging class. It also outputs a parse-able format which is in: ... " />
-            <marker date="1498482434163" expanded="true" signature="503:8931" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="539:676" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="907:995" ph="/// List of streams to output log lines to. ... " />
-            <marker date="1498482434163" expanded="true" signature="1077:1336" ph="/// The log level that is required for outputting log lines. ... " />
-            <marker date="1498482434163" expanded="true" signature="1402:1570" ph="/// Set to true to prepend a timestamp to the log lines. ... " />
-            <marker date="1498482434163" expanded="true" signature="1635:1899" ph="/// The format of the timestamp. It uses the format specified here: ... " />
-            <marker date="1498482434163" expanded="true" signature="1961:2057" ph="/// Whether to enable console output while logging. ... " />
-            <marker date="1498482434163" expanded="true" signature="2097:2658" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="2123:2313" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="2329:2648" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="2681:2874" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="2912:3037" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="3055:3206" ph="/// Writes a line to the desired output stream. ... " />
-            <marker date="1498482434163" expanded="true" signature="3248:3583" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="3437:3559" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="3593:3760" ph="/// Logs a line, formatted with some info like timestamp etc. ... " />
-            <marker date="1498482434163" expanded="true" signature="3811:3932" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="3942:4239" ph="/// Add a file that will have log lines written to it. ... " />
-            <marker date="1498482434163" expanded="true" signature="4286:4903" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="4538:4606" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="4623:4796" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="4913:5125" ph="/// Converts abc.def.ghi etc.. to (Abc)(Def)(Ghi) etc.. ... " />
-            <marker date="1498482434163" expanded="true" signature="5179:5697" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="5358:5665" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="5707:5856" ph="/// Generate a timestamp for the logline. ... " />
-            <marker date="1498482434163" expanded="true" signature="5894:5985" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="6003:6196" ph="/// Log a info message. ... " />
-            <marker date="1498482434163" expanded="true" signature="6255:6501" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="6519:6706" ph="/// Log an error. ... " />
-            <marker date="1498482434163" expanded="true" signature="6766:7013" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="7031:7219" ph="/// Log a warning. ... " />
-            <marker date="1498482434163" expanded="true" signature="7281:7530" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="7548:7736" ph="/// Log a warning. ... " />
-            <marker date="1498482434163" expanded="true" signature="7796:8043" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="8061:8249" ph="/// Log a warning. ... " />
-            <marker date="1498482434163" expanded="true" signature="8311:8560" ph="{...}" />
-            <marker date="1498482434163" expanded="true" signature="8570:8734" ph="/// Add a file that will have log lines written to it. ... " />
-            <marker date="1498482434163" expanded="true" signature="8789:8925" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerEvents.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3875">
-          <caret line="16" column="76" lean-forward="false" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
-          <folding>
-            <marker date="1498482985929" expanded="false" signature="6:186" ph="..." />
-            <marker date="1498482985929" expanded="true" signature="223:18706" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="266:18704" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="4563:4799" ph="/// Processes an event and dispatches it to all listeners. ... " />
-            <marker date="1498482985929" expanded="true" signature="4876:18698" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="4928:5982" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="5065:5188" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="5212:5294" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="5378:5864" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="6031:6305" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="6361:6907" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="6963:7215" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="7271:7756" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="7810:8051" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="8105:8346" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="8400:8741" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="8483:8617" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="8796:9152" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="8879:9028" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="9210:9572" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="9296:9445" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="9633:10016" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="9722:9886" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="10083:10344" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="10402:10645" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="10706:11082" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="10795:10952" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="11143:11653" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="11232:11523" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="11714:12106" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="11803:11976" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="12165:12538" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="12252:12410" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="12597:12970" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="12684:12842" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="13029:13393" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="13116:13265" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="13449:13698" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="13754:14003" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="14059:14411" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="14144:14285" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="14472:14847" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="14561:14717" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="14909:15426" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="14999:15295" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="15491:16014" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="15584:15880" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="16083:16472" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="16179:16335" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="16529:17109" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="16615:16982" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="17163:17586" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="17246:17462" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="17639:17876" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="17936:18197" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="18258:18688" ph="{...}" />
-            <marker date="1498482985929" expanded="true" signature="18347:18558" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/RateLimiter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="39" column="65" lean-forward="false" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="65" />
-          <folding>
-            <marker date="1498485795388" expanded="true" signature="6:77" ph="..." />
-            <marker date="1498485795388" expanded="true" signature="106:1416" ph="{...}" />
-            <marker date="1498485795388" expanded="true" signature="137:1414" ph="{...}" />
-            <marker date="1498485795388" expanded="true" signature="339:497" ph="{...}" />
-            <marker date="1498485795388" expanded="true" signature="507:676" ph="/// Waits one second if limit has been reached, if the limit has not  ... " />
-            <marker date="1498485795388" expanded="true" signature="713:1408" ph="{...}" />
-            <marker date="1498485795388" expanded="true" signature="925:1045" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListener.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Util/Log.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Gateway/GatewayListenerEvents.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/RateLimiter.cs" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A213B2F-F9E5-42E9-96F5-64A940C18609/9e/23675205/WebRequest.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-42">
           <caret line="716" column="24" lean-forward="false" selection-start-line="716" selection-start-column="24" selection-end-line="716" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/ResourceRequest.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding>
-            <marker date="1498486733386" expanded="false" signature="6:139" ph="..." />
-            <marker date="1498486733386" expanded="true" signature="168:14414" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="203:14412" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="448:706" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="716:963" ph="/// Creates a request for use with the discord api. ... " />
-            <marker date="1498486733386" expanded="true" signature="1020:1422" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="1432:1654" ph="/// Executes a http request and get its response. ... " />
-            <marker date="1498486733386" expanded="true" signature="1725:2627" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="1806:1930" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="1948:2276" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="2311:2569" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="2637:2861" ph="/// Does a GET request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="2921:3114" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="3132:3356" ph="/// Does a GET request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="3427:3535" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="3545:3750" ph="/// Do a put request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="3810:3991" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="4009:4214" ph="/// Do a put request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="4285:4393" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="4411:4860" ph="/// Do a put request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="4932:5674" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="5092:5168" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="5443:5586" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="5692:6141" ph="/// Do a put request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="6224:6339" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="6349:6558" ph="/// Do a patch request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="6620:6803" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="6821:7030" ph="/// Do a patch request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="7103:7213" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="7231:7686" ph="/// Do a patch request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="7760:8504" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="7920:7996" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="8273:8416" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="8522:8977" ph="/// Do a patch request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="9062:9179" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="9189:9424" ph="/// Sends a delete request to the api server. ... " />
-            <marker date="1498486733386" expanded="true" signature="9487:9671" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="9689:9924" ph="/// Sends a delete request to the api server. ... " />
-            <marker date="1498486733386" expanded="true" signature="9998:10109" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="10127:10362" ph="/// Sends a delete request to the api server. ... " />
-            <marker date="1498486733386" expanded="true" signature="10437:11182" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="10597:10673" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="10951:11094" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="11200:11435" ph="/// Sends a delete request to the api server. ... " />
-            <marker date="1498486733386" expanded="true" signature="11521:11639" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="11649:12101" ph="/// Do a post request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="12174:12862" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="12334:12410" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="12631:12774" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="12880:13332" ph="/// Do a post request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="13416:13532" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="13550:13757" ph="/// Do a post request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="13818:14000" ph="{...}" />
-            <marker date="1498486733386" expanded="true" signature="14018:14225" ph="/// Do a post request against the api. ... " />
-            <marker date="1498486733386" expanded="true" signature="14297:14406" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/API.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498290353000" expanded="false" signature="6:59" ph="..." />
-            <marker date="1498290353000" expanded="true" signature="88:1170" ph="{...}" />
-            <marker date="1498290353000" expanded="true" signature="95:171" ph="/// Main API class for the discord API. ... " />
-            <marker date="1498290353000" expanded="true" signature="192:1168" ph="{...}" />
-            <marker date="1498290353000" expanded="true" signature="252:329" ph="/// REST for channel management. ... " />
-            <marker date="1498290353000" expanded="true" signature="370:445" ph="/// REST for guild management. ... " />
-            <marker date="1498290353000" expanded="true" signature="482:558" ph="/// REST for invite management. ... " />
-            <marker date="1498290353000" expanded="true" signature="597:671" ph="/// REST for user management. ... " />
-            <marker date="1498290353000" expanded="true" signature="706:781" ph="/// Rest for voice management. ... " />
-            <marker date="1498290353000" expanded="true" signature="858:1162" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Authentication.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498290353000" expanded="true" signature="42:1173" ph="{...}" />
-            <marker date="1498290353000" expanded="true" signature="49:131" ph="/// Holds discord authentication information. ... " />
-            <marker date="1498290353000" expanded="true" signature="163:1171" ph="{...}" />
-            <marker date="1498290353000" expanded="true" signature="198:254" ph="{...}" />
-            <marker date="1498290353000" expanded="true" signature="309:401" ph="/// The authentication token/identifier string. ... " />
-            <marker date="1498290353000" expanded="true" signature="453:630" ph="/// The type of authentication. Usually Bot for bot accounts. ... " />
-            <marker date="1498290353000" expanded="true" signature="664:1005" ph="{...}" />
-            <marker date="1498290353000" expanded="true" signature="690:995" ph="{...}" />
-            <marker date="1498290353000" expanded="true" signature="739:981" ph="{...}" />
-            <marker date="1498290353000" expanded="true" signature="1074:1165" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/API.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Authentication.cs" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AC28C8DB-D887-487E-8DCF-CE2C70F95670/c3/e134aeeb/Task`1.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="50" column="19" lean-forward="false" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Channel.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="199" column="9" lean-forward="false" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
-          <folding>
-            <marker date="1498486984608" expanded="true" signature="6:143" ph="..." />
-            <marker date="1498486984608" expanded="true" signature="182:10932" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="219:10930" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="288:612" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="705:1037" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="1104:1431" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="1531:2474" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="1673:2115" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="2558:2904" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="2992:3674" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="3264:3422" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="3684:3921" ph="///  ... " />
-            <marker date="1498486984608" expanded="true" signature="4006:4314" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="4403:4714" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="4819:5130" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="5222:5591" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="5667:5960" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="6062:6414" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="6485:6763" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="6852:7133" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="7250:7536" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="7603:7934" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="8033:8369" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="8452:8731" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="8793:9054" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="9122:9451" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="9532:9803" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="9887:10161" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="10235:10497" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="10574:10839" ph="{...}" />
-            <marker date="1498486984608" expanded="true" signature="10904:10924" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Guild.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="848">
-          <caret line="318" column="28" lean-forward="false" selection-start-line="318" selection-start-column="28" selection-end-line="318" selection-end-column="28" />
-          <folding>
-            <marker date="1498487121523" expanded="false" signature="6:160" ph="..." />
-            <marker date="1498487121523" expanded="true" signature="199:14330" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="235:14328" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="304:613" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="665:978" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="1057:1378" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="1433:1749" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="1817:2153" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="2253:2594" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="2714:3058" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="3136:3478" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="3575:4258" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="3671:3913" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="4363:4711" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="4809:5084" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="5178:5440" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="5523:5811" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="5897:6188" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="6256:6526" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="6583:6907" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="6972:7236" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="7301:7568" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="7626:7951" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="8037:8367" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="8473:8806" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="8906:9247" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="9313:9581" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="9679:10138" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="10230:10690" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="10762:11096" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="11170:11511" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="11583:11922" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="12016:12285" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="12400:12687" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="12767:13049" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="13127:13417" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="13479:13808" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="13902:14239" ph="{...}" />
-            <marker date="1498487121523" expanded="true" signature="14302:14322" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Invite.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" column="85" lean-forward="false" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
-          <folding>
-            <marker date="1498487133480" expanded="false" signature="6:65" ph="..." />
-            <marker date="1498487133480" expanded="true" signature="104:1399" ph="{...}" />
-            <marker date="1498487133480" expanded="true" signature="140:1397" ph="{...}" />
-            <marker date="1498487133480" expanded="true" signature="203:529" ph="{...}" />
-            <marker date="1498487133480" expanded="true" signature="590:919" ph="{...}" />
-            <marker date="1498487133480" expanded="true" signature="980:1307" ph="{...}" />
-            <marker date="1498487133480" expanded="true" signature="1371:1391" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Resource.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding>
-            <marker date="1498290350000" expanded="true" signature="37:233" ph="{...}" />
-            <marker date="1498290350000" expanded="true" signature="65:231" ph="{...}" />
-            <marker date="1498290350000" expanded="true" signature="173:225" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/User.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
-          <folding>
-            <marker date="1498487169202" expanded="false" signature="6:107" ph="..." />
-            <marker date="1498487169202" expanded="true" signature="146:3781" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="180:3779" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="229:501" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="550:828" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="899:1179" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="1267:2002" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="1382:1709" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="2049:2287" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="2334:2622" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="2684:2977" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="3049:3342" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="3399:3691" ph="{...}" />
-            <marker date="1498487169202" expanded="true" signature="3753:3773" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Voice.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="70" lean-forward="false" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
-          <folding>
-            <marker date="1498487174309" expanded="false" signature="6:65" ph="..." />
-            <marker date="1498487174309" expanded="true" signature="104:575" ph="{...}" />
-            <marker date="1498487174309" expanded="true" signature="139:573" ph="{...}" />
-            <marker date="1498487174309" expanded="true" signature="199:484" ph="{...}" />
-            <marker date="1498487174309" expanded="true" signature="547:567" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="1108" column="12" lean-forward="true" selection-start-line="1108" selection-start-column="12" selection-end-line="1108" selection-end-column="12" />
-          <folding>
-            <marker date="1498485880637" expanded="false" signature="6:392" ph="..." />
-            <marker date="1498485880637" expanded="true" signature="413:61893" ph="{...}" />
-            <marker date="1498485880637" expanded="true" signature="442:61891" ph="{...}" />
-            <marker date="1498485880637" expanded="true" signature="495:61885" ph="{...}" />
-            <marker date="1498485880637" expanded="true" signature="851:56913" ph="{...}" />
-            <marker date="1498485880637" expanded="true" signature="57446:58595" ph="{...}" />
-            <marker date="1498485880637" expanded="true" signature="57951:58092" ph="{...}" />
-            <marker date="1498485880637" expanded="true" signature="58622:58803" ph="/* gateway.OnMessageCreate += eventArgs =&gt; ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Guild.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Invite.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Resource.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/User.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Voice.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/Resources/Channel.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Discord/ResourceRequest.cs" />
+    <entry file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs" />
   </component>
 </project>

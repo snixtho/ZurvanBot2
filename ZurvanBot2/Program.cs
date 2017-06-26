@@ -1076,37 +1076,7 @@ namespace ZurvanBot
                 Log.Info(eventArgs.Message.author.username + ": " + eventArgs.Message.content, "message");
             }; */
             
-            // gateway.StartListeningAsync().Wait();
-
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz1" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz2" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz3" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz4" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz5" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz6" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz7" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz8" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz9" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz10" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz11" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz12" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz13" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz14" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz15" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz16" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz17" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz18" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz19" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz20" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz21" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz22" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz23" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz24" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz25" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz26" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz27" });
-            api.Channel.CreateMessage(130638711930093568, new CreateMessageParams{ content = "lolz28" });
-            
+            gateway.StartListeningAsync().Wait();
             Log.Info("Closed.");
         }
     }
