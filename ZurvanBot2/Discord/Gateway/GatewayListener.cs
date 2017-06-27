@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using WebSocketSharp;
 using ZurvanBot.Discord.Gateway.Events;
 using ZurvanBot.Discord.Gateway.Payloads;
+using ZurvanBot.Discord.Gateway.StateTracking;
 using ZurvanBot.Discord.Resources.Objects;
 using ZurvanBot.Util;
 
@@ -22,6 +23,7 @@ namespace ZurvanBot.Discord.Gateway
         private HeartBeater _heart;
         private object _mainWait = new object();
         private object _readyWait = new object();
+        private bool _reconnect = true;
         
         /// <summary>
         /// The gateway procotol version to use.
@@ -32,12 +34,15 @@ namespace ZurvanBot.Discord.Gateway
         /// </summary>
         public bool AsyncEvents { get; set; }
         
+        public StateTracker State { get; set; }
+        
         public GatewayListener(string gatewayUrl, string authToken)
         {
             ProtocolVersion = 5;
             _gatewayAddress = new Uri(gatewayUrl);
             _authToken = authToken;
             AsyncEvents = true;
+            State = new StateTracker(this);
         }
 
         /// <summary>
@@ -119,7 +124,7 @@ namespace ZurvanBot.Discord.Gateway
                     var t = (string)jo["t"];
                     t = t.ToUpper();
                     Log.Debug("Event: " + t);
-                    DispatchEvent(t, jo);
+                    ProcessEvent(t, jo);
                     
                     break;
                 case OpCode.Heartbeat:
@@ -143,6 +148,8 @@ namespace ZurvanBot.Discord.Gateway
                     break;
                 case OpCode.Reconnect:
                     Log.Debug("Event: Reconnect", "websocket.onmessage");
+                    _reconnect = true;
+                    _websocket.Close(CloseStatusCode.Normal);
                     break;
                 case OpCode.RequestGuildMembers:
                     Log.Debug("Event: RequestGuildMembers", "websocket.onmessage");
@@ -181,18 +188,22 @@ namespace ZurvanBot.Discord.Gateway
             
             var t = new Task(() =>
             {
-                SetupNewSocket();
-                Log.Debug("Starting websocket ...");
-                _websocket.Connect();
-                
-                // wait until _isRunning is false, which is usally when the connection closes.
-                try
+                while (_reconnect)
                 {
-                    Monitor.Enter(_mainWait);
-                    while (_isRunning)
-                        Monitor.Wait(_mainWait);
+                    _reconnect = false;
+                    SetupNewSocket();
+                    Log.Debug("Starting websocket ...");
+                    _websocket.Connect();
+                
+                    // wait until _isRunning is false, which is usally when the connection closes.
+                    try
+                    {
+                        Monitor.Enter(_mainWait);
+                        while (_isRunning)
+                            Monitor.Wait(_mainWait);
+                    }
+                    finally { Monitor.Exit(_mainWait); }
                 }
-                finally { Monitor.Exit(_mainWait); }
             });
             
             t.Start();

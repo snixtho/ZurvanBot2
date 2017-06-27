@@ -78,7 +78,7 @@ namespace ZurvanBot.Discord.Gateway
         /// </summary>
         /// <param name="eventStr">The even identifier string.</param>
         /// <param name="eventData">The event's data.</param>
-        private async void DispatchEvent(string eventStr, JObject eventData)
+        private async void ProcessEvent(string eventStr, JObject eventData)
         {
             if (eventStr.Equals("READY"))
             {
@@ -186,7 +186,11 @@ namespace ZurvanBot.Discord.Gateway
             }
             else if (eventStr.Equals("GUILD_MEMBER_ADD"))
             {
-                var args = new GuildMemberAddEventArgs{ GuildId = (ulong)eventData["d"]["guild_id"] };
+                var args = new GuildMemberAddEventArgs
+                {
+                    GuildMember = eventData["d"].ToObject<GuildMemberObject>(),
+                    GuildId = (ulong)eventData["d"]["guild_id"]
+                };
                 var et = new Task(() => OnGuildMemberAdd?.Invoke(args));et.Start();if (!AsyncEvents) et.Wait();
             }
             else if (eventStr.Equals("GUILD_MEMBER_REMOVE"))

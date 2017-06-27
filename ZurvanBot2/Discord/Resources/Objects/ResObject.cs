@@ -4,6 +4,6 @@ namespace ZurvanBot.Discord.Resources.Objects
 {
     public class ResObject
     {
-        public ulong? id;
+        public ulong id;
     }
 }
