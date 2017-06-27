@@ -36,11 +36,11 @@ namespace ZurvanBot.Discord.Gateway
         
         public StateTracker State { get; set; }
         
-        public GatewayListener(string gatewayUrl, string authToken)
+        public GatewayListener(string gatewayUrl, Authentication auth)
         {
             ProtocolVersion = 5;
             _gatewayAddress = new Uri(gatewayUrl);
-            _authToken = authToken;
+            _authToken = auth.AuthString;
             AsyncEvents = true;
             State = new StateTracker(this);
         }

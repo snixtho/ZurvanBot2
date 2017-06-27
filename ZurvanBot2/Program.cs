@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Reflection;
 using System.Threading;
@@ -19,7 +20,22 @@ namespace ZurvanBot
     {
         public static void Main(string[] args)
         {
-            
+            // Log.Instance().LogLevel = Log.Elevation.Verbose;
+            var auth = new Authentication(Authentication.AuthType.Bot, "token");
+            var gateway = new GatewayListener("wss://gateway.discord.gg/", auth);
+
+            gateway.OnMessageCreate += eventArgs =>
+            {
+                if (eventArgs.Message.content.Equals("users"))
+                {
+                    gateway.State.ForEachUser((user, guildId) =>
+                    {
+                        Console.WriteLine("Username: " + user.user.username + "(" + guildId + ")");
+                    });
+                }
+            };
+
+            gateway.StartListeningAsync().Wait();
         }
     }
 }
