@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class EmbedAuthorObject: ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class EmbedAuthorObject : ResObject {
         public string name;
         public string url;
         public string icon_url;

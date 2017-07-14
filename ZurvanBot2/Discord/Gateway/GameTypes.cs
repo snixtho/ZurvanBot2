@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Gateway
-{
-    public enum GameTypes
-    {
+﻿namespace ZurvanBot.Discord.Gateway {
+    public enum GameTypes {
         Game = 0,
         Streaming = 1
     }

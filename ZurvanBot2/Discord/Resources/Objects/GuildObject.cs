@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class GuildObject : ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class GuildObject : ResObject {
         public string name;
         public string icon;
         public string splash;

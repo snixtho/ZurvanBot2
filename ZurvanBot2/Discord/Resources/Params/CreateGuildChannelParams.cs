@@ -1,9 +1,7 @@
 ﻿using ZurvanBot.Discord.Resources.Objects;
 
-namespace ZurvanBot.Discord.Resources.Params
-{
-    public class CreateGuildChannelParams
-    {
+namespace ZurvanBot.Discord.Resources.Params {
+    public class CreateGuildChannelParams {
         public string name;
         public string type;
         public int? bitrate;

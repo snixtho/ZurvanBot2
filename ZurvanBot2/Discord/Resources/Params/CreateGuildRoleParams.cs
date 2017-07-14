@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Params
-{
-    public class CreateGuildRoleParams
-    {
+﻿namespace ZurvanBot.Discord.Resources.Params {
+    public class CreateGuildRoleParams {
         public string name;
         public int? permissions;
         public int? color;

@@ -1,12 +1,9 @@
 ﻿using Newtonsoft.Json;
 using ZurvanBot.Discord.Resources.Objects;
 
-namespace ZurvanBot.Discord.Resources
-{
-    public class Voice: Resource
-    {
-        public VoiceRegionObject[] ListVoiceRegions()
-        {
+namespace ZurvanBot.Discord.Resources {
+    public class Voice : Resource {
+        public VoiceRegionObject[] ListVoiceRegions() {
             var re = _request.GetRequestAsync("/voice/regions").Result;
             if (re.Code != 200)
                 return null; // handle these errors ?
@@ -14,8 +11,7 @@ namespace ZurvanBot.Discord.Resources
             return r;
         }
 
-        public Voice(ResourceRequest request) : base(request)
-        {
+        public Voice(ResourceRequest request) : base(request) {
         }
     }
 }

@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Params
-{
-    public class ModifyGuildRoleParams
-    {
+﻿namespace ZurvanBot.Discord.Resources.Params {
+    public class ModifyGuildRoleParams {
         public string name;
         public int? permissions;
         public int? color;

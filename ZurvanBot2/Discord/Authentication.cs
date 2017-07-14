@@ -1,20 +1,17 @@
 ﻿using System;
 
-namespace ZurvanBot.Discord
-{
+namespace ZurvanBot.Discord {
     /// <summary>
     /// Holds discord authentication information.
     /// </summary>
-    public class Authentication
-    {
-        public enum AuthType
-        {
+    public class Authentication {
+        public enum AuthType {
             Bot,
             Bearer
         }
 
         private AuthType _authType;
-        
+
         /// <summary>
         /// The authentication token/identifier string.
         /// </summary>
@@ -24,12 +21,9 @@ namespace ZurvanBot.Discord
         /// The type of authentication. Usually Bot for bot accounts.
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        public string AuthTypeStr
-        {
-            get
-            {
-                switch (_authType)
-                {
+        public string AuthTypeStr {
+            get {
+                switch (_authType) {
                     case AuthType.Bearer: return "bearer";
                     case AuthType.Bot: return "Bot";
                     default:
@@ -38,8 +32,7 @@ namespace ZurvanBot.Discord
             }
         }
 
-        public Authentication(AuthType authType, string authString)
-        {
+        public Authentication(AuthType authType, string authString) {
             AuthString = authString;
             _authType = authType;
         }

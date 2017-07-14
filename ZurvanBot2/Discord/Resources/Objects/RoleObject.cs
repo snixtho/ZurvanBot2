@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class RoleObject : ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class RoleObject : ResObject {
         public string name;
         public int? color;
         public bool hoist;

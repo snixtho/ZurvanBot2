@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class AttachmentObject : ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class AttachmentObject : ResObject {
         public string filename;
         public int? size;
         public string url;

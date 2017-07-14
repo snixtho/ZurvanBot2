@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class VoiceStateObject: ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class VoiceStateObject : ResObject {
         public ulong? guild_id;
         public ulong? channel_id;
         public ulong? user_id;

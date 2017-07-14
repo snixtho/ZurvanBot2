@@ -1,9 +1,7 @@
 ﻿using System;
 
-namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class GuildChannelObject : ResObject
-    {
+namespace ZurvanBot.Discord.Resources.Objects {
+    public class GuildChannelObject : ResObject {
         public ulong? guild_id;
         public string name;
         public string type;

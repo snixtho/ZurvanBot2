@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class VoiceRegionObject: ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class VoiceRegionObject : ResObject {
         public new string id;
         public string name;
         public string sample_hostname;

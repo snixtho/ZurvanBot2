@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class InviteMetadataObject: ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class InviteMetadataObject : ResObject {
         public UserObject user;
         public int? uses;
         public int? max_uses;

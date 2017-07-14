@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class UserObject: ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class UserObject : ResObject {
         public string username;
         public string discriminator;
         public string avatar;

@@ -4,16 +4,13 @@ using WebSocketSharp;
 using ZurvanBot.Discord.Gateway.Payloads;
 using ZurvanBot.Util;
 
-namespace ZurvanBot.Discord.Gateway
-{
-    public class HeartBeater
-    {
+namespace ZurvanBot.Discord.Gateway {
+    public class HeartBeater {
         private int _interval;
         private WebSocket _ws;
         private bool _gotEcho = true;
-        
-        public HeartBeater(WebSocket ws, int interval)
-        {
+
+        public HeartBeater(WebSocket ws, int interval) {
             _interval = interval;
             _ws = ws;
         }
@@ -22,10 +19,8 @@ namespace ZurvanBot.Discord.Gateway
         /// Send a heartbeat to the websocket server.
         /// </summary>
         /// <returns>True on success, false if the send failed.</returns>
-        private bool SendHeartbeat()
-        {
-            if (!_ws.IsAlive)
-            {
+        private bool SendHeartbeat() {
+            if (!_ws.IsAlive) {
                 Log.Debug("Did not send heartbeat: websocket not alive.");
                 return false;
             }
@@ -34,7 +29,7 @@ namespace ZurvanBot.Discord.Gateway
                 _ws.Close(CloseStatusCode.Normal);
                 return false;
             }
-            
+
             var heartbeat = new HeartbeatPayload();
             Log.Debug("Sending heartbeat ...");
             _ws.Send(heartbeat.Serialized());
@@ -44,37 +39,32 @@ namespace ZurvanBot.Discord.Gateway
         /// <summary>
         /// Starts the heartbeater.
         /// </summary>
-        public void Start()
-        {
-            try
-            {
-                while (_ws.IsAlive)
-                {
+        public void Start() {
+            try {
+                while (_ws.IsAlive) {
                     if (!SendHeartbeat())
                         break;
                     Thread.Sleep(_interval);
                 }
             }
-            catch (ThreadInterruptedException e) {}
+            catch (ThreadInterruptedException e) {
+            }
         }
 
         /// <summary>
         /// Starts the heartbeater asynchronous.
         /// </summary>
-        public Task StartAsync()
-        {
-            var task = new Task(() =>
-            {
-                try
-                {
-                    while (_ws.IsAlive)
-                    {
+        public Task StartAsync() {
+            var task = new Task(() => {
+                try {
+                    while (_ws.IsAlive) {
                         if (!SendHeartbeat())
                             break;
                         Thread.Sleep(_interval);
                     }
                 }
-                catch (ThreadInterruptedException e) {}
+                catch (ThreadInterruptedException e) {
+                }
             });
 
             task.Start();
@@ -85,8 +75,7 @@ namespace ZurvanBot.Discord.Gateway
         /// This has to be called in between the heartbeats, otherwise
         /// the heartbeater will automatically close the websocket connection.
         /// </summary>
-        public void EchoHeartbeat()
-        {
+        public void EchoHeartbeat() {
             Log.Debug("Got heartbeat echo.");
             _gotEcho = true;
         }

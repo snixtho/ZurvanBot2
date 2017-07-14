@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class PruneCountObject: ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class PruneCountObject : ResObject {
         public int? pruned;
     }
 }

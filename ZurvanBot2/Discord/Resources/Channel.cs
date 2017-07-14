@@ -4,12 +4,9 @@ using ZurvanBot.Discord.Resources.Objects;
 using ZurvanBot.Discord.Resources.Params;
 using ZurvanBot.Util;
 
-namespace ZurvanBot.Discord.Resources
-{
-    public class Channel: Resource
-    {
-        public GuildChannelObject GetChannel(UInt64 channelId)
-        {
+namespace ZurvanBot.Discord.Resources {
+    public class Channel : Resource {
+        public GuildChannelObject GetChannel(UInt64 channelId) {
             var response = _request.GetRequestAsync("/channels/" + channelId).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
@@ -17,8 +14,7 @@ namespace ZurvanBot.Discord.Resources
             return guildObj;
         }
 
-        public GuildChannelObject ModifyChannel(UInt64 channelId, ModifyChannelParams pars)
-        {
+        public GuildChannelObject ModifyChannel(UInt64 channelId, ModifyChannelParams pars) {
             var response = _request.PatchRequestAsync("/channels/" + channelId, pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
@@ -26,8 +22,7 @@ namespace ZurvanBot.Discord.Resources
             return guildObj;
         }
 
-        public GuildChannelObject DeleteChannel(UInt64 channelId)
-        {
+        public GuildChannelObject DeleteChannel(UInt64 channelId) {
             var response = _request.DeleteRequestAsync("/channels/" + channelId).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
@@ -35,11 +30,9 @@ namespace ZurvanBot.Discord.Resources
             return guildObj;
         }
 
-        public MessageObject[] GetChannelMessages(UInt64 channelId, GetChannelMessagesParams pars)
-        {
+        public MessageObject[] GetChannelMessages(UInt64 channelId, GetChannelMessagesParams pars) {
             var query = "";
-            if (pars.after != null || pars.around != null || pars.before != null || pars.limit != null)
-            {
+            if (pars.after != null || pars.around != null || pars.before != null || pars.limit != null) {
                 query += "?";
                 if (pars.after != null)
                     query += "after=" + pars.after;
@@ -50,8 +43,8 @@ namespace ZurvanBot.Discord.Resources
                 if (pars.limit != null)
                     query += "limit=" + pars.limit;
             }
-            
-            
+
+
             var response = _request.GetRequestAsync("/channels/" + channelId + "/messages" + query).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
@@ -59,8 +52,7 @@ namespace ZurvanBot.Discord.Resources
             return messages;
         }
 
-        public MessageObject GetChannelMessage(UInt64 channelId, UInt64 messageId)
-        {
+        public MessageObject GetChannelMessage(UInt64 channelId, UInt64 messageId) {
             var response = _request.GetRequestAsync("/channels/" + channelId + "/messages/" + messageId).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
@@ -68,13 +60,11 @@ namespace ZurvanBot.Discord.Resources
             return messages;
         }
 
-        public MessageObject CreateMessage(UInt64 channelId, CreateMessageParams pars)
-        {
+        public MessageObject CreateMessage(UInt64 channelId, CreateMessageParams pars) {
             Log.Verbose("Create message: PostRequest");
             var response = _request.PostRequestAsync("/channels/" + channelId + "/messages", pars).Result;
             Log.Verbose("Create message: PostRequest.Done");
-            if (response.Code != 200)
-            {
+            if (response.Code != 200) {
                 Log.Verbose("Create message: ErrorCode: " + response.Code);
                 return null; // handle these errors ?
             }
@@ -91,49 +81,51 @@ namespace ZurvanBot.Discord.Resources
         /// <param name="messageId"></param>
         /// <param name="emoji"s></param>
         /// <returns>Returns true on success.</returns>
-        public bool CreateReaction(UInt64 channelId, UInt64 messageId, string emoji)
-        {
-            var response = _request.PutRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + "/@me").Result;
+        public bool CreateReaction(UInt64 channelId, UInt64 messageId, string emoji) {
+            var response = _request
+                .PutRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + "/@me")
+                .Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public bool DeleteOwnReaction(UInt64 channelId, UInt64 messageId, string emoji)
-        {
-            var response = _request.DeleteRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + "/@me").Result;
+        public bool DeleteOwnReaction(UInt64 channelId, UInt64 messageId, string emoji) {
+            var response = _request
+                .DeleteRequestAsync(
+                    "/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + "/@me").Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public bool DeleteUserReaction(UInt64 channelId, UInt64 messageId, string emoji, UInt64 userId)
-        {
-            var response = _request.DeleteRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + userId).Result;
+        public bool DeleteUserReaction(UInt64 channelId, UInt64 messageId, string emoji, UInt64 userId) {
+            var response = _request
+                .DeleteRequestAsync(
+                    "/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji + userId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public UserObject[] GetReactions(UInt64 channelId, UInt64 messageId, string emoji)
-        {
-            var response = _request.GetRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji).Result;
+        public UserObject[] GetReactions(UInt64 channelId, UInt64 messageId, string emoji) {
+            var response = _request
+                .GetRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions/" + emoji).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
             var messages = JsonConvert.DeserializeObject<UserObject[]>(response.Contents);
             return messages;
         }
 
-        public bool DeleteAllReactions(UInt64 channelId, UInt64 messageId)
-        {
-            var response = _request.DeleteRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions").Result;
+        public bool DeleteAllReactions(UInt64 channelId, UInt64 messageId) {
+            var response = _request
+                .DeleteRequestAsync("/channels/" + channelId + "/messages/" + messageId + "/reactions").Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public MessageObject EditMessage(UInt64 channelId, UInt64 messageId, EditMessageParams pars)
-        {
+        public MessageObject EditMessage(UInt64 channelId, UInt64 messageId, EditMessageParams pars) {
             var response = _request.PatchRequestAsync("/channels/" + channelId + "/messages/" + messageId, pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
@@ -141,32 +133,29 @@ namespace ZurvanBot.Discord.Resources
             return message;
         }
 
-        public bool DeleteMessage(UInt64 channelId, UInt64 messageId)
-        {
+        public bool DeleteMessage(UInt64 channelId, UInt64 messageId) {
             var response = _request.DeleteRequestAsync("/channels/" + channelId + "/messages/" + messageId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public bool BulkDeleteMessages(UInt64 channelId, BulkDeleteMessagesParams pars)
-        {
+        public bool BulkDeleteMessages(UInt64 channelId, BulkDeleteMessagesParams pars) {
             var response = _request.PostRequestAsync("/channels/" + channelId + "/messages/bulk-delete", pars).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public bool EditChannelPermissions(UInt64 channelId, UInt64 overwriteId, EditChannelPermissionsParams pars)
-        {
-            var response = _request.PutRequestAsync("/channels/" + channelId + "/permissions/" + overwriteId, pars).Result;
+        public bool EditChannelPermissions(UInt64 channelId, UInt64 overwriteId, EditChannelPermissionsParams pars) {
+            var response = _request.PutRequestAsync("/channels/" + channelId + "/permissions/" + overwriteId, pars)
+                .Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public InviteObject[] GetChannelInvites(UInt64 channelId)
-        {
+        public InviteObject[] GetChannelInvites(UInt64 channelId) {
             var response = _request.GetRequestAsync("/channels/" + channelId + "/invites").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
@@ -174,8 +163,7 @@ namespace ZurvanBot.Discord.Resources
             return message;
         }
 
-        public InviteObject CreateChannelInvite(UInt64 channelId, CreateChannelInviteParams pars)
-        {
+        public InviteObject CreateChannelInvite(UInt64 channelId, CreateChannelInviteParams pars) {
             var response = _request.PostRequestAsync("/channels/" + channelId + "/invites", pars).Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
@@ -183,24 +171,21 @@ namespace ZurvanBot.Discord.Resources
             return message;
         }
 
-        public bool DeleteChannelPermission(UInt64 channelId, UInt64 overwriteId)
-        {
+        public bool DeleteChannelPermission(UInt64 channelId, UInt64 overwriteId) {
             var response = _request.DeleteRequestAsync("/channels/" + channelId + "/invites/" + overwriteId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public bool TriggerTypingIndicator(UInt64 channelId)
-        {
+        public bool TriggerTypingIndicator(UInt64 channelId) {
             var response = _request.PostRequestAsync("/channels/" + channelId + "/typing").Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public MessageObject[] GetPinnedMessages(UInt64 channelId)
-        {
+        public MessageObject[] GetPinnedMessages(UInt64 channelId) {
             var response = _request.GetRequestAsync("/channels/" + channelId + "/pins").Result;
             if (response.Code != 200)
                 return null; // handle these errors ?
@@ -208,40 +193,35 @@ namespace ZurvanBot.Discord.Resources
             return message;
         }
 
-        public bool AddPinnedChannelMessage(UInt64 channelId, UInt64 messageId)
-        {
+        public bool AddPinnedChannelMessage(UInt64 channelId, UInt64 messageId) {
             var response = _request.PutRequestAsync("/channels/" + channelId + "/pins/" + messageId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public bool DeletePinnedChannelMessage(UInt64 channelId, UInt64 messageId)
-        {
+        public bool DeletePinnedChannelMessage(UInt64 channelId, UInt64 messageId) {
             var response = _request.DeleteRequestAsync("/channels/" + channelId + "/pins/" + messageId).Result;
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public bool GroupDMAddRecipient(UInt64 channelId, UInt64 userId)
-        {
+        public bool GroupDMAddRecipient(UInt64 channelId, UInt64 userId) {
             var response = _request.PutRequest("/channels/" + channelId + "/recipients/" + userId);
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public bool GroupDMRemoveRecipient(UInt64 channelId, UInt64 userId)
-        {
+        public bool GroupDMRemoveRecipient(UInt64 channelId, UInt64 userId) {
             var response = _request.DeleteRequest("/channels/" + channelId + "/recipients/" + userId);
             if (response.Code == 204 || response.Code == 200)
                 return true; // handle these errors ?
             return false;
         }
 
-        public Channel(ResourceRequest request) : base(request)
-        {
+        public Channel(ResourceRequest request) : base(request) {
         }
     }
 }

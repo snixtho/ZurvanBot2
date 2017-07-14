@@ -1,8 +1,6 @@
-﻿namespace ZurvanBot.Discord.Gateway
-{
-    public enum ChannelType
-    {
-        DM, 
+﻿namespace ZurvanBot.Discord.Gateway {
+    public enum ChannelType {
+        DM,
         Guild
     }
 }

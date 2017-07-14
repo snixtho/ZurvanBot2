@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Params
-{
-    public class ModifyGuildObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Params {
+    public class ModifyGuildObject {
         public string name;
         public string region;
         public int? verification_level;

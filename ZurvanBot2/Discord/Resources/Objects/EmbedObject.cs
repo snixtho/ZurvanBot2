@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class EmbedObject: ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class EmbedObject : ResObject {
         public string title;
         public string type;
         public string description;

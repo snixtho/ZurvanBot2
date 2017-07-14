@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class IntegrationObject: ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class IntegrationObject : ResObject {
         public string name;
         public string type;
         public bool? enabled;

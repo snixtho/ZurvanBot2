@@ -1,9 +1,7 @@
 ﻿using System;
 
-namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class MessageObject : ResObject
-    {
+namespace ZurvanBot.Discord.Resources.Objects {
+    public class MessageObject : ResObject {
         public UInt64 channel_id;
         public UserObject author;
         public string content;

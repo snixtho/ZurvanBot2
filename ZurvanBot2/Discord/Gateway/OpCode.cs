@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Gateway
-{
-    public enum OpCode
-    {
+﻿namespace ZurvanBot.Discord.Gateway {
+    public enum OpCode {
         Dispatch = 0,
         Heartbeat = 1,
         Identify = 2,

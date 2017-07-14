@@ -1,18 +1,14 @@
 ﻿using Newtonsoft.Json;
 
-namespace ZurvanBot.Discord.Gateway.Payloads
-{
-    public class PayloadBase
-    {
+namespace ZurvanBot.Discord.Gateway.Payloads {
+    public class PayloadBase {
         public int op;
         public object d;
         public int s;
         public string t;
 
-        public string Serialized(bool ignoreNull=true)
-        {
-            var serialized = JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
+        public string Serialized(bool ignoreNull = true) {
+            var serialized = JsonConvert.SerializeObject(this, new JsonSerializerSettings {
                 NullValueHandling = ignoreNull ? NullValueHandling.Ignore : NullValueHandling.Include
             });
             return serialized;

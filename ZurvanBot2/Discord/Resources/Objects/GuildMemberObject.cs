@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class GuildMemberObject: ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class GuildMemberObject : ResObject {
         public UserObject user;
         public string nick;
         public string[] roles;

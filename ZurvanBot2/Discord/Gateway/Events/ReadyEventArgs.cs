@@ -1,9 +1,7 @@
 ﻿using ZurvanBot.Discord.Resources.Objects;
 
-namespace ZurvanBot.Discord.Gateway.Events
-{
-    public class ReadyEventArgs: GatewayEventArgs
-    {
+namespace ZurvanBot.Discord.Gateway.Events {
+    public class ReadyEventArgs : GatewayEventArgs {
         public int? V;
         public UserObject User;
         public DMChannelObject[] PrivateChannels;

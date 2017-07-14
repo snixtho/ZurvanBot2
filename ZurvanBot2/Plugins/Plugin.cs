@@ -1,11 +1,8 @@
-﻿namespace ZurvanBot.Plugins
-{
-    public abstract class Plugin
-    {
+﻿namespace ZurvanBot.Plugins {
+    public abstract class Plugin {
         protected PluginSystem pluginSystem;
-        
-        protected Plugin(PluginSystem pluginSystem)
-        {
+
+        protected Plugin(PluginSystem pluginSystem) {
             this.pluginSystem = pluginSystem;
         }
 

@@ -3,17 +3,14 @@ using System.IO;
 using ZurvanBot.Plugins.Collections;
 using ZurvanBot.Plugins.PluginInterfaces;
 
-namespace ZurvanBot.Plugins
-{
-    public class PluginSystem
-    {
+namespace ZurvanBot.Plugins {
+    public class PluginSystem {
         public string PluginsDir { get; }
         public PluginsFileCollection PluginFiles { get; }
         public PluginsFileCollection ErroredPlugins { get; }
         public PluginCollection LoadedPlugins { get; }
-        
-        public PluginSystem(string pluginsDir)
-        {
+
+        public PluginSystem(string pluginsDir) {
             if (!Directory.Exists(pluginsDir))
                 throw new DirectoryNotFoundException("The plugin directory could not be found.");
 
@@ -26,11 +23,10 @@ namespace ZurvanBot.Plugins
         /// <summary>
         /// Call OnAllPluginsLoaded on all plugins that supports it
         /// </summary>
-        private void CallEndInitialization()
-        {
+        private void CallEndInitialization() {
             foreach (var plugin in LoadedPlugins)
                 if (plugin is IEventsInitialization)
-                    ((IEventsInitialization)plugin).OnAllPluginsLoaded(this);
+                    ((IEventsInitialization) plugin).OnAllPluginsLoaded(this);
         }
 
         /// <summary>
@@ -40,51 +36,46 @@ namespace ZurvanBot.Plugins
         /// if the plugin class exists.
         /// </summary>
         /// <returns>True if all plugins were loaded correctly, false if errors occured.</returns>
-        public bool LoadPlugins()
-        {
+        public bool LoadPlugins() {
             var dirs = Directory.GetDirectories(PluginsDir);
             var errorsOccured = false;
 
-            foreach (var fileName in dirs)
-            {
+            foreach (var fileName in dirs) {
                 var dir = new DirectoryInfo(fileName);
                 if (!File.Exists(dir.FullName + "/Plugin.cs")) continue;
-                
+
                 var pluginDir = new PluginDirectory(dir);
                 PluginFiles.Add(pluginDir);
-                
-                if (!pluginDir.TryCompile())
-                {
+
+                if (!pluginDir.TryCompile()) {
                     errorsOccured = true;
                     ErroredPlugins.Add(pluginDir);
                     continue;
                 }
 
                 Plugin plugin = null;
-                
-                try
-                {
+
+                try {
                     plugin = pluginDir.CreateInstance(this);
                 }
-                catch (Exception e)
-                {
+                catch (Exception e) {
                     //todo: log this error
                     Console.WriteLine("Failed to load the plugin '" + pluginDir + "': " + e.Message);
                 }
 
-                if (plugin == null)
-                { // if this occurs, something strange happened
+                if (plugin == null) {
+                    // if this occurs, something strange happened
                     //todo: log this weird error
                     Console.WriteLine("Failed to load the plugin '" + pluginDir + "'.");
                 }
-                
+
                 LoadedPlugins.Add(plugin);
-                
+
                 // call the OnLoaded event if possible
                 if (plugin is IEventsInitialization)
-                    ((IEventsInitialization)plugin).OnLoaded(this);
+                    ((IEventsInitialization) plugin).OnLoaded(this);
             }
-            
+
             CallEndInitialization();
 
             return !errorsOccured;

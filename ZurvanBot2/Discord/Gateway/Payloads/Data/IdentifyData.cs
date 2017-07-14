@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Gateway.Payloads
-{
-    public class IdentifyData
-    {
+﻿namespace ZurvanBot.Discord.Gateway.Payloads {
+    public class IdentifyData {
         public string token;
         public DeviceData properties = new DeviceData();
         public bool compress;

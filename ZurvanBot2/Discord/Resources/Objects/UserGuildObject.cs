@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Resources.Objects
-{
-    public class UserGuildObject: ResObject
-    {
+﻿namespace ZurvanBot.Discord.Resources.Objects {
+    public class UserGuildObject : ResObject {
         public string name;
         public string icon;
         public bool? owner;

@@ -1,7 +1,5 @@
-﻿namespace ZurvanBot.Discord.Gateway
-{
-    public enum ErrorCode
-    {
+﻿namespace ZurvanBot.Discord.Gateway {
+    public enum ErrorCode {
         UnknownError = 4000,
         UnknownOpCode = 4001,
         DecodeError = 4002,
