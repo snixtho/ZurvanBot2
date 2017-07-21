@@ -108,286 +108,229 @@ namespace ZurvanBot.Discord.Gateway {
         /// <param name="eventStr">The even identifier string.</param>
         /// <param name="eventData">The event's data.</param>
         private async void ProcessEvent(string eventStr, JObject eventData) {
-            if (eventStr.Equals("READY")) {
-                await _heart.StartAsync();
+            var handlerTask = new GatewayEvent(eventStr, eventData)
+                .OnEvent("READY", token => {
+                    await _heart.StartAsync();
 
-                Monitor.Enter(_readyWait);
-                try {
+                    Monitor.Enter(_readyWait);
+                    try {
+                        _isReady = true;
+                        Monitor.PulseAll(_readyWait);
+                    }
+                    finally {
+                        Monitor.Exit(_readyWait);
+                    }
+
+                    var args = new ReadyEventArgs {
+                        V = (int) eventData["v"],
+                        User = eventData["user"].ToObject<UserObject>(),
+                        PrivateChannels = eventData["private_channels"].ToObject<DMChannelObject[]>(),
+                        Guilds = eventData["guilds"].ToObject<UnavailableGuildObject[]>(),
+                        SessionID = (string) eventData["session_id"],
+                        _trace = eventData["_trace"].ToObject<string[]>()
+                    };
+
+                    OnReady?.Invoke(args);
+                })
+                .OnEvent("RESUMED", token => {
                     _isReady = true;
-                    Monitor.PulseAll(_readyWait);
-                }
-                finally {
-                    Monitor.Exit(_readyWait);
-                }
+                    var args = new ResumedEventArgs {_trace = eventData["_trace"].ToObject<string[]>()};
+                    OnResumed?.Invoke(args);
+                })
+                .OnEvent("CHANNEL_CREATE", token => {
+                    var isDM = (bool) eventData[
+                        "is_private"]; // is_private is only true when DM and only false when Guild
+                    var args = new ChannelCreateEventArgs {Type = isDM ? ChannelType.DM : ChannelType.Guild};
+                    if (isDM) args.DMChannel = eventData.ToObject<DMChannelObject>();
+                    else args.GuildChannel = eventData.ToObject<GuildChannelObject>();
+                    OnChannelCreate?.Invoke(args);
+                })
+                .OnEvent("CHANNEL_UPDATE", token => {
+                    var args = new ChannelUpdateEventArgs {Guild = eventData.ToObject<GuildChannelObject>()};
+                    OnChannelUpdate?.Invoke(args);
+                })
+                .OnEvent("CHANNEL_DELETE", token => {
+                    var isDM = (bool) eventData["is_private"];
+                    var args = new ChannelDeleteEventArgs {Type = isDM ? ChannelType.DM : ChannelType.Guild};
+                    if (isDM) args.DMChannel = eventData.ToObject<DMChannelObject>();
+                    else args.GuildChannel = eventData.ToObject<GuildChannelObject>();
+                    OnChannelDelete?.Invoke(args);
+                })
+                .OnEvent("GUILD_CREATE", token => {
+                    var args = new GuildCreateEventArgs {Guild = eventData.ToObject<GuildObject>()};
+                    OnGuildCreate?.Invoke(args);
+                })
+                .OnEvent("GUILD_UPDATE", token => {
+                    var args = new GuildUpdateEventArgs {Guild = eventData.ToObject<GuildObject>()};
+                    OnGuildUpdate?.Invoke(args);
+                })
+                .OnEvent("GUILD_DELETE", token => {
+                    var args = new GuildDeleteEventArgs {
+                        Id = (ulong) eventData["id"],
+                        Unavailable = (bool) eventData["id"]
+                    };
+                    OnGuildDelete?.Invoke(args);
+                })
+                .OnEvent("GUILD_BAN_ADD", token => {
+                    var args = new GuildBanAddEventArgs {
+                        User = eventData.ToObject<UserObject>(),
+                        GuildId = (ulong) eventData["guild_id"]
+                    };
+                    OnGuildBanAdd?.Invoke(args);
+                })
+                .OnEvent("GUILD_BAN_REMOVE", token => {
+                    var args = new GuildBanRemoveEventArgs {
+                        User = eventData.ToObject<UserObject>(),
+                        GuildId = (ulong) eventData["guild_id"]
+                    };
+                    OnGuildBanRemove?.Invoke(args);
+                })
+                .OnEvent("GUILD_EMOJIS_UPDATE", token => {
+                    var args = new GuildEmojisUpdateEventArgs {
+                        GuildId = (ulong) eventData["guild_id"],
+                        Emojis = eventData["emojis"].ToObject<EmojiObject[]>()
+                    };
+                    OnGuildEmojisUpdate?.Invoke(args);
+                })
+                .OnEvent("GUILD_INTEGRATIONS_UPDATE", token => {
+                    var args = new GuildIntegrationsUpdateEventArgs {GuildId = (ulong) eventData["guild_id"]};
+                    OnGuildIntegrationsUpdate?.Invoke(args);
+                })
+                .OnEvent("GUILD_MEMBER_ADD", token => {
+                    var args = new GuildMemberAddEventArgs {
+                        GuildMember = eventData.ToObject<GuildMemberObject>(),
+                        GuildId = (ulong) eventData["guild_id"]
+                    };
+                    OnGuildMemberAdd?.Invoke(args);
+                })
+                .OnEvent("GUILD_MEMBER_REMOVE", token => {
+                    var args = new GuildMemberRemoveEventArgs {
+                        GuildId = (ulong) eventData["guild_id"],
+                        User = eventData["user"].ToObject<UserObject>()
+                    };
+                    OnGuildMemberRemove?.Invoke(args);
+                })
+                .OnEvent("GUILD_MEMBER_UPDATE", token => {
+                    var args = new GuildMemberUpdateEventArgs {
+                        GuildId = (ulong) eventData["guild_id"],
+                        User = eventData["user"].ToObject<UserObject>(),
+                        Roles = eventData["roles"].ToObject<ulong[]>(),
+                        Nick = (string) eventData["nick"]
+                    };
+                    OnGuildMemberUpdate?.Invoke(args);
+                })
+                .OnEvent("GUILD_MEMBERS_CHUNK", token => {
+                    var args = new GuildMembersChunkEventArgs {
+                        GuildId = (ulong) eventData["guild_id"],
+                        Members = eventData["members"].ToObject<GuildMemberObject[]>()
+                    };
+                    OnGuildMembersChunk?.Invoke(args);
+                })
+                .OnEvent("GUILD_ROLE_CREATE", token => {
+                    var args = new GuildRoleCreateEventArgs {
+                        GuildId = (ulong) eventData["guild_id"],
+                        Role = eventData["role"].ToObject<RoleObject>()
+                    };
+                    OnGuildRoleCreate?.Invoke(args);
+                })
+                .OnEvent("GUILD_ROLE_UPDATE", token => {
+                    var args = new GuildRoleUpdateEventArgs {
+                        GuildId = (ulong) eventData["guild_id"],
+                        Role = eventData["role"].ToObject<RoleObject>()
+                    };
+                    OnGuildRoleUpdate?.Invoke(args);
+                })
+                .OnEvent("GUILD_ROLE_DELETE", token => {
+                    var args = new GuildRoleDeleteEventArgs {
+                        GuildId = (ulong) eventData["guild_id"],
+                        RoleId = (ulong) eventData["role_id"]
+                    };
+                    OnGuildRoleDelete?.Invoke(args);
+                })
+                .OnEvent("MESSAGE_CREATE", token => {
+                    var args = new MessageCreateEventArgs {Message = eventData.ToObject<MessageObject>()};
+                    OnMessageCreate?.Invoke(args);
+                })
+                .OnEvent("MESSAGE_UPDATE", token => {
+                    var args = new MessageUpdateEventArgs {Message = eventData.ToObject<MessageObject>()};
+                    OnMessageUpdate?.Invoke(args);
+                })
+                .OnEvent("MESSAGE_DELETE", token => {
+                    var args = new MessageDeleteEventArgs {
+                        Id = (ulong) eventData["id"],
+                        ChannelId = (ulong) eventData["channel_id"]
+                    };
+                    OnMessageDelete?.Invoke(args);
+                })
+                .OnEvent("MESSAGE_DELETE_BULK", token => {
+                    var args = new MessageDeleteBulkEventArgs {
+                        Ids = eventData["ids"].ToObject<ulong[]>(),
+                        ChannelId = (ulong) eventData["channel_id"]
+                    };
+                    OnMessageDeleteBulk?.Invoke(args);
+                })
+                .OnEvent("MESSAGE_REACTION_ADD", token => {
+                    var args = new MessageReactionAddEventArgs {
+                        UserId = (ulong) eventData["user_id"],
+                        ChannelId = (ulong) eventData["channel_id"],
+                        MessageId = (ulong) eventData["message_id"],
+                        Emoji = eventData["emoji"].ToObject<EmojiObject>()
+                    };
+                    OnMessageReactionAdd?.Invoke(args);
+                })
+                .OnEvent("MESSAGE_REACTION_REMOVE", token => {
+                    var args = new MessageReactionRemoveEventArgs {
+                        UserId = (ulong) eventData["user_id"],
+                        ChannelId = (ulong) eventData["channel_id"],
+                        MessageId = (ulong) eventData["message_id"],
+                        Emoji = eventData["emoji"].ToObject<EmojiObject>()
+                    };
+                    OnMessageReactionRemove?.Invoke(args);
+                })
+                .OnEvent("MESSAGE_REACTION_REMOVE_ALL", token => {
+                    var args = new MessageReactionRemoveAllEventArgs {
+                        ChannelId = (ulong) eventData["channel_id"],
+                        MessageId = (ulong) eventData["message_id"]
+                    };
+                    OnMessageReactionRemoveAll?.Invoke(args);
+                })
+                .OnEvent("PRESENCE_UPDATE", token => {
+                    var args = new PresenceUpdateEventArgs {
+                        User = eventData["user"].ToObject<UserObject>(),
+                        Roles = eventData["roles"].ToObject<ulong[]>(),
+                        Game = eventData["game"].ToObject<GameObject>(),
+                        GuildId = (ulong) eventData["guild_id"],
+                        Status = (string) eventData["status"]
+                    };
+                    OnPresenceUpdate?.Invoke(args);
+                })
+                .OnEvent("TYPING_START", token => {
+                    var args = new TypingStartEventArgs {
+                        ChannelId = (ulong) eventData["channel_id"],
+                        UserId = (ulong) eventData["user_id"],
+                        Timestamp = (int) eventData["timestamp"]
+                    };
+                    OnTypingStart?.Invoke(args);
+                })
+                .OnEvent("USER_UPDATE", token => {
+                    var args = new UserUpdateEventArgs {User = eventData["d"].ToObject<UserObject>()};
+                    OnUserUpdate?.Invoke(args);
+                })
+                .OnEvent("VOICE_STATE_UPDATE", token => {
+                    var args = new VoiceStateUpdateEventArgs {VoiceState = eventData.ToObject<VoiceStateObject>()};
+                    OnVoiceStateUpdate?.Invoke(args);
+                })
+                .OnEvent("VOICE_SERVER_UPDATE", token => {
+                    var args = new VoiceServerUpdateEventArgs {
+                        Token = (string) eventData["token"],
+                        GuildId = (ulong) eventData["guild_id"],
+                        Endpoint = (string) eventData["endpoint"]
+                    };
+                    OnVoiceServerUpdate?.Invoke(args);
+                }).Handle();
 
-                var args = new ReadyEventArgs {
-                    V = (int) eventData["d"]["v"],
-                    User = eventData["d"]["user"].ToObject<UserObject>(),
-                    PrivateChannels = eventData["d"]["private_channels"].ToObject<DMChannelObject[]>(),
-                    Guilds = eventData["d"]["guilds"].ToObject<UnavailableGuildObject[]>(),
-                    SessionID = (string) eventData["d"]["session_id"],
-                    _trace = eventData["d"]["_trace"].ToObject<string[]>()
-                };
-                var et = new Task(() => OnReady?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("RESUMED")) {
-                _isReady = true;
-                var args = new ResumedEventArgs {_trace = eventData["d"]["_trace"].ToObject<string[]>()};
-                var et = new Task(() => OnResumed?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("CHANNEL_CREATE")) {
-                var isDM = (bool) eventData["d"][
-                    "is_private"]; // is_private is only true when DM and only false when Guild
-                var args = new ChannelCreateEventArgs {Type = isDM ? ChannelType.DM : ChannelType.Guild};
-                if (isDM) args.DMChannel = eventData["d"].ToObject<DMChannelObject>();
-                else args.GuildChannel = eventData["d"].ToObject<GuildChannelObject>();
-                var et = new Task(() => OnChannelCreate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("CHANNEL_UPDATE")) {
-                var args = new ChannelUpdateEventArgs {Guild = eventData["d"].ToObject<GuildChannelObject>()};
-                var et = new Task(() => OnChannelUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("CHANNEL_DELETE")) {
-                var isDM = (bool) eventData["d"]["is_private"];
-                var args = new ChannelDeleteEventArgs {Type = isDM ? ChannelType.DM : ChannelType.Guild};
-                if (isDM) args.DMChannel = eventData["d"].ToObject<DMChannelObject>();
-                else args.GuildChannel = eventData["d"].ToObject<GuildChannelObject>();
-                var et = new Task(() => OnChannelDelete?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_CREATE")) {
-                var args = new GuildCreateEventArgs {Guild = eventData["d"].ToObject<GuildObject>()};
-                var et = new Task(() => OnGuildCreate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_UPDATE")) {
-                var args = new GuildUpdateEventArgs {Guild = eventData["d"].ToObject<GuildObject>()};
-                var et = new Task(() => OnGuildUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_DELETE")) {
-                var args = new GuildDeleteEventArgs {
-                    Id = (ulong) eventData["d"]["id"],
-                    Unavailable = (bool) eventData["d"]["id"]
-                };
-                var et = new Task(() => OnGuildDelete?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_BAN_ADD")) {
-                var args = new GuildBanAddEventArgs {
-                    User = eventData["d"].ToObject<UserObject>(),
-                    GuildId = (ulong) eventData["d"]["guild_id"]
-                };
-                var et = new Task(() => OnGuildBanAdd?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_BAN_REMOVE")) {
-                var args = new GuildBanRemoveEventArgs {
-                    User = eventData["d"].ToObject<UserObject>(),
-                    GuildId = (ulong) eventData["d"]["guild_id"]
-                };
-                var et = new Task(() => OnGuildBanRemove?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_EMOJIS_UPDATE")) {
-                var args = new GuildEmojisUpdateEventArgs {
-                    GuildId = (ulong) eventData["d"]["guild_id"],
-                    Emojis = eventData["d"]["emojis"].ToObject<EmojiObject[]>()
-                };
-                var et = new Task(() => OnGuildEmojisUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_INTEGRATIONS_UPDATE")) {
-                var args = new GuildIntegrationsUpdateEventArgs {GuildId = (ulong) eventData["d"]["guild_id"]};
-                var et = new Task(() => OnGuildIntegrationsUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_MEMBER_ADD")) {
-                var args = new GuildMemberAddEventArgs {
-                    GuildMember = eventData["d"].ToObject<GuildMemberObject>(),
-                    GuildId = (ulong) eventData["d"]["guild_id"]
-                };
-                var et = new Task(() => OnGuildMemberAdd?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_MEMBER_REMOVE")) {
-                var args = new GuildMemberRemoveEventArgs {
-                    GuildId = (ulong) eventData["d"]["guild_id"],
-                    User = eventData["d"]["user"].ToObject<UserObject>()
-                };
-                var et = new Task(() => OnGuildMemberRemove?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_MEMBER_UPDATE")) {
-                var args = new GuildMemberUpdateEventArgs {
-                    GuildId = (ulong) eventData["d"]["guild_id"],
-                    User = eventData["d"]["user"].ToObject<UserObject>(),
-                    Roles = eventData["d"]["roles"].ToObject<ulong[]>(),
-                    Nick = (string) eventData["d"]["nick"]
-                };
-                var et = new Task(() => OnGuildMemberUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_MEMBERS_CHUNK")) {
-                var args = new GuildMembersChunkEventArgs {
-                    GuildId = (ulong) eventData["d"]["guild_id"],
-                    Members = eventData["d"]["members"].ToObject<GuildMemberObject[]>()
-                };
-                var et = new Task(() => OnGuildMembersChunk?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_ROLE_CREATE")) {
-                var args = new GuildRoleCreateEventArgs {
-                    GuildId = (ulong) eventData["d"]["guild_id"],
-                    Role = eventData["d"]["role"].ToObject<RoleObject>()
-                };
-                var et = new Task(() => OnGuildRoleCreate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_ROLE_UPDATE")) {
-                var args = new GuildRoleUpdateEventArgs {
-                    GuildId = (ulong) eventData["d"]["guild_id"],
-                    Role = eventData["d"]["role"].ToObject<RoleObject>()
-                };
-                var et = new Task(() => OnGuildRoleUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("GUILD_ROLE_DELETE")) {
-                var args = new GuildRoleDeleteEventArgs {
-                    GuildId = (ulong) eventData["d"]["guild_id"],
-                    RoleId = (ulong) eventData["d"]["role_id"],
-                };
-                var et = new Task(() => OnGuildRoleDelete?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("MESSAGE_CREATE")) {
-                var args = new MessageCreateEventArgs {Message = eventData["d"].ToObject<MessageObject>()};
-                var et = new Task(() => OnMessageCreate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("MESSAGE_UPDATE")) {
-                var args = new MessageUpdateEventArgs {Message = eventData["d"].ToObject<MessageObject>()};
-                var et = new Task(() => OnMessageUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("MESSAGE_DELETE")) {
-                var args = new MessageDeleteEventArgs {
-                    Id = (ulong) eventData["d"]["id"],
-                    ChannelId = (ulong) eventData["d"]["channel_id"]
-                };
-                var et = new Task(() => OnMessageDelete?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("MESSAGE_DELETE_BULK")) {
-                var args = new MessageDeleteBulkEventArgs {
-                    Ids = eventData["d"]["ids"].ToObject<ulong[]>(),
-                    ChannelId = (ulong) eventData["d"]["channel_id"]
-                };
-                var et = new Task(() => OnMessageDeleteBulk?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("MESSAGE_REACTION_ADD")) {
-                var args = new MessageReactionAddEventArgs {
-                    UserId = (ulong) eventData["d"]["user_id"],
-                    ChannelId = (ulong) eventData["d"]["channel_id"],
-                    MessageId = (ulong) eventData["d"]["message_id"],
-                    Emoji = eventData["d"]["emoji"].ToObject<EmojiObject>()
-                };
-                var et = new Task(() => OnMessageReactionAdd?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("MESSAGE_REACTION_REMOVE")) {
-                var args = new MessageReactionRemoveEventArgs {
-                    UserId = (ulong) eventData["d"]["user_id"],
-                    ChannelId = (ulong) eventData["d"]["channel_id"],
-                    MessageId = (ulong) eventData["d"]["message_id"],
-                    Emoji = eventData["d"]["emoji"].ToObject<EmojiObject>()
-                };
-                var et = new Task(() => OnMessageReactionRemove?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("MESSAGE_REACTION_REMOVE_ALL")) {
-                var args = new MessageReactionRemoveAllEventArgs {
-                    ChannelId = (ulong) eventData["d"]["channel_id"],
-                    MessageId = (ulong) eventData["d"]["message_id"]
-                };
-                var et = new Task(() => OnMessageReactionRemoveAll?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("PRESENCE_UPDATE")) {
-                var args = new PresenceUpdateEventArgs {
-                    User = eventData["d"]["user"].ToObject<UserObject>(),
-                    Roles = eventData["d"]["roles"].ToObject<ulong[]>(),
-                    Game = eventData["d"]["game"].ToObject<GameObject>(),
-                    GuildId = (ulong) eventData["d"]["guild_id"],
-                    Status = (string) eventData["d"]["status"]
-                };
-                var et = new Task(() => OnPresenceUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("TYPING_START")) {
-                var args = new TypingStartEventArgs {
-                    ChannelId = (ulong) eventData["d"]["channel_id"],
-                    UserId = (ulong) eventData["d"]["user_id"],
-                    Timestamp = (int) eventData["d"]["timestamp"]
-                };
-                var et = new Task(() => OnTypingStart?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("USER_UPDATE")) {
-                var args = new UserUpdateEventArgs {User = eventData["d"].ToObject<UserObject>()};
-                var et = new Task(() => OnUserUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("VOICE_STATE_UPDATE")) {
-                var args = new VoiceStateUpdateEventArgs {VoiceState = eventData["d"].ToObject<VoiceStateObject>()};
-                var et = new Task(() => OnVoiceStateUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
-            else if (eventStr.Equals("VOICE_SERVER_UPDATE")) {
-                var args = new VoiceServerUpdateEventArgs {
-                    Token = (string) eventData["d"]["token"],
-                    GuildId = (ulong) eventData["d"]["guild_id"],
-                    Endpoint = (string) eventData["d"]["endpoint"]
-                };
-                var et = new Task(() => OnVoiceServerUpdate?.Invoke(args));
-                et.Start();
-                if (!AsyncEvents) et.Wait();
-            }
+            if (!AsyncEvents)
+                handlerTask.Wait();
         }
     }
 }

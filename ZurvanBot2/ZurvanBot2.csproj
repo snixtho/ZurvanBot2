@@ -85,6 +85,7 @@
     <Compile Include="Discord\Gateway\Events\VoiceServerUpdateEventArgs.cs" />
     <Compile Include="Discord\Gateway\Events\VoiceStateUpdateEventArgs.cs" />
     <Compile Include="Discord\Gateway\GameTypes.cs" />
+    <Compile Include="Discord\Gateway\GatewayEvent.cs" />
     <Compile Include="Discord\Gateway\GatewayListener.cs" />
     <Compile Include="Discord\Gateway\GatewayListenerActions.cs" />
     <Compile Include="Discord\Gateway\GatewayListenerEvents.cs" />

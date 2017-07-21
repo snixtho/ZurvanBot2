@@ -177,8 +177,7 @@ namespace ZurvanBot.Util {
         /// <param name="msg">The message to log.</param>
         /// <param name="cat">The category of the message.</param>
         public static void Info(string msg, string cat = "") {
-            if (_instance == null)
-                _instance = new Log();
+            Instance();
             if ((int) _instance.LogLevel < (int) Elevation.Info) return;
             _instance._logLineFormatted("[I]" + generateCat(cat) + ": " + msg);
         }
@@ -189,8 +188,7 @@ namespace ZurvanBot.Util {
         /// <param name="msg">The message to log.</param>
         /// <param name="cat">The category of the message.</param>
         public static void Error(string msg, string cat = "") {
-            if (_instance == null)
-                _instance = new Log();
+            Instance();
             if ((int) _instance.LogLevel < (int) Elevation.Error) return;
             _instance._logLineFormatted("[E]" + generateCat(cat) + ": " + msg);
         }
@@ -201,8 +199,7 @@ namespace ZurvanBot.Util {
         /// <param name="msg">The message to log.</param>
         /// <param name="cat">The category of the message.</param>
         public static void Warning(string msg, string cat = "") {
-            if (_instance == null)
-                _instance = new Log();
+            Instance();
             if ((int) _instance.LogLevel < (int) Elevation.Warning) return;
             _instance._logLineFormatted("[W]" + generateCat(cat) + ": " + msg);
         }
@@ -213,8 +210,7 @@ namespace ZurvanBot.Util {
         /// <param name="msg">The message to log.</param>
         /// <param name="cat">The category of the message.</param>
         public static void Debug(string msg, string cat = "") {
-            if (_instance == null)
-                _instance = new Log();
+            Instance();
             if ((int) _instance.LogLevel < (int) Elevation.Debug) return;
             _instance._logLineFormatted("[D]" + generateCat(cat) + ": " + msg);
         }
@@ -225,8 +221,7 @@ namespace ZurvanBot.Util {
         /// <param name="msg">The message to log.</param>
         /// <param name="cat">The category of the message.</param>
         public static void Verbose(string msg, string cat = "") {
-            if (_instance == null)
-                _instance = new Log();
+            Instance();
             if ((int) _instance.LogLevel < (int) Elevation.Verbose) return;
             _instance._logLineFormatted("[V]" + generateCat(cat) + ": " + msg);
         }
@@ -236,8 +231,7 @@ namespace ZurvanBot.Util {
         /// </summary>
         /// <param name="filePath">The path to the file.</param>
         public static void AddLogFile(string filePath) {
-            if (_instance == null)
-                _instance = new Log();
+            Instance();
             _instance._addFile(filePath);
         }
     }
