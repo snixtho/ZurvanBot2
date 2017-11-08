@@ -12,3 +12,5 @@ a custom implementation for the Discord API.
 
 ### Current State
 Just trying to get everything working, with a somewhat messy code. Which will be cleaned up later.
+
+** Project currently on hold **
