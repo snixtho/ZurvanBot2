@@ -23,7 +23,7 @@ namespace ZurvanBot {
         
         public static void Main(string[] args) {
             Log.Instance().LogLevel = Log.Elevation.Verbose;
-            var auth = new Authentication(Authentication.AuthType.Bot, "MjQzMDg0Nzc2NzkyMTI5NTM2.DFY3nw.xlUTNbws0KQDheiSwL1cIH61-XM");
+            var auth = new Authentication(Authentication.AuthType.Bot, "");
             var discord = new DiscordClient(auth);
 
             discord.Gateway.OnMessageCreate += eventArgs => {
