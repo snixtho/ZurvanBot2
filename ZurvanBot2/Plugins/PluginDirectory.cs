@@ -4,9 +4,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.CSharp;
@@ -127,7 +125,6 @@ namespace ZurvanBot.Plugins {
                 return true;
             }
 
-            //todo: compilation code
             var srcFilesArray = new string[sourceFiles.Count];
             for (var i = 0; i < sourceFiles.Count; i++)
                 srcFilesArray[i] = File.ReadAllText(sourceFiles[i].FullName);
@@ -188,154 +185,5 @@ namespace ZurvanBot.Plugins {
         public override string ToString() {
             return _directory.Name;
         }
-
-        /* private readonly FileInfo _file;
-        private Assembly _pluginAssembly;
-
-        public CompilerErrorCollection CompilerErrors { get; private set; }
-
-        public PluginDirectory(FileInfo file)
-        {
-            if (!file.Exists)
-                throw new FileNotFoundException("The specified plugin file does not exist.");
-            
-            if (!file.Extension.ToLower().Equals(".cs"))
-                throw new Exception("The specified plugin file needs to have a '.cs' extension.");
-            
-            _file = file;
-        }
-
-        /// <summary>
-        /// Get the name of the compiled output file.
-        /// </summary>
-        /// <returns>The compiled output file name.</returns>
-        public string GetOutputName()
-        {
-            return _file.Name;
-        }
-
-        /// <summary>
-        /// Get the name of the checksum file for this plugin.
-        /// </summary>
-        /// <returns>The name of the checksum file.</returns>
-        public string GetChecksumFile()
-        {
-            return _file.Name + ".checksum";
-        }
-
-        /// <summary>
-        /// Calculate hash checksum from the specified string.
-        /// </summary>
-        /// <param name="source">The string to calculate the hash.</param>
-        /// <returns>The hash computed by the specified string.</returns>
-        private static string CalcChecksum(string source)
-        {
-            using (var sha = new SHA512Managed())
-            {
-                var hash = sha.ComputeHash(Encoding.UTF8.GetBytes(source));
-                var sb = new StringBuilder(hash.Length*2);
-
-                foreach (var b in hash)
-                {
-                    sb.Append(b.ToString("X2"));
-                }
-
-                return sb.ToString();
-            }
-        }
-
-        /// <summary>
-        /// Check to see if the current checksum of the source file
-        /// matches the old one.
-        /// </summary>
-        /// <param name="currSource">The source of the current source file.</param>
-        /// <returns>True if they match, false if not.</returns>
-        public bool ChecksumMatchesOld(string currSource)
-        {
-            if (!File.Exists(_file.DirectoryName + "/" + GetChecksumFile()))
-                return false;
-
-            var newChecksum = CalcChecksum(currSource);
-            var oldChecksum = File.ReadAllText(_file.DirectoryName + "/" + GetChecksumFile());
-
-            return newChecksum.Equals(oldChecksum);
-        }
-
-        /// <summary>
-        /// Try to compile the plugin source file.
-        /// </summary>
-        /// <returns>True if compilation succeeded, false if not.</returns>
-        public bool TryCompile()
-        { 
-            var source = File.ReadAllText(_file.FullName);
-            
-            // check compilation cache
-            if (File.Exists(_file.DirectoryName + "/" + GetOutputName() + ".obj") && ChecksumMatchesOld(source))
-            {
-                _pluginAssembly = Assembly.LoadFile(_file.DirectoryName + "/" + GetOutputName() + ".obj");
-                Console.WriteLine("Loaded " + this + " from cache.");
-                return true;
-            }
-            
-            // cache out of date, so compile it
-            var provider = new CSharpCodeProvider();
-            var compPars = new CompilerParameters
-            {
-                GenerateExecutable = false,
-                GenerateInMemory = false,
-                IncludeDebugInformation = Debugger.IsAttached,
-                OutputAssembly = _file.DirectoryName + "/" + GetOutputName() + ".obj"
-            };
-
-            compPars.ReferencedAssemblies.Add(Path.GetFileName(Assembly.GetEntryAssembly().Location));
-
-            var res = provider.CompileAssemblyFromSource(compPars, source);
-
-            CompilerErrors = res.Errors;
-            if (res.Errors.HasErrors)
-            {
-                return false;
-            }
-
-            // plugin compilation successful
-            _pluginAssembly = res.CompiledAssembly;
-            
-            // create checksum file for it
-            var checksum = CalcChecksum(source);
-            var checksumFile = _file.DirectoryName + "/" + GetChecksumFile(); 
-            if (File.Exists(checksumFile))
-                File.Delete(checksumFile);
-            File.WriteAllText(checksumFile, checksum);
-            
-            Console.WriteLine("Loaded " + this + " from source.");
-            
-            return true;
-        }
-
-        /// <summary>
-        /// Create an object instance of the compiled plugin class.
-        /// </summary>
-        /// <param name="pluginSystem"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
-        public Plugin CreateInstance(PluginSystem pluginSystem)
-        {
-            var pluginClass = _pluginAssembly.GetType("ZurvanBot.Plugins.CustomPlugin");
-            if (pluginClass == null)
-                throw new Exception(
-                    "Failed to find the main plugin class 'CustomPlugin'. Make sure it has public access.");
-            
-            var plugin = (Plugin) Activator.CreateInstance(pluginClass, pluginSystem);
-            return plugin;
-        }
-
-        /// <summary>
-        /// Just returns the file name.
-        /// </summary>
-        /// <returns>The file name.</returns>
-        public override string ToString()
-        {
-            return _file.Name;
-        } */
     }
 }

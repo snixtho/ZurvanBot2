@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Net.WebSockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
@@ -10,6 +11,7 @@ using ZurvanBot.Discord.Gateway.Payloads;
 using ZurvanBot.Discord.Gateway.StateTracking;
 using ZurvanBot.Discord.Resources.Objects;
 using ZurvanBot.Util;
+using WebSocket = WebSocketSharp.WebSocket;
 
 namespace ZurvanBot.Discord.Gateway {
     public partial class GatewayListener {
@@ -22,6 +24,13 @@ namespace ZurvanBot.Discord.Gateway {
         private object _mainWait = new object();
         private object _readyWait = new object();
         private bool _reconnect = true;
+        private int _disconnectCode = -1;
+        private string _disconnectReason = null;
+
+        /// <summary>
+        /// True when the gateway is connected, false if not.
+        /// </summary>
+        public bool Connected => _isRunning;
 
         /// <summary>
         /// The gateway procotol version to use.
@@ -32,6 +41,30 @@ namespace ZurvanBot.Discord.Gateway {
         /// Set to true to call events asynchronously, false to wait for completion.
         /// </summary>
         public bool AsyncEvents { get; set; }
+
+        /// <summary>
+        /// Get the code returned when the gateway was disconnected.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">Thrown when trying to retrive before disconnection.</exception>
+        public int DisconnectCode {
+            get {
+                if (_disconnectCode < 0)
+                    throw new InvalidOperationException("Gateway not disconnected. There is no disconnect code.");
+                return _disconnectCode;
+            }
+        }
+        
+        /// <summary>
+        /// The reason as a string for why the gateway disconnected.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">Thrown when trying to retrive before disconnection.</exception>
+        public string DisconnectReason {
+            get {
+                if (_disconnectReason == null)
+                    throw new InvalidOperationException("Gateway not disconnected. There is no disconnect reason.");
+                return _disconnectReason;
+            }
+        }
 
         public StateTracker State { get; set; }
 
@@ -82,8 +115,8 @@ namespace ZurvanBot.Discord.Gateway {
         private void WebsocketOnOnClose(object sender, CloseEventArgs closeEventArgs) {
             Log.Info("Connection closed: (" + closeEventArgs.Code + ") " + closeEventArgs.Reason);
 
-            if ((ErrorCode) closeEventArgs.Code == ErrorCode.NotAuthenticated)
-                Log.Error("Authentication failed for gateway.");
+            _disconnectCode = closeEventArgs.WasClean ? 1000 : closeEventArgs.Code;
+            _disconnectReason = closeEventArgs.Reason;
 
             try {
                 Log.Debug("Attempt: set _isRunning to false.");
@@ -172,6 +205,9 @@ namespace ZurvanBot.Discord.Gateway {
             if (_isRunning)
                 throw new Exception("This gateway listener has already been started.");
 
+            _disconnectCode = -1;
+            _disconnectReason = null;
+            
             var t = new Task(() => {
                 while (_reconnect) {
                     _reconnect = false;

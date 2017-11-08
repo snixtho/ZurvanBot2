@@ -31,7 +31,7 @@ namespace ZurvanBot.Discord {
         /// <summary>
         /// Rest for voice management.
         /// </summary>
-        public Voice Voice;
+        public Resources.Voice Voice;
 
         public API(Authentication auth) {
             _requester = new ResourceRequest(auth);
@@ -40,7 +40,7 @@ namespace ZurvanBot.Discord {
             Guild = new Guild(_requester);
             Invite = new Invite(_requester);
             User = new User(_requester);
-            Voice = new Voice(_requester);
+            Voice = new Resources.Voice(_requester);
         }
     }
 }

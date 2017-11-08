@@ -2,6 +2,7 @@
 using System.IO;
 using ZurvanBot.Plugins.Collections;
 using ZurvanBot.Plugins.PluginInterfaces;
+using ZurvanBot.Util;
 
 namespace ZurvanBot.Plugins {
     public class PluginSystem {
@@ -59,14 +60,12 @@ namespace ZurvanBot.Plugins {
                     plugin = pluginDir.CreateInstance(this);
                 }
                 catch (Exception e) {
-                    //todo: log this error
-                    Console.WriteLine("Failed to load the plugin '" + pluginDir + "': " + e.Message);
+                    Log.Error("Failed to load the plugin '" + pluginDir + "': " + e.Message, "PluginSystem");
                 }
 
                 if (plugin == null) {
                     // if this occurs, something strange happened
-                    //todo: log this weird error
-                    Console.WriteLine("Failed to load the plugin '" + pluginDir + "'.");
+                    Log.Error("Failed to load the plugin '" + pluginDir + "'.", "PluginSystem");
                 }
 
                 LoadedPlugins.Add(plugin);

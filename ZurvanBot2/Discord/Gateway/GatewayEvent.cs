@@ -33,7 +33,7 @@ namespace ZurvanBot.Discord.Gateway {
         public Task Handle() {
             if (!_handlers.ContainsKey(_eventName)) {
                 Log.Warning("No handler for event: " + _eventName, "GatewayEvent");
-                return;
+                return null;
             }
 
             var func = (Action<JToken>)_handlers[_eventName];
@@ -42,7 +42,7 @@ namespace ZurvanBot.Discord.Gateway {
                 et.Start();
                 return et;
             } catch (Exception e) {
-                Log.Error(e.Message);
+                Log.Error(e.Message, "GatewayEvent");
                 throw;
             }
         }

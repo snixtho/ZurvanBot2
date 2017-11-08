@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,8 +37,14 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Sodium, Version=0.10.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\libsodium-net.0.10.0\lib\Net40\Sodium.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -50,6 +57,7 @@
     <Compile Include="Discord\API.cs" />
     <Compile Include="Discord\Authentication.cs" />
     <Compile Include="Discord\BasicRequestResponse.cs" />
+    <Compile Include="Discord\DiscordClient.cs" />
     <Compile Include="Discord\Gateway\ChannelType.cs" />
     <Compile Include="Discord\Gateway\ErrorCode.cs" />
     <Compile Include="Discord\Gateway\Events\ChannelCreateEventArgs.cs" />
@@ -172,6 +180,20 @@
     <Compile Include="Discord\Resources\Resource.cs" />
     <Compile Include="Discord\Resources\User.cs" />
     <Compile Include="Discord\Resources\Voice.cs" />
+    <Compile Include="Discord\Voice\Codecs\OpusCodec.cs" />
+    <Compile Include="Discord\Voice\Codecs\RtpCodec.cs" />
+    <Compile Include="Discord\Voice\Codecs\SodiumCodec.cs" />
+    <Compile Include="Discord\Voice\HeartBeater.cs" />
+    <Compile Include="Discord\Voice\Payloads\Data\IdentifyData.cs" />
+    <Compile Include="Discord\Voice\Payloads\Data\VoiceSpeakingData.cs" />
+    <Compile Include="Discord\Voice\Payloads\HeartbeatPayload.cs" />
+    <Compile Include="Discord\Voice\Payloads\IdentifyPayload.cs" />
+    <Compile Include="Discord\Voice\Payloads\PayloadBase.cs" />
+    <Compile Include="Discord\Voice\Payloads\SpeakingPayload.cs" />
+    <Compile Include="Discord\Voice\VoiceClient.cs" />
+    <Compile Include="Discord\Voice\VoiceConfig.cs" />
+    <Compile Include="Discord\Voice\VoiceOpCode.cs" />
+    <Compile Include="Discord\Voice\VoiceStream.cs" />
     <Compile Include="Plugins\Collections\PluginCollection.cs" />
     <Compile Include="Plugins\Collections\PluginsFileCollection.cs" />
     <Compile Include="Plugins\PluginInterfaces\IEventsInitialization.cs" />
@@ -183,6 +205,7 @@
     <Compile Include="Util\HTTP\HTTPSRequest.cs" />
     <Compile Include="Util\HTTP\HTTPSResponse.cs" />
     <Compile Include="Util\Log.cs" />
+    <Compile Include="Util\Net\UdpClientEx.cs" />
     <Compile Include="Util\PlatformDetect.cs" />
     <Compile Include="ZurvanBot.cs" />
   </ItemGroup>
@@ -190,6 +213,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.2.0-xbuild02\build\net40\Baseclass.Contrib.Nuget.Output.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

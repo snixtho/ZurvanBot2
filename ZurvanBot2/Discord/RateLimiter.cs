@@ -17,7 +17,7 @@ namespace ZurvanBot.Discord {
 
         /// <summary>
         /// Waits one second if limit has been reached, if the limit has not 
-        /// been reached, it just returns immediately.
+        /// been reached, it just returns immediately. This ensures that all messages are sent in the end.
         /// </summary>
         public void WaitOrContinue() {
             lock (_ctrlObj) {
